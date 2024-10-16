@@ -6,6 +6,7 @@
 	<title>Welcome to my Portfolio</title>
 	<link rel="shortcut icon" href="images/home_images/logo_black.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	 <link rel="stylesheet" type="text/css" href="css/navs.css">
 	<link rel="stylesheet" type="text/css" href="css/describe_projects.css">
 	<link rel="stylesheet" type="text/css" href="css/posters.css">
 	<link rel="stylesheet" type="text/css" href="css/2d_car.css">
@@ -16,14 +17,41 @@
 <div id="wrap"> <!--wrap start-->
 	<div id="main_body"><!--main_body start-->
 
-		<div id="header" class="header">
-			<div id="navs" class="navs">
-			 <a href="index.html"><div id="logo" class="logo"> &nbsp;</div></a>
-				<div  class="nav"><a href="index.html">HOME</a></div>
-				<div class="nav" id="home"><a href="projects.html" target="blank">PROJECTS</a></div> 
-				<div class="nav" ><a href="contact_me.html" target="blank">CONTACT&nbsp;ME</a></div> 		
-			</div><!--navs end-->
-		</div><!--header end-->
+		<div id="header" class="header"> 
+
+               <div id="navs" class="navs">
+                      <a href="#"><div id="logo" class="logo"> &nbsp; </div></a>
+                    <div class="nav"><a href="index.html">HOME</a></div>
+                    <div class="nav">
+                         <div class="dropdown" >
+                       <button class="dropbtn"  id="home"><a>PROJECTS</a></button>
+                         <div class="dropdown-content">
+                              <ul><li class="graphic_design"><a href="graphic_designs.html">Graphic Designs</a></li>
+                              <li class="web_designs"><a href="web_designs.html">Web Designs</a></li>
+                              <li class="game_designs"  id="home"><a href="game_designs.html">Game Designs</a></li>
+                              <li class="illustration"><a href="illustration.html">Illustration</a></li>
+                              <li class="3d_model_designs"><a href="3d_model_designs.html">3D Model Designs</a></li>
+                              <li class="cad_blueprints"><a href="cad_blueprints.html">CAD Blueprints</a></li>
+                              <li class="video_editiing"><a href="video_editiing.html">Videos / Animation</a></li>
+                         </ul>
+                         </div>
+                    </div>
+                    </div> 
+                    <div class="nav">
+                         <div class="dropdown" >
+                       <button class="dropbtn"><a>CODING</a></button>
+                         <div class="dropdown-content">
+                              <ul><li class="coding"><a href="python_to_do_list.html">Pthon: To-Do List</a></li>
+                              
+                         </ul>
+                         </div>
+                    </div>
+                    </div> 
+                    <div class="nav"><a href="contact_me.html" target="blank">CONTACT&nbsp;ME</a></div>       
+               </div><!--navs end-->
+
+              
+          </div><!--header end-->
 
 		<div class="column4" id="column">
 			<div class="poster15">&nbsp;</div>
