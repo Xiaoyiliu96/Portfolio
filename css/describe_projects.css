@@ -1,3 +1,31 @@
+
+.nav a
+{
+	text-decoration: none;
+
+}
+
+.nav a:hover
+{
+	text-decoration: underline;
+	text-decoration-thickness:0.2em;
+
+}
+
+#header_white .nav a
+{
+	color: white;
+	text-decoration: none;
+}
+
+#header_white .nav a:hover
+{
+	color: orange;
+	text-decoration: underline;
+	text-decoration-thickness:0.2em;
+}
+
+
 #navs{font-weight: bold;}
 #header a:hover {color: orange;}
 #header a {color: black;}
@@ -15,8 +43,8 @@
 	text-decoration-thickness:0.2em;
 }
 
-#header3 a:hover {color:orange; }
-#header3 a {color:white;}
+#header3 a:hover {color:orange; text-decoration: none;}
+#header3 a {color:white; text-decoration: none;}
 
 #home3 a:hover {color: white; text-decoration: none;}
 #home3 a 
@@ -38,15 +66,17 @@
 
 #header5 a:hover {color: orange;}
 #header5 a {color: white;}
+
 #home3 a:hover {color: white;}
 #home3 a {color:orange;}
+
+
 
 /******navs*************/
 
 .wrap2{background: #322F40}
 .wrap3{background:#3B3B3B;}
 .wrap4{background: #3E3E4A;}
-
 
 
 .logo2
@@ -198,3 +228,4 @@ iframe
 	img{margin: auto;}
 
 }
+

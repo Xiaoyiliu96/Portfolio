@@ -1,5 +1,44 @@
 body{background: #37282F;}
 
+#logo a
+{
+	text-decoration: none;
+
+}
+#logo a:hover
+{
+	text-decoration: none;
+
+}
+
+
+.nav a
+{
+	color: white;
+}
+
+.nav a:hover
+{
+	color: orange;
+	text-decoration: underline;
+	text-decoration-thickness:0.2em;
+
+
+}
+
+#home a
+{
+	color: orange;
+	text-decoration: underline;
+	text-decoration-thickness:0.2em;
+}
+
+
+#home a:hover
+{
+	color: white;
+}
+
 #contact_me
 {
 	width: 100%;
@@ -72,7 +111,6 @@ label
 
 .submit_button button:hover
 {
-	background:white;
-	color: black;
+	background:black;
 }
 

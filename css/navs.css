@@ -2,11 +2,10 @@
 .dropbtn
 {
   border: none;
-  color: white;
   font-family: 'Helvetica';
   font-size: 1.1em;
   font-weight: bold;
-  background: #37282F;
+  background: transparent;
 
 }
 
@@ -26,12 +25,12 @@ botton
 {
   color: black;
   text-decoration: none;
-  color: white;
-
 }
 
 .dropdown-content a:hover {
-  color: #FFB439;
+  /*color: #FFB439;*/
+  text-decoration: underline;
+  text-decoration-thickness:0.2em;
 }
 
 .dropdown:hover .dropdown-content 
@@ -43,7 +42,7 @@ botton
 
 .dropdown:hover .dropbtn
 {
-  color: orange;
+  /*color: orange;*/
   text-decoration: underline;
   text-decoration-thickness:0.2em;
 }

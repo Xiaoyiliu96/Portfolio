@@ -40,6 +40,23 @@ body{font-family:'Helvetica';}
 	padding-bottom:36em;
 }
 
+.dropdown-content a:hover {
+	color: #D8C7B0;
+}
+
+.dropbtn
+{
+	color: white;
+}
+
+
+.dropbtn:hover
+{
+	color: #D8C7B0;
+}
+
+
+
 
 #home
 {

@@ -91,13 +91,21 @@ iframe
 #home
 {
 	color: #FFB439;
+	text-decoration: underline;
+	text-decoration-thickness:0.2em;
 }
+
+#home:hover
+{
+	text-decoration: none;
+}
+
  
 
 .navs
 {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 	grid-gap: 1em;
 }
 
@@ -135,6 +143,7 @@ iframe
 	background: url("../images/home_images/logo_yellow.png") no-repeat;
     background-position: left;
     background-size: contain;
+    text-decoration: none;
 }
 
 #logo
@@ -144,6 +153,7 @@ iframe
     display: block;
     padding: 0px;
     margin: 0px;
+    text-decoration: none;
 }
 
 .logo:hover
@@ -151,6 +161,7 @@ iframe
 	background: url("../images/home_images/logo_white.png") no-repeat;
 	background-position: left;
     background-size: contain;
+    text-decoration: none;
 }
 
 

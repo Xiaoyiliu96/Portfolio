@@ -1,6 +1,21 @@
 
 body{background: #37282F;}
 
+.dropbtn
+{
+  color: white;
+  background: #37282F;
+
+}
+
+.dropdown-content a 
+{
+  color: black;
+  text-decoration: none;
+  color: white;
+}
+
+
 #projects
 {
 	width: 100%;
@@ -12,9 +27,7 @@ body{background: #37282F;}
 
 #navs button 
 {
-	color: orange;
-	text-decoration: underline;
-  	text-decoration-thickness:0.2em;
+  text-decoration-thickness:0.2em;
 }
 
 
