@@ -53,6 +53,33 @@
 
 		</div><!--header end-->
 
+		<script type="text/javascript">
+			// Select all the anchor tags inside the dropdown
+			const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+
+			// Select the dropbtn (the "PROJECTS" button)
+			const dropbtn = document.querySelector('.dropbtn');
+
+			// Function to handle hover over the link
+			function handleHover() {
+			  dropbtn.style.color = 'orange';  // Change the color of the dropbtn to orange
+			  this.style.color = 'orange';     // Change the color of the hovered link to orange
+			}
+
+			// Function to handle mouseout (when the hover ends)
+			function handleMouseOut() {
+			  dropbtn.style.color = '';  // Reset the color of the dropbtn
+			  this.style.color = '';     // Reset the color of the hovered link
+			}
+
+			// Add event listeners to all anchor tags inside the dropdown
+			dropdownLinks.forEach(link => {
+			  link.addEventListener('mouseover', handleHover);
+			  link.addEventListener('mouseout', handleMouseOut);
+			});
+
+		</script>
+
 
 
 
