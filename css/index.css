@@ -390,3 +390,42 @@ iframe
 }
 
 */
+
+.my_projects_pic
+{
+  width:100%;
+  height:20em;
+  background: url("../images/maze_game_images/screencapture-file-I-Studio-Coding-Studio-Resume-Portfolio-Plan-F-maze-game-html-2024-11-12-14_44_53.png") no-repeat;
+  background-position:top;
+  background-size:cover;
+  padding:0px;
+  margin-top:2em;
+  margin-bottom:2em;
+
+}
+
+.my_projects_pic2
+{
+  width:100%;
+  height:20em;
+  background: url("../images/atypi2019toyko_images/screencapture-file-I-Studio-Coding-Studio-Resume-Portfolio-Plan-F-atypi19-html-2024-11-12-14_54_14.png") no-repeat;
+  background-position:top;
+  background-size:cover;
+  padding:0px;
+  margin-top:2em;
+  margin-bottom:2em;
+
+}
+
+.my_projects_pic3
+{
+  width:100%;
+  height:20em;
+  background: url("../images/projects_images/20.jpg") no-repeat;
+  background-position:top;
+  background-size:cover;
+  padding:0px;
+  margin-top:2em;
+  margin-bottom:2em;
+
+}
