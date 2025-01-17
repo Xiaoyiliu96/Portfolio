@@ -2,3 +2,8 @@
 {
 	margin-top: 2em;
 }
+
+img {
+      user-select: none;
+      pointer-events: none;
+    }

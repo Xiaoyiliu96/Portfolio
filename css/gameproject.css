@@ -19,6 +19,12 @@ body
 	margin: 0px;
 }
 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
 #wrap2
 {
 	background: url('../images/maze_game_images/01.png') no-repeat;

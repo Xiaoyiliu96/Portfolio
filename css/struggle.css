@@ -8,6 +8,12 @@
 -o-transform:rotate(-3deg);  
 transform:rotate(-3deg); 
 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
 
 /* Define the font face */
 @font-face {

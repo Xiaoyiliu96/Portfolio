@@ -8,6 +8,12 @@
 	line-height:30em;
 }
 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
 .poster2
 {
 	padding: 0px;

@@ -4,6 +4,12 @@
 #home a:hover {color: #292C63;}
 #home a {color:#A5D0F0;}
 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
 .logo:hover
 {
 	background: url("../images/home_images/logo_lightblue.png") no-repeat;

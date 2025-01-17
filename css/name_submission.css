@@ -8,6 +8,12 @@ body
 
 }
 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
 ul
 {
 	padding: 0px;

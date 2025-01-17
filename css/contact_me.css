@@ -1,5 +1,11 @@
 body{background: #37282F;}
 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
 #logo a
 {
 	text-decoration: none;

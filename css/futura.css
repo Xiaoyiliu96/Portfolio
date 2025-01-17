@@ -4,6 +4,12 @@
 #home a:hover {color: #333333;}
 #home a {color:#C11F1D;}
 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
 .logo:hover
 {
   background: url("../images/home_images/logo_black.png") no-repeat;

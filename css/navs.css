@@ -9,6 +9,12 @@
 
 }
 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
 botton
 {
   border: none;
