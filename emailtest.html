@@ -14,17 +14,19 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     (function() {
-        emailjs.init("4R44izEO1n-dseC1Z");
+        emailjs.init("4R44izEO1n-dseC1Z");  // Replace with your actual User ID
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
 
-        emailjs.sendForm('your-service-id', 'your-template-id', this)
+        // Replace with correct Service ID and Template ID
+        emailjs.sendForm('service_znxydab', 'template_zkfyzoh', this)
             .then(function(response) {
                 alert('邮件发送成功！');
             }, function(error) {
-                alert('邮件发送失败！');
+                console.error('EmailJS Error:', error);  // Log the error to console
+                alert('邮件发送失败！详细错误信息请查看控制台。');
             });
     });
 </script>
