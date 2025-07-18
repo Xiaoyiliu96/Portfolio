@@ -155,36 +155,7 @@
 
 
 
-			<div id="experience" class="experience">
-				<div class="experience_title">
-					 <span class="orange_color">
-					Sales Floor</span> 
-					<br>
-					<span class="black_text_bold">Burlington</span>
-				</div>
-				<div class="job_type">
-					<span class="black_text_bold">
-					October 2024 – November  2024</span> 
-					<br>
-					<span class="location">Seasonal Part-time </span>
-
-				</div>
-			</div>
-
 			
-			<div class="experience_textbox">
-
-			<ul>
-				<li> Provided exceptional customer service by assisting customers with product selection, answering inquiries, and ensuring a positive shopping experience. </li>
-
-				<li>Maintained in-depth knowledge of product offerings and promotions, contributing to increased sales and customer satisfaction.</li>
-
-				<li>Assisted with visual merchandising, ensuring displays were attractive and aligned with company standards.</li>
-
-			
-			</ul>
-
-			</div>
 
 
 
@@ -257,36 +228,6 @@
 				<li>Provided technical support to colleagues by resolving IT maintenance issues, troubleshooting hardware and software problems, and assisting with system upgrades.</li>
 
 				<li>Learned to use JIRA for documenting IT procedures, troubleshooting steps, and resolutions, and enhancing knowledge sharing and effciency within the IT department.</li>
-			</ul>
-
-			</div>
-
-
-			<div id="experience" class="experience">
-				<div class="experience_title">
-					 <span class="orange_color">
-					Ophthalmic Assistant</span> 
-					<br>
-					<span class="black_text_bold">8th Avenue Ophthalmolgy P.C.</span>
-				</div>
-				<div class="job_type">
-					<span class="black_text_bold">
-					January 2024 – March 2024</span> 
-					<br>
-					<span class="location">Part-Time</span>
-
-				</div>
-			</div>
-
-			
-			<div class="experience_textbox">
-
-			<ul>
-				<li>Strong attention to detail and organizational skills.</li>
-				<li>Profcient in administering vision feld tests using autorefractors, optos machines, and other diagnostic equipment.</li>
-				<li>Skilled in guiding patients through the testing process, ensuring comfort and accuracy.</li>
-
-
 			</ul>
 
 			</div>
