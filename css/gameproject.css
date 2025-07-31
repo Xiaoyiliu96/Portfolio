@@ -484,6 +484,11 @@ img {
 		background-size:contain;
 		line-height:15em;
 	}
+	
+	.face{
+		display: none;
+	}
+	
 
 
 }
