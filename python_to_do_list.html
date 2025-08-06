@@ -1,155 +1,244 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Welcome to my Portfolio</title>
-	<link rel="shortcut icon" href="images/home_images/logo_black.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-     <link rel="stylesheet" type="text/css" href="css/navs.css">
-	<link rel="stylesheet" type="text/css" href="css/describe_projects.css">
-     <link rel="stylesheet" type="text/css" href="css/name_submission.css">
-     <link rel="stylesheet" type="text/css" href="css/coding.css">
-     
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to my Portfolio</title>
+  <link rel="shortcut icon" href="images/home_images/logo_black.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navs.css">
+  <link rel="stylesheet" href="css/describe_projects.css">
+  <link rel="stylesheet" href="css/name_submission.css">
+  <link rel="stylesheet" href="css/coding.css">
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
 
-	
+    #wrap {
+      display: flex;
+      flex-direction: column;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    #main_body {
+      display: flex;
+      padding: 20px;
+      gap: 40px;
+    }
+
+    .output, .coding_text {
+      flex: 1;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      overflow: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .output h1, .output h2 {
+      margin-top: 1em;
+      color: orange;
+
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 200px;
+    }
+
+    button {
+      padding: 5px 10px;
+      margin-left: 5px;
+    }
+
+    .coding_text {
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      background-color: #f9f9f9;
+      color: #333;
+      border-left: 4px solid #999;
+    }
+
+    @media (max-width: 768px) {
+      #main_body {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-   
 
 <div id="wrap">
-     <div id="main_body">
-        <div id="header" class="header"> 
 
-               <div id="navs" class="navs">
-                      <a href="#"><div id="logo" class="logo"> &nbsp; </div></a>
-                    <div class="nav"><a href="index.html">HOME</a></div>
-                    <div class="nav">
-                         <div class="dropdown" >
-                       <button class="dropbtn" ><a>PROJECTS</a></button>
-                         <div class="dropdown-content">
-                              <ul><li class="graphic_design"><a href="graphic_designs.html">Graphic Designs</a></li>
-                              <li class="web_designs"><a href="web_designs.html">Web Designs</a></li>
-                              <li class="game_designs"><a href="game_designs.html">Game Designs</a></li>
-                              <li class="illustration"><a href="illustration.html">Illustration</a></li>
-                              <li class="3d_model_designs"><a href="3d_model_designs.html">3D Model Designs</a></li>
-                              <li class="cad_blueprints"><a href="cad_blueprints.html">CAD Blueprints</a></li>
-                              <li class="video_editiing"><a href="video_editiing.html">Videos / Animation</a></li>
-                         </ul>
-                         </div>
-                    </div>
-                    </div> 
-                    <div class="nav">
-                         <div class="dropdown" >
-                       <button class="dropbtn" id="home"><a>CODING</a></button>
-                         <div class="dropdown-content">
-                              <ul><li class="coding" id="home"><a href="python_to_do_list.html">Pthon: To-Do List</a></li>
-                              
-                         </ul>
-                         </div>
-                    </div>
-                    </div> 
-                    <div class="nav"><a href="contact_me.html" target="blank">CONTACT&nbsp;ME</a></div>       
-               </div><!--navs end-->
+  <div id="header" class="header">
+    <div id="navs" class="navs">
+      <a href="#"><div id="logo" class="logo"> &nbsp; </div></a>
+      <div class="nav"><a href="index.html">HOME</a></div>
+      <div class="nav">
+        <div class="dropdown">
+          <button class="dropbtn">PROJECTS</button>
+          <div class="dropdown-content">
+            <ul>
+              <li class="graphic_design"><a href="graphic_designs.html">Graphic Designs</a></li>
+              <li class="web_designs"><a href="web_designs.html">Web Designs</a></li>
+              <li class="game_designs"><a href="game_designs.html">Game Designs</a></li>
+              <li class="illustration"><a href="illustration.html">Illustration</a></li>
+              <li class="3d_model_designs"><a href="3d_model_designs.html">3D Model Designs</a></li>
+              <li class="cad_blueprints"><a href="cad_blueprints.html">CAD Blueprints</a></li>
+              <li class="video_editiing"><a href="video_editiing.html">Videos / Animation</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="dropdown">
+          <button class="dropbtn">CODING</button>
+          <div class="dropdown-content">
+            <ul>
+              <li class="coding"><a href="python_to_do_list.html">Python: To-Do List</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav"><a href="contact_me.html" target="_blank">CONTACT&nbsp;ME</a></div>
+    </div>
+  </div><!-- header end -->
 
-              
-          </div><!--header end-->
+  <div id="main_body">
 
+    <!-- OUTPUT LEFT -->
+    <div class="output">
+      <h1>Simple To-Do List Manager</h1>
+      <div>
+        <input type="text" id="taskInput" placeholder="Enter a task..." />
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <h2>Your Tasks:</h2>
+      <ul id="taskList"></ul>
+    </div>
 
+    <!-- PYTHON CODE RIGHT -->
+    <div class="coding_text">
+#To_Do_List Project  
+try:  
+    to_do_list = []  # adding empty list  
+    print("Welcome to the Simple To-Do List Manager!")  
 
-          <div class="coding_text">
-               #To_Do_List Project  <br>
-               try: <br>
-                   to_do_list = [] #adding empty list  <br>
-                   print ("Welcome to the Simple To-Do List Manager!")  <br>
-                   # Showing the menu options  <br>
-                   def menu():  <br>
-                       try:  <br>
-                           print ("\nMenu:")  <br>
-                           print ("1.View To-Do List \n2.Add Task \n3.Remove Task \n4.Exit\n")  <br>
-                           global user  <br>
-                           user = int(input("Please choose an option: 1, 2, 3, 4: "))  <br>
-                       except ValueError:  <br>
-                           print('Invalid input. Please choose a menu option: 1, 2, 3, 4')  <br>
-                           menu()  <br>
-                   # create the showing list function  <br>
-                   def showing_list():  <br>
-                       if to_do_list == []:  <br>
-                           print ('To Do List is empty')  <br>
-                       else:  <br>
-                           i=0 #the position of the value in the list  <br>
-                           for list_value in to_do_list:  <br>
-                               i+=1  <br>
-                               print (f"{i}. {list_value}")  <br>
-                           print("\n")  <br>
-                   # menu function  <br>
-                   menu()  <br>
-                   # view To_Do_List  <br>
-                   while user !=0 or user == 0:  <br>
-                       if user==1:  <br>
-                           print("\nTo Do List:")  <br>
-                           if to_do_list == []:  <br>
-                                   print ('To Do List is empty')  <br>
-                                   menu()  <br>
-                           else:  <br>
-                               showing_list()  <br>
-                               menu()  <br>
-                    # Add Task into To_Do_List  <br>
-                       elif user == 2:  <br>
-                           user_type = input("Enter a task description: ")  <br>
-                           to_do_list.append(user_type)  <br>
-                           print (f"Task '{user_type}' added to the to-do list.")  <br>
-                           menu()  <br>
-                   #Remove Task from To_Do_List  <br>
-                       elif user == 3:  <br>
-                           try:  <br>
-                               print("\nTo Do List:")  <br>
-                           #if list is empty print 'To Do List is empty'  <br>
-                               showing_list()  <br>
-                               if to_do_list == []:  <br>
-                                   menu()  <br>
-                           # if not  <br>
-                               else:  <br>
-                                   removelist = int(input("Enter the position of the task to remove: "))  <br>
-                                   if 1<= removelist <= len(to_do_list):  <br>
-                                       print (f"Task '{to_do_list[removelist-1]}' removed from the  to-do list.")  <br>
-                                       to_do_list.pop(removelist-1)  <br>
-                                       menu()  <br>
-                                   else: <br>
-                                        print('Invalid input. Please choose a menu option: 1, 2, 3, 4') <br>
-                           except ValueError: <br>
-                               print('Invalid input. Please choose a menu option: 1, 2, 3, 4') <br>
-                   #Enter '4' to exit the program <br>
-                       elif user == 4: <br>
-                           print ("Goodbye! Thank you for using the Simple To-Do List Manager.") <br>
-                           break <br>
-                   #when the user types different numbers, it will print "Please type 1, 2, 3, or 4" <br>
-                       else: <br>
-                           print ("Please choose a menu option: 1, 2, 3, 4") <br>
-                           menu() <br>
-               #when the user types difference type, it will print 'Invalid input. Please choose a menu option: 1, 2, 3, 4' <br>
-               except ValueError: <br>
-                           print('Invalid input. Please choose a menu option: 1, 2, 3, 4') <br>
-                           menu() <br>
-</div> <!--coding end-->
+    def menu():  
+        try:  
+            print("\nMenu:")  
+            print("1.View To-Do List \n2.Add Task \n3.Remove Task \n4.Exit\n")  
+            global user  
+            user = int(input("Please choose an option: 1, 2, 3, 4: "))  
+        except ValueError:  
+            print("Invalid input. Please choose a menu option: 1, 2, 3, 4")  
+            menu()  
 
-<div class="output">
-     <img src="images\output\todolist_output01.png">
-</div>
+    def showing_list():  
+        if to_do_list == []:  
+            print("To Do List is empty")  
+        else:  
+            i = 0  
+            for list_value in to_do_list:  
+                i += 1  
+                print(f"{i}. {list_value}")  
+            print("\n")  
 
+    menu()  
 
-   </div> <!--main_body end-->
+    while user != 0 or user == 0:  
+        if user == 1:  
+            print("\nTo Do List:")  
+            if to_do_list == []:  
+                print("To Do List is empty")  
+                menu()  
+            else:  
+                showing_list()  
+                menu()  
 
+        elif user == 2:  
+            user_type = input("Enter a task description: ")  
+            to_do_list.append(user_type)  
+            print(f"Task '{user_type}' added to the to-do list.")  
+            menu()  
 
-</div><!--wrap end-->
+        elif user == 3:  
+            try:  
+                print("\nTo Do List:")  
+                showing_list()  
+                if to_do_list == []:  
+                    menu()  
+                else:  
+                    removelist = int(input("Enter the position of the task to remove: "))  
+                    if 1 <= removelist <= len(to_do_list):  
+                        print(f"Task '{to_do_list[removelist-1]}' removed from the to-do list.")  
+                        to_do_list.pop(removelist-1)  
+                        menu()  
+                    else:  
+                        print("Invalid input. Please choose a menu option: 1, 2, 3, 4")  
+            except ValueError:  
+                print("Invalid input. Please choose a menu option: 1, 2, 3, 4")  
 
+        elif user == 4:  
+            print("Goodbye! Thank you for using the Simple To-Do List Manager.")  
+            break  
+        else:  
+            print("Please choose a menu option: 1, 2, 3, 4")  
+            menu()  
+except ValueError:  
+    print("Invalid input. Please choose a menu option: 1, 2, 3, 4")  
+    menu()
+    </div>
 
-<script type="text/javascript">
-   document.addEventListener('contextmenu', function(event) 
-   {
-      event.preventDefault();
-    });
+  </div><!-- main_body end -->
+</div><!-- wrap end -->
+
+<script>
+  const taskList = [];
+
+  function displayTasks() {
+    const listElement = document.getElementById("taskList");
+    listElement.innerHTML = "";
+
+    if (taskList.length === 0) {
+      listElement.innerHTML = "<li>To-Do List is empty</li>";
+    } else {
+      taskList.forEach((task, index) => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `${index + 1}. ${task} <button onclick="removeTask(${index})">Remove</button>`;
+        listElement.appendChild(listItem);
+      });
+    }
+  }
+
+  function addTask() {
+    const input = document.getElementById("taskInput");
+    const task = input.value.trim();
+    if (task !== "") {
+      taskList.push(task);
+      input.value = "";
+      displayTasks();
+    } else {
+      alert("Please enter a task description.");
+    }
+  }
+
+  function removeTask(index) {
+    const removedTask = taskList.splice(index, 1);
+    alert(`Task "${removedTask}" removed from the to-do list.`);
+    displayTasks();
+  }
+
+  displayTasks();
 </script>
+ 
+
 </body>
 </html>
