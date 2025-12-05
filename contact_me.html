@@ -10,15 +10,16 @@
     <link rel="stylesheet" type="text/css" href="css/contact_me.css">
 </head>
 <body>
-<div id="wrap"> <!--wrap start-->
-    <div id="main_body"><!--main_body start-->
+<div id="wrap">
+    <div id="main_body">
         <div id="header" class="header"> 
             <div id="navs" class="navs">
-                <a href="#"><div id="logo" class="logo"> &nbsp; </div></a>
+                <a href="#"><div id="logo" class="logo">&nbsp;</div></a>
                 <div class="nav"><a href="index.html">HOME</a></div>
+
                 <div class="nav">
                     <div class="dropdown">
-                        <button class="dropbtn"><a href="#">PROJECTS</a></button>
+                        <button class="dropbtn">PROJECTS</button>
                         <div class="dropdown-content">
                             <ul>
                                 <li class="graphic_design"><a href="graphic_designs.html">Graphic Designs</a></li>
@@ -27,23 +28,27 @@
                                 <li class="illustration"><a href="illustration.html">Illustration</a></li>
                                 <li class="3d_model_designs"><a href="3d_model_designs.html">3D Model Designs</a></li>
                                 <li class="cad_blueprints"><a href="cad_blueprints.html">CAD Blueprints</a></li>
-                                <li class="video_editiing"><a href="video_editiing.html">Videos / Animation</a></li>
+                                <li class="video_editing"><a href="video_editing.html">Videos / Animation</a></li>
                             </ul>
                         </div>
                     </div>
                 </div> 
+
                 <div class="nav">
                     <div class="dropdown">
-                        <button class="dropbtn"><a href="#">CODING</a></button>
+                        <button class="dropbtn">CODING</button>
                         <div class="dropdown-content">
-                            <ul><li class="coding"><a href="python_to_do_list.html">Pthon: To-Do List</a></li>
-                                <li class="coding"><a href="attendance.html">Attendance System</a></li></ul>
+                            <ul>
+                                <li class="coding"><a href="python_to_do_list.html">Python: To-Do List</a></li>
+                                <li class="coding"><a href="attendance.html">Attendance System</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div> 
-                <div class="nav" id="home"><a href="contact_me.html" target="blank">CONTACT&nbsp;ME</a></div>       
-            </div><!--navs end-->
-        </div><!--header end-->
+
+                <div class="nav" id="home"><a href="contact_me.html" target="_blank">CONTACT&nbsp;ME</a></div>       
+            </div>
+        </div>
 
         <div class="contact_me" id="contact_me">  
             <div class="contents_title"><span>CONTACT ME</span></div>
@@ -57,7 +62,7 @@
                 <input type="text" class="textbox" id="lname" name="lastname" placeholder="Your last name.." required>
 
                 <label for="email">Email:</label>
-                <input type="text" class="textbox" id="email" name="email" placeholder="Your Email address" required>
+                <input type="email" class="textbox" id="email" name="email" placeholder="Your Email address" required>
 
                 <label for="message">Message:</label>
                 <textarea id="message" class="textbox" name="message" placeholder="Write something.." style="height:200px" required></textarea>
@@ -71,37 +76,31 @@
             <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
             <script>
                 (function() {
-                    // Initialize EmailJS with your user ID
-                    emailjs.init("service_1zyi415");  // Replace with your actual EmailJS User ID
+                    emailjs.init("4R44izEO1n-dseC1Z"); // Initialize EmailJS with your API key
                 })();
 
-                // Handle the form submission
                 document.getElementById("contact-form").addEventListener("submit", function(event) {
-                    event.preventDefault();  // Prevent the default form submission
+                    event.preventDefault();
 
-                    // Send form data using EmailJS
-                    emailjs.sendForm('service_1zyi415, 'template_zkfyzoh', this)
+                    emailjs.sendForm('service_1zyi415', 'template_zkfyzoh', this)
                         .then(function(response) {
                             alert('Email sent successfully!');
                         }, function(error) {
-                            console.error('EmailJS Error:', error);  // Log the error to console
+                            console.error('EmailJS Error:', error);
                             alert('Email sending failed! Please check the console for more details.');
                         });
                 });
             </script>
 
-        </div><!--contact_me end-->
-    </div><!--main_body end-->
-</div> <!--wrap end-->
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="js/footer.js"></script>
 <script type="text/javascript">
-   document.addEventListener('contextmenu', function(event) 
-   {
+   document.addEventListener('contextmenu', function(event) {
       event.preventDefault();
    });
 </script>
 </body>
 </html>
-
-
