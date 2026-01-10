@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+ 
+
 <div id="game_banner"><!-------game_banner-------->
   <div class="image-container"><!-------image-container--------->
 
@@ -28,6 +30,7 @@
       <a href="index.html" class="white_nav">Home</a>
       <a href="index.html #main-bg" id="orange_nav">Projects</a>
       <a href="#contact_me" class="white_nav">Contact&nbsp;Me</a>
+      <a class="menu_btn" onclick="toggleMenu()">X</a> 
     </div>
   </nav>
 </div><!-------image-container--------->
@@ -231,6 +234,16 @@
 
 
 </div>
+<model-viewer
+    src="3d_models/amy.gltf"
+    alt="avatar"
+    shadow-intensity="1"
+    camera-controls
+     ><div class="game_description_title">Player&nbsp;Model&nbsp;3D&nbsp;View</div>
+</model-viewer>
+
+<!-- Import the component -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 
  <div class="game_project_img">
     <img src="images/maze_game_images/18.jpg">
@@ -278,7 +291,7 @@
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-(function() {
+function() {
         emailjs.init("4R44izEO1n-dseC1Z");  
     })();
 
@@ -292,7 +305,7 @@
     console.error('EmailJS Error:', error);
     alert('Email sending failed! Please check the console for more details.');
     });
-});</script>
+</script>
 
 
 </div><!--contact_me end-->

@@ -23,3 +23,26 @@ function togglenav() {
 }
 
  
+
+
+function contact_me_card() {
+  const contactCard = document.getElementById("contact_me_card");
+  const mainCard = document.getElementById("main-card");
+
+  const isHidden =
+    window.getComputedStyle(contactCard).display === "none";
+
+  if (isHidden) {
+    contactCard.style.display = "flex";
+    mainCard.style.display = "none";
+  }  
+}
+
+function covid19_card() {
+  const contactCard = document.getElementById("contact_me_card");
+  const mainCard = document.getElementById("main-card");
+
+  contactCard.style.display = "none";
+  mainCard.style.display = "flex";
+}
+ 
