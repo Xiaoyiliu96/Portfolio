@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Wonderland</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/cad.css">
+    <link rel="shortcut icon" href="images/logo/logo_black.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<nav class="minimal-nav">
+    <a href="index.html"><div class="logo">&nbsp;</div></a>
+    <div class="menu-icon" id="menuBtn">☰</div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay">
+    <div class="close-btn" id="closeBtn">✕</div>
+    <div class="nav-content">
+        <a href="index.html">Home</a>
+        <a href="index.html #projects">Projects</a>
+        <a href="#contact">Contact Me</a>
+    </div>
+</div>
+
+<section class="info-panel">
+    <div class="header">
+        <p>Computer-Aided Design</p>
+        <h1>DRILL JIG<br>ASSEMBLY</h1>
+    </div>
+
+    <div class="main-desc">
+        <p style="color: #888; line-height: 1.8;">
+            This project demonstrated the effectiveness of using AutoCAD for designing complex assembly tools like drill jigs. The software's robust 2D and 3D modeling capabilities allowed for precise design and visualization, ensuring that the final product met all required specifications. The completed drill jig not only achieved its objectives of accuracy and durability but also proved to be a valuable tool in improving the efficiency of the drilling process.
+        </p>
+        
+        <div class="specs-grid">
+            <div class="spec-item"><label>Software</label><span>Autodesk AutoCAD</span></div>
+            <div class="spec-item"><label>Class</label><span>Computer-Aided Design</span></div>
+            <div class="spec-item"><label>Material</label><span>Steel</span></div>
+            <div class="spec-item"><label>Date</label><span>12/10/2022</span></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button class="download-btn"><a href="images/cad/Xiaoyi_Liu_Project3_Drill Jig Assembly.pdf" target="blank">DOWNLOAD PDF</a></button>
+        
+    </div>
+    
+<div id="contact_me_part"><!--contact_me_part -->
+
+<div class="contact_me" id="contact_me"> 
+   
+ <h2>Contact Me</h2>
+<!-- Form for contact -->
+    <form id="contact-form" >
+      <label for="fname">First Name:</label>
+        <input type="text" class="textbox" name="firstname" placeholder="Your name.." required id="fname">
+
+        <label for="lname">Last Name:</label>
+        <input type="text" class="textbox" id="lname" name="lastname" placeholder="Your last name.." required>
+
+        <label for="email">Email:</label>
+        <input type="text" class="textbox" id="email" name="email" placeholder="Your Email address" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" class="textbox" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+
+        <div class="submit_button">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  emailjs.sendForm('service_1zyi415', 'template_zkfyzoh', this)
+    .then(function() {
+      alert('Email sent successfully!');
+    }, function(error) {
+      console.error('EmailJS Error:', error);
+      alert('Email sending failed! Please check the console for more details.');
+    });
+});
+</script>
+
+
+</div><!--contact_me end-->
+
+
+<div class="social_media_buttons">
+
+  <a href="mailto:xiaoyiliu96xyl@gmail.com" class="fa fa-google" target="_blank"></a>
+
+  <a href="https://www.linkedin.com/in/xiaoyi-l-7a4510286" class="fa fa-linkedin" target="_blank"></a>
+
+  <a href="https://www.instagram.com/xiaoyiliu96?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="fa fa-instagram" target="_blank"></a>
+
+</div>
+
+<div class="bg_bootom">
+  Copyright © Xiaoyi Liu 2024
+</div>
+
+ 
+</div><!--contact_me_part -->
+</section>
+
+<main class="viewport" id="blueprint-container">&nbsp;</main>
+
+<script type="text/javascript" src="js/cad.js"></script>
+
+
+
+
+
+
+</body>
+</html>
