@@ -4,9 +4,12 @@ body
   overflow-x: hidden;
 }
 
-  a{text-decoration: none;}
+a{text-decoration: none;}
 
 
+
+
+/******************************************/
 .poker_navs
 {
     display: grid;
@@ -34,6 +37,10 @@ body
 }
 
 
+.red_poker_nav a:hover
+{
+    color: #001A33;
+}
 
 
 
