@@ -6,7 +6,7 @@
 	padding: 0px;
 	width: 100%;
 	text-align: center;
-	padding-top:27%;
+	padding-top:28%;
 }
 
 
@@ -25,7 +25,7 @@
  
 #projects img
 {
-	width: 55%;
+	width: 50%;
 }
 
  
@@ -165,6 +165,16 @@
         text-align: right;
         font-family: "Momo Trust Display", sans-serif;
     }
+
+    #projects
+    {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+        padding-top:20%;
+    }
+
 
 
  
