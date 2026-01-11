@@ -543,24 +543,24 @@ window.addEventListener("DOMContentLoaded", () => {
   const navCards = document.querySelectorAll("#wonderland-nav .nav-card");
 
   navCards.forEach((card, index) => {
-    // Make sure the left side is the pivot
+     
     card.style.transformOrigin = "left center";
 
     setTimeout(() => {
       const cardWidth = card.offsetWidth;
-      const jumpX = cardWidth / 20; // jump half width
-      const jumpRotate = 0;         // rotation in degrees
+      const jumpX = cardWidth / 20; 
+      const jumpRotate = 0;         
 
       card.style.transition = "transform 0.3s ease";
       card.style.transform = `translateX(${jumpX}px) rotate(${jumpRotate}deg)`;
 
-      // Jump back after 500ms
+    
       setTimeout(() => {
         card.style.transition = "transform 0.3s ease";
-        card.style.transform = ""; // reset to original → hover works
+        card.style.transform = "";  works
       }, 500);
 
-    }, index * 400); // stagger each card
+    }, index * 400);  
   });
 });
 </script>
@@ -568,25 +568,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
  
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const slideElements = document.querySelectorAll(".slide_up");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('appear'); 
+            
+        }
+    });
+}, { threshold: 0.1 });
 
-    const observerOptions = {
-        root: null, // 默认以窗口作为参照
-        threshold: 0.15 // 元素出现 15% 时触发
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("appear");
-                // 如果你希望只触发一次动画，取消下面这行的注释：
-                // observer.unobserve(entry.target); 
-            }
-        });
-    }, observerOptions);
-
-    slideElements.forEach(el => observer.observe(el));
+ 
+const sections = ['#edu', '#work_experience', '.skills', '#achievement', '#contact_me'];
+sections.forEach(selector => {
+    const el = document.querySelector(selector);
+    if(el) observer.observe(el);
 });
 </script>
 
