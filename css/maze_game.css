@@ -167,11 +167,11 @@ model-viewer
 .wrap_header {
   display: flex;
   flex-direction: column;
-  gap: 1.8em;
+  gap: 1em;
   text-align: center;
   font-family: 'Inter', -apple-system, sans-serif;
   font-weight: 800;
-  font-size: 1.5em;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 
@@ -184,7 +184,7 @@ model-viewer
 .wrap_header a:hover {
   color: #AA05A0;
   transform: translateY(-2px);
-  letter-spacing: 6px;
+  letter-spacing: 10px;
 }
 
 #nav_color {

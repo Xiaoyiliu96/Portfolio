@@ -40,12 +40,12 @@ form
   width: 100%;
 }
 
-#nav_change_color
+#nav_color
 {
   color: var(--accent);
 }
 
-#nav_change_color:hover
+#nav_color:hover
 {
   color: white;
 }
@@ -78,7 +78,7 @@ form
 }
 
 .menu-icon {
-  font-size: 24px;
+  font-size: 2rem;
   cursor: pointer;
   pointer-events: auto;
 }
@@ -118,7 +118,7 @@ form
   display: block;
   margin: 20px 0;
   color: white;
-  font-size: 3rem;
+  font-size: 2em;
   font-weight: 800;
   text-decoration: none;
   text-align: center;
