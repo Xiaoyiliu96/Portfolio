@@ -527,23 +527,53 @@
   Copyright © Xiaoyi Liu 2024
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
+ 
+ 
 
 
 <script src="js/nav.js"></script>
 
 <script src="js/toggle_menu.js"></script>
 <script type="text/javascript" src="js/slide_up.js"></script>
+
+
+
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const navCards = document.querySelectorAll("#wonderland-nav .nav-card");
+
+  navCards.forEach((card, index) => {
+    // Make sure the left side is the pivot
+    card.style.transformOrigin = "left center";
+
+    setTimeout(() => {
+      const cardWidth = card.offsetWidth;
+      const jumpX = cardWidth / 20; // jump half width
+      const jumpRotate = 0;         // rotation in degrees
+
+      card.style.transition = "transform 0.3s ease";
+      card.style.transform = `translateX(${jumpX}px) rotate(${jumpRotate}deg)`;
+
+      // Jump back after 500ms
+      setTimeout(() => {
+        card.style.transition = "transform 0.3s ease";
+        card.style.transform = ""; // reset to original → hover works
+      }, 500);
+
+    }, index * 400); // stagger each card
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
