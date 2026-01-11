@@ -1,6 +1,10 @@
 function toggleMenu() {
-  document.getElementById("myLinks").classList.toggle("open");
-  document.getElementById("top_navs").classList.toggle("hidden");
+  const menu = document.getElementById("myLinks");
+  const topNav = document.getElementById("top_navs");
+
+  menu.classList.toggle("open");
+  topNav.classList.toggle("hidden");
+
 }
 
 
@@ -46,4 +50,5 @@ function covid19_card() {
   mainCard.style.display = "flex";
 }
  
+
 
