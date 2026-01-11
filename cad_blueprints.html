@@ -9,10 +9,10 @@
     <link rel="shortcut icon" href="images/logo/logo_black.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/cad_project.css">
-    
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav class="minimal-nav">
         <a href="index.html"><div class="logo">&nbsp;</div></a>
         <div class="menu-icon" id="menuBtn">☰</div>
@@ -27,6 +27,7 @@
         </div>
     </div>
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="category-tag">Computer-Aided Design</div>
         <h1>DRILL JIG ASSEMBLY</h1>
@@ -41,6 +42,7 @@
 
         <a href="https://drive.google.com/file/d/14gz3lLTwALdkQPWdJo5RmqwGZjgpSJ-e/view?usp=sharing" class="btn-pdf" target="_blank">DOWNLOAD PDF</a>
 
+        <!-- CONTACT FORM -->
         <div class="contact_me" id="contact_me">
             <h2>Contact Me</h2>
             <form id="contact-form">
@@ -51,7 +53,7 @@
                 <input type="text" class="textbox" id="lname" name="lastname" placeholder="Your last name.." required>
 
                 <label for="email">Email:</label>
-                <input type="text" class="textbox" id="email" name="email" placeholder="Your Email address" required>
+                <input type="email" class="textbox" id="email" name="email" placeholder="Your Email address" required>
 
                 <label for="message">Message:</label>
                 <textarea id="message" class="textbox" name="message" placeholder="Write something.." style="height:150px" required></textarea>
@@ -71,12 +73,14 @@
                 Copyright © Xiaoyi Liu 2024
             </div>
         </div>
-        </aside>
+    </aside>
 
-    <main class="gallery-container" id="gallery">
-        </main>
+    <!-- GALLERY -->
+    <main class="gallery-container" id="gallery"></main>
 
+    <!-- SCRIPTS -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="js/cad.js"></script>
+ 
 </body>
 </html>
