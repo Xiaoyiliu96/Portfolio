@@ -55,7 +55,7 @@ function switchTab(index) {
     document.getElementById("desc").innerText = item.desc;
     document.getElementById("software").innerText = item.software;
 
-    document.getElementById("main-bg").style.backgroundImage = item.img;
+    document.getElementById("main_bg").style.backgroundImage = item.img;
 
     document.getElementById("detail-btn").onclick = () => {
         window.location.href = item.link;
