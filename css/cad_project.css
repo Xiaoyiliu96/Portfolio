@@ -1,7 +1,6 @@
-/* ==========================================================================
+/* ========================================================================== 
    VARIABLES & GLOBAL RESET
    ========================================================================== */
-
 :root {
   --accent: #ff9f00;
   --bg: #000000;
@@ -28,7 +27,7 @@ body {
 
 img {
   filter: grayscale(100%);
-  transition: filter 0.5s ease; /* Makes the color fade in smoothly */
+  transition: filter 0.5s ease;
 }
 
 img:hover {
@@ -40,16 +39,14 @@ form
   width: 100%;
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    NAVIGATION
    ========================================================================== */
-
 .minimal-nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding:2em;
-  padding-top: 0px;
+  padding:2em 2em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,7 +54,6 @@ form
   pointer-events: none;
 }
 
-/* LOGO */
 .logo {
   width: 35px;
   height: 4em;
@@ -66,13 +62,8 @@ form
   pointer-events: auto;
 }
 
-.logo:hover 
-{
-  width: 35px;
-  height: 4em;
+.logo:hover {
   background: url("../images/logo/logo_white.png") no-repeat left center;
-  background-size: 2em;
-  pointer-events: auto;
 }
 
 .menu-icon {
@@ -82,10 +73,9 @@ form
 }
 
 .menu-icon:hover { 
-    color: var(--accent); 
+  color: var(--accent); 
 }
 
-/* Nav Overlay */
 .nav-overlay {
   position: fixed;
   top: 0;
@@ -100,9 +90,7 @@ form
   transition: 0.5s ease;
 }
 
-.nav-overlay.active {
-  right: 0;
-}
+.nav-overlay.active { right: 0; }
 
 .close-btn {
   position: absolute;
@@ -112,11 +100,7 @@ form
   cursor: pointer;
 }
 
-.close-btn:hover
-{
-  color: var(--accent);
-}
-
+.close-btn:hover { color: var(--accent); }
 
 .nav-content a {
   display: block;
@@ -129,14 +113,13 @@ form
 }
 
 .nav-content a:hover {
-    color: var(--accent);
-    letter-spacing: 6px;
+  color: var(--accent);
+  letter-spacing: 6px;
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    SIDEBAR
    ========================================================================== */
-
 .sidebar {
   width: 38%;
   height: 100vh;
@@ -145,12 +128,10 @@ form
   flex-direction: column;
   border-right: 1px solid var(--border);
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
-.sidebar::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
+.sidebar::-webkit-scrollbar { display: none; }
 
 .category-tag {
   margin-bottom: 15px;
@@ -161,8 +142,7 @@ form
   text-transform: uppercase;
 }
 
-h1 
-{
+h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin: 0;
   line-height: 0.9;
@@ -179,7 +159,6 @@ h1
   line-height: 1.6;
 }
 
-/* Specs Grid */
 .specs {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -194,42 +173,31 @@ h1
   text-transform: uppercase;
 }
 
-.spec-item p {
-  margin: 0;
-  font-size: 14px;
-}
+.spec-item p { margin: 0; font-size: 14px; }
 
 .btn-pdf {
   display: inline-block;
   width: fit-content;
   margin-bottom: 60px;
   padding: 14px 28px;
-
   font-size: 12px;
   font-weight: 800;
   text-decoration: none;
   line-height: 2em;
   text-transform: uppercase;
-  font-weight: bold;
   border-radius: 5px;
   background: var(--accent);
   color: black;
 }
 
-.btn-pdf:hover
-{
+.btn-pdf:hover {
   background: white;
   color: black;
-  
-   
 }
 
-
-
-/* ==========================================================================
+/* ========================================================================== 
    CONTACT SECTION
    ========================================================================== */
-
 .contact_me {
   padding-top: 40px;
   border-top: 1px solid var(--border);
@@ -276,7 +244,6 @@ h1
   color: black;
 }
 
-/* Social & Footer */
 .social_media_buttons {
   display: flex;
   gap:20px;
@@ -290,9 +257,7 @@ h1
   transition: 0.3s;
 }
 
-.social_media_buttons a:hover {
-  color: var(--accent);
-}
+.social_media_buttons a:hover { color: var(--accent); }
 
 .bg_bootom {
   margin-top: 40px;
@@ -301,110 +266,70 @@ h1
   letter-spacing: 1px;
 }
 
-/* ==========================================================================
-   GALLERY
+/* ========================================================================== 
+   GALLERY FIXED FULLSIZE
    ========================================================================== */
-
 .gallery-container {
   flex: 1;
   height: 100vh;
-  padding: 60px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  padding: 40px;
 }
 
 .img-block {
-  margin-bottom: 60px;
+  height: 100vh;              /* Full viewport height */
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0;
 }
 
-.img-frame {
+.image-frame {
+  width: 90%;                 /* leave small margin */
+  height: 80%;                /* occupy most of the block */
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  transition: border var(--transition-fast);
+  margin: 0 auto;
 }
 
-.img-frame img {
-  display: block;
+.image-frame img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;        /* preserve aspect ratio */
+  filter: grayscale(1) brightness(1.1);
+  transition: var(--transition-smooth);
+}
+
+.image-frame:hover { border-color: var(--accent); }
+.image-frame:hover img {
+  filter: grayscale(0) brightness(1);
+  transform: scale(1.02);
 }
 
 .img-meta {
   display: flex;
   justify-content: space-between;
+  font-family: monospace;
   margin-top: 15px;
 }
 
-.sheet-no {
-  color: var(--accent);
-  font-family: monospace;
-}
+.sheet-no { color: var(--accent); font-weight: bold; }
+.sheet-title { font-size: 11px; font-weight: 700; text-transform: uppercase; }
 
-.sheet-title {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.gallery-container::-webkit-scrollbar { width: 4px; }
+/* Scrollbar Styling */
+.gallery-container::-webkit-scrollbar { width: 6px; }
 .gallery-container::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
 
-/*****/
- /* 5. VIEWPORT & CONTENT */
-.gallery-container {
-    width: 65%;
-    padding: 40px;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-}
-
-.img-block {
-    height: calc(100vh - 100px);
-    scroll-snap-align: start;
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.image-frame {
-    height: 75%;
-    padding: 30px;
-    background: white;
-    border: 1px solid var(--glass);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: border var(--transition-fast);
-}
-
-.image-frame img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: grayscale(1) brightness(1.1);
-    transition: var(--transition-smooth);
-}
-
-.image-frame:hover { border-color: var(--accent); }
-.image-frame:hover img {
-    filter: grayscale(0) brightness(1);
-    transform: scale(1.02);
-}
-
-.image-info {
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-    font-family: monospace;
-}
-
-.counter { color: var(--accent); font-weight: bold; }
-
-
-/* ==========================================================================
+/* ========================================================================== 
    RESPONSIVE DESIGN
    ========================================================================== */
-
 @media (max-width: 1024px) {
   body {
     flex-direction: column;
@@ -412,10 +337,19 @@ h1
     overflow: visible;
   }
 
-  .sidebar, 
-  .gallery-container {
+  .sidebar, .gallery-container {
     width: 100%;
     height: auto;
     padding: 40px 20px;
+  }
+
+  .image-frame {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-frame img {
+    width: 100%;
+    height: auto;
   }
 }
