@@ -12,28 +12,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
- 
+<div class="image-container"><!-------image-container--------->
 
-<div id="game_banner"><!-------game_banner-------->
-  <div class="image-container"><!-------image-container--------->
 
   <!-- TOP NAV -->
   <nav class="top_navs" id="top_navs">
-    <a href="#" class="logo" onclick="toggleMenu()">&nbsp;</a>
-    <button class="menu_btn" onclick="toggleMenu()"><a>☰</a></button>
+    <a href="index.html" class="logo"></a>
+    <button class="menu_btn" onclick="toggleMenu()">☰</button>
   </nav>
 
-  <!-- DROPDOWN NAV -->
+  <!-- FULLSCREEN MENU -->
   <nav class="image_container_navs" id="myLinks">
+    <div class="menu_top_overlay"><button class="menu_btn close_btn" onclick="toggleMenu()">X</button></div>
+
     <div class="wrap_header">
-      <a href="#" class="logo" onclick="toggleMenu()">&nbsp;</a>
-      <a href="index.html" class="white_nav">Home</a>
-      <a href="index.html#main_bg" id="orange_nav">Projects</a>
-      <a href="#contact_me" class="white_nav">Contact&nbsp;Me</a>
-      <a class="menu_btn" onclick="toggleMenu()">X</a> 
+      <a href="index.html" target="_blank">Home</a>
+      <a href="index.html#main_bg" id="nav_color" target="_blank">Projects</a>
+      <a href="https://docs.google.com/presentation/d/1EtfpYpQDQh5bsWt8w8PleQaQcUt8bpUC/edit?slide=id.p1#slide=id.p1" target="_blank"> OP-ED</a>
+      <a href="maze_game.html" id="nav_color" target="_blank"> Maze Game</a>
+      <a href="covid19_posters.html" target="_blank"> Covid-19 Poster</a>
+      <a href="cad_blueprints.html" target="_blank"> Drill Jig Assembly</a>
+      <a href="atypi19.html" target="_blank"> ATYPI 19 Guide Design</a>
+
+      <a href="#contact_me" onclick="toggleMenu()">Contact Me</a>
     </div>
   </nav>
+
 </div><!-------image-container--------->
+
+<div id="game_banner"><!-------game_banner-------->
+
 
   <div class="topic">MAZE GAME</div>
   <div class="download_button">
@@ -41,6 +49,7 @@
   </div>
 </div><!------game_banner-------->
  
+<div id="game_bg">&nbsp;</div>
  
 <div id="game_description"> <!--wrap start-->
   <div class="column" id="column">

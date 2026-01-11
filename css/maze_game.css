@@ -36,8 +36,11 @@ body
 {
 	background: url("../images/maze_game_images/02.jpg") repeat-y center center;
 	background-size: cover;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+ 
 
 /* ====================model-viewer ===================== */
 model-viewer
@@ -52,156 +55,180 @@ model-viewer
 
 
 /* ===================== NAV ===================== */
-
-.image-container
-{
-  max-width:100%;
-  position:relative;
+.image-container {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   top: 0px;
-  z-index: 6;
-  margin:0px;
-  padding: 0px;
 }
 
-
-
-.top_navs 
-{
-  max-width:85%;
+/* ===================== TOP NAV ===================== */
+.top_navs {
+  max-width: 85%;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  line-height: 4em;
+  padding: 1em 0;
   text-transform: uppercase;
+  z-index: 12;
+  position: relative;
+  background: none;
 }
 
- 
-.image_container_navs 
-{
-  max-width:85%;
-  margin: auto;
-  line-height: 4em;
-  justify-content: space-between;
-  align-items: center;
-  text-transform: uppercase;
-  display: none;
-}
-
-.image_container_navs.open {
-  display: block;
-}
-
-.top_navs.hidden {
-  display: none;
-}
-
-.menu_btn, .top_navs button
-{
+.menu_btn {
   background: none;
   border: none;
   color: white;
   font-size: 2em;
-  line-height:2em;
   cursor: pointer;
-  font-family: Arial, sans-serif;
+  transition: color 0.3s ease;
 }
 
-.menu_btn:hover, .menu_btn a:hover
-{
-  color:#AA05A0;
-
+.menu_btn:hover {
+  color: #44CBEA;
 }
-
-
-
-#orange_nav {
-  color:#AA05A0;
-  
-}
-
-#orange_nav:hover {
-  color:white;
-}
-
-.white_nav
-{
-    color:white;
-}
-
-
-.white_nav:hover {
-  color:#AA05A0;
-}
-
-
-
-.wrap_header
-{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  font-family: "Momo Trust Display", sans-serif;
-  grid-column-gap:2em;
-  text-align: right;
-}
-
-@media only screen and (max-width:600px)
-{
-    .top_navs 
-  {
-    max-width:100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 4em;
-    text-transform: uppercase;
-  }
-
-   
-  .image_container_navs 
-  {
-    max-width:100%;
-    margin: auto;
-    line-height: 4em;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    display: none;
-  }
-}
- 
 
 /* ===================== LOGO ===================== */
-
 .logo {
-  width:35px;
-  height: 4em;
+  width: 40px;
+  height: 40px;
   display: block;
-  background: url("../images/logo/logo_greenblue.png") no-repeat left center/2em;
+  background: url("../images/logo/logo_greenblue.png") no-repeat center/contain;
+  cursor: pointer;
 }
- 
 
 .logo:hover {
   background-image: url("../images/logo/logo_white.png");
 }
 
+/* ===================== FULLSCREEN MENU ===================== */
+.image_container_navs {
+  position: fixed;
+  top: 0;
+  left: 0;         /* Snaps to the absolute left of the screen */
+  width: 100vw;    /* 100% of the browser width, ignoring parents */
+  height: 100vh;   /* 100% of the browser height */
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.98);
+  z-index: 999999; /* Higher than any other element */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%); /* Slides from right like your new animation */
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
 
-/* ===================== LOGO ===================== */
+.image_container_navs.open {
+  transform: translateX(0); /* Slides into view */
+}
+/* ===================== CLOSE BUTTON  ===================== */
 
+.menu_top_overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 2em; /* Matches your minimal-nav padding */
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.close_btn {
+  pointer-events: auto;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close_btn:hover {
+  color: #44CBEA;      /* Match your menu_btn hover color */
+}
+
+@media only screen and (max-width: 600px) {
+  /* This forces the menu to be 100% even if the parent is 85% */
+  .image_container_navs {
+    max-width: 100% !important; 
+    left: 0 !important;
+    width: 100vw !important;
+  }
+}
+
+
+/* ===================== MENU LINKS ===================== */
+.wrap_header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+  text-align: center;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.wrap_header a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.wrap_header a:hover {
+  color: #AA05A0;
+  transform: translateY(-2px);
+  letter-spacing: 6px;
+}
+
+#nav_color {
+  color: #AA05A0;
+}
+
+#nav_color:hover {
+  color: white;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+/***************************************/
 #game_banner
 {
 	width: 100%;
-	background: url("../images/maze_game_images/01.png") no-repeat top center;
 	height:100vh;
 	text-align: center;
 	margin: 0px;
 	padding: 0px;
-	background-size: cover;
 	padding-bottom: 5em;
 }
 
+#game_bg {
+  width: 100%;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url('../images/maze_game_images/01.png') no-repeat center top;
+  background-size: cover;
+  min-height: 100vh; 
+  height:975px; 
+}
 
 .topic
 {
@@ -212,7 +239,7 @@ model-viewer
 	font-size: 7em;
 	font-weight: bold;
 	color: white;
-	padding-top:20%;
+	padding-top:15%;
 
 }
 
@@ -367,7 +394,7 @@ model-viewer
 		grid-template-columns: 1fr;
 	}
 
-	.top_navs, .image_container_navs, #game_description 
+	.top_navs, #game_description 
 	{
 		max-width: 85%;
 	}

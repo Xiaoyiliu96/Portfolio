@@ -39,7 +39,12 @@ function contact_me_card() {
   if (isHidden) {
     contactCard.style.display = "flex";
     mainCard.style.display = "none";
-  }  
+  }
+    const menu = document.getElementById("myLinks");
+  const topNav = document.getElementById("top_navs");
+
+  menu.classList.toggle("open");
+  topNav.classList.toggle("hidden"); 
 }
 
 function covid19_card() {
@@ -50,5 +55,4 @@ function covid19_card() {
   mainCard.style.display = "flex";
 }
  
-
 
