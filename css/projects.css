@@ -66,6 +66,7 @@
     font-size: 48px;
     margin-bottom: 15px;
     text-transform: uppercase;
+    color: #FAC363;
 }
 
 #desc {
@@ -113,6 +114,7 @@
     cursor: pointer;
     opacity: 0.4;
     transition: 0.3s;
+    color: #FAC363;
 }
 
 .nav-item.active,
