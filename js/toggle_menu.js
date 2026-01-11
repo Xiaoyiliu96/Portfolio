@@ -47,24 +47,3 @@ function covid19_card() {
 }
  
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        const sidebar = document.querySelector('.sidebar');
-        const overlay = document.getElementById('navOverlay');
-
-        if (targetElement) {
-            // 1. Close the mobile menu if it's open
-            if (overlay) overlay.classList.remove('active');
-
-            // 2. Scroll the sidebar specifically to the element
-            sidebar.scrollTo({
-                top: targetElement.offsetTop - 100, // -100 for some padding at the top
-                behavior: 'smooth'
-            });
-        }
-    });
- 
