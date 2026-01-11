@@ -19,8 +19,7 @@
 </head>
 
 <body>
-<!-------wonderland-sidenav------
-<button id="side_navigation"><a onclick="sidenav()"><img src="images/bgimages/cat.png"></a></button> --->
+<!-------wonderland-sidenav--------->
 
 <div class="wonderland-nav" id="wonderland-nav">
   <a href="#" class="nav-card black">Home<span><img src="images/logo/crown.png" width="20px" style="padding-bottom: 5px;"> </span></a>
@@ -537,7 +536,7 @@
 <script type="text/javascript" src="js/slide_up.js"></script>
 
 
-
+ 
 <script>
 window.addEventListener("DOMContentLoaded", () => {
   const navCards = document.querySelectorAll("#wonderland-nav .nav-card");
@@ -551,7 +550,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const jumpX = cardWidth / 20; 
       const jumpRotate = 0;         
 
-      card.style.transition = "transform 0.3s ease";
+      card.style.transition = "transform 0.5s ease";
       card.style.transform = `translateX(${jumpX}px) rotate(${jumpRotate}deg)`;
 
     
@@ -585,8 +584,7 @@ sections.forEach(selector => {
 });
 </script>
 
-
-
+ 
 
 </body>
 </html>
