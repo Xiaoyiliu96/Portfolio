@@ -1,0 +1,143 @@
+/* TOP NAV BAR */
+.top_navs {
+  max-width:75%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 4em;
+}
+
+/* MENU BUTTON */
+.menu_btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* DROPDOWN NAV */
+.image_container_navs 
+{
+  max-width:75%;
+  margin: auto;
+  line-height: 4em;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  display: none;
+}
+
+.image_container_navs.open {
+  display: block;
+}
+
+/* HIDE TOP NAV */
+.hidden {
+  display: none;
+}
+
+/* LINKS */
+.wrap_header
+{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-family: "Momo Trust Display", sans-serif;
+  grid-column-gap:2em;
+  text-align: right;
+}
+
+
+.wrap_header a {
+  color: white;
+  text-transform: uppercase;
+  line-height: 4em;
+
+}
+
+.white_nav
+{
+	text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.wrap_header a:hover {
+  color: orange;
+}
+
+.wrap_header .orange_nav {
+  color: orange;
+}
+
+.wrap_header .orange_nav:hover {
+  color:white;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+/* LOGO */
+.logo {
+  width: 35px;
+  height: 4em;
+  background: url("../images/logo/logo_yellow.png") no-repeat left center;
+  background-size: 2em;
+}
+
+.logo:hover 
+{
+  width: 35px;
+  height: 4em;
+  background: url("../images/logo/logo_white.png") no-repeat left center;
+  background-size: 2em;
+}
+
+/* IMAGE CONTAINER */
+.image-container {
+  width: 100%;
+  height: 80vw;
+  position: relative;
+  top: 0px;
+}
+
+/* BANNERS */
+.banner {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.banner1 { z-index: -1; }
+.banner2 { z-index: -2; animation: moveIn 3s ease-out forwards; }
+.banner3 { z-index: -3; animation: fromRightToMiddle 2s ease-out forwards; }
+.banner4 { z-index: -4; }
+
+/* ANIMATIONS */
+@keyframes moveIn {
+  from {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fromRightToMiddle {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

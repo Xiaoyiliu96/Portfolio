@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+a:hover {
+  color: #CEBAA3;
+}
+
+ 
+
+/* ===================== NAV RESET ===================== */
+.image-container {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+/* ===================== TOP NAV ===================== */
+.top_navs {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.8em 0;
+  background:none;
+
+  z-index: 1000;
+}
+
+.top_navs.hidden {
+  display: none;
+}
+
+#nav_color
+{
+  color: #CEBAA3;
+}
+
+#nav_color:hover
+{
+  color: white;
+}
+
+ 
+
+
+/* ===================== LOGO ===================== */
+.logo {
+  width: 3em;
+  height: 2.5em;
+  display: block;
+  background: url("../images/logo/logo_light_yellow.png") no-repeat left center;
+  background-size: contain;
+}
+
+.logo:hover {
+  filter: brightness(3);
+}
+
+/* ===================== MENU BUTTONS ===================== */
+.menu_btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  transition: color 0.3s ease;
+}
+
+.menu_btn:hover {
+  color: #D8C7B0;
+}
+
+/* ===================== FULLSCREEN MENU ===================== */
+.image_container_navs {
+  position: fixed;
+  inset: 0;
+  background: #101C35;
+  z-index: 999;
+  text-transform: uppercase;
+
+  /* animation setup */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_container_navs.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+
+/* ===================== CLOSE BUTTON (TOP RIGHT) ===================== */
+.close_btn {
+  position: fixed;
+  top: 1em;
+  right: 5%;
+  font-size: 2em;
+  z-index: 1001;
+}
+
+/* ===================== MENU CONTENT ===================== */
+.wrap_header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+  text-align: center;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 800;
+}
+
+.wrap_header a {
+  font-size: 2em;
+  letter-spacing: 0.08em;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+}
+
+.wrap_header a:hover {
+  color: #D8C7B0;
+  transform: translateY(-2px);
+  letter-spacing:10px;
+}
+
+
+
+/* ===================== SCROLL LOCK ===================== */
+.no-scrollbar {
+  overflow: hidden;
+}
+
+ 
+ 
+img {
+      user-select: none;
+      pointer-events: none;
+    }
+
+
+a
+{
+  color: white;
+  text-decoration: none;
+  
+}
+
+ul
+{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+li{line-height: 2em}
+
+iframe
+{
+  border: none;
+  overflow: hidden;
+}
+
+body{font-family:'Helvetica';}
+ 
+
+#wrap
+{
+  width: 100%;
+  height: auto;
+  background: #101A43;
+}
+
+#header_bg
+{
+  width: 100%;
+  height: auto;
+  background: url("../images/atypi2019toyko_images/banner.gif") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom:36em;
+}
+
+.dropdown-content a:hover {
+  color: #D8C7B0;
+}
+
+.dropbtn
+{
+  color: white;
+}
+
+
+.dropbtn:hover
+{
+  color: #D8C7B0;
+}
+
+ 
+#banner
+{
+  width:100%;
+  height: auto;
+  text-align: center;
+  color: white;
+  font-family:'Helvetica';  
+}
+
+.banner_title
+{
+  color: #D8C7B0;
+  font-family: 'atlas';
+  font-size:5em;
+}
+
+.atlas_title
+{
+  color: #D8C7B0;
+  font-family: 'atlas';
+  font-size:3em;
+}
+
+.kanagawa_title
+{
+  color: #D8C7B0;
+  font-family: 'atlas';
+  font-size:2em;
+}
+
+
+.banner_text
+{
+  line-height:2em;
+  font-size: 1.3em;
+}
+
+.banner
+{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 1em;
+}
+
+.banner_right
+{
+  margin-top:6em;
+   
+}
+
+ 
+
+#project
+{
+  width: 100%;
+  height: auto;
+  color: white;
+  
+}
+
+.objective
+{
+  max-width: 1024px;
+  height: auto;
+  margin: 0px auto;
+  padding: 1em;
+
+}
+
+#the_great_wave_off_kanagawa
+{
+  max-width: 1024px;
+  height: auto;
+  margin: 0px auto;
+  padding: 1em;
+  margin-top: 5em;
+}
+
+.kanagawa_left
+{
+  grid-area: kanagawa_left;
+}
+
+.kanagawa_right
+{
+  grid-area: kanagawa_right;
+}
+
+.the_great_wave_off_kanagawa
+{
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  grid-template-areas: "kanagawa_left kanagawa_right";
+  grid-column-gap:3em;
+}
+
+.kanagawa_left
+{
+  width: 100%;
+  height: auto;
+}
+
+.kanagawa_right
+{
+  width: 100%;
+  height: auto;
+  background: url("https://mcraftsmanship.com/cdn/shop/articles/Katsushikahokusaipaint_1600x.jpg?v=1636120956") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+
+#about_bg
+{
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  background: url("../images/atypi2019toyko_images/about_bg.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 30em;
+}
+
+.product_detail
+{
+  max-width: 1024px;
+  height: auto;
+  padding: 0px;
+  margin: 0px auto;
+
+}
+
+.product_detail_bold
+{
+  font-weight: bold;
+  color: #101C35;
+}
+
+ 
+
+.atlas_title
+{
+  color: #D8C7B0;
+  font-family: 'atlas';
+  font-size: 3em;
+}
+
+#project_atypi
+{
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 5em;
+}
+
+.atypi
+{
+  max-width: 1024px;
+  height: auto;
+  margin: 0px auto;
+}
+
+
+
+.product_detail_right_01
+{
+  width: 100%;
+  height: auto;
+  background: url("../images/atypi2019toyko_images/20240404_135058.png") no-repeat;
+  background-size:contain;
+  background-position: center;
+  line-height:15em;
+}
+
+.product_detail_right_02
+{
+  width: 100%;
+  height: auto;
+  background: url("../images/atypi2019toyko_images/20240404_135138.png") no-repeat;
+  background-size:contain;
+  background-position: center;
+  line-height:10em;
+}
+
+.product_detail_text
+{
+  max-width: 1024px;
+  height: auto;
+  margin: 0px auto;
+}
+
+.product_detail_right
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.product_detail_text a{color: black;}
+.product_detail_text a:hover{color: #D8C7B0;}
+
+@media only screen and (max-width: 1024px) 
+{
+  .banner{grid-template-columns: auto;}
+  .banner_right{padding-bottom:20em;}
+  .the_great_wave_off_kanagawa
+  {
+    grid-template-columns: auto;
+    grid-template-areas:  "kanagawa_right" "kanagawa_left";
+    grid-gap: 3em;
+  }
+  .kanagawa_right
+  {
+    line-height: 30em;
+  }
+  .banner_title{font-size: 3em}
+
+  .banner_text{
+    font-size: 1.2em;
+  }
+  .product_detail,.product_detail_text
+  {
+    padding: 1em;
+  }
+  iframe
+  {
+    width: 90%;
+    padding-left: 1em;
+  }
+
+  form
+  {
+    width: 85%;
+  }
+
+ 
+}
+
+
+.no-scrollbar 
+{
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+
+
+form
+{
+    max-width: 1024px;
+    text-align: left;
+    margin: auto;
+}
+
+#contact-form
+{
+  margin-top: 2em;
+}
+
+input,textarea
+{
+    width: 100%;
+    height: auto;
+}
+
+label
+{
+    line-height: 2em;
+    color: #D8C7B0;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.textbox
+{
+    margin-bottom: 2em;
+}
+
+.textbox:focus {
+    outline: none;
+    border: 2px solid #D8C7B0;
+    background-color: #fffbf2;
+}
+
+.submit_button
+{
+    text-align: center;
+    padding: 0px;
+    margin: 0px auto;
+}
+
+.submit_button button
+{
+    background: #D8C7B0;
+    color:#001A33;
+    border: none;
+    line-height: 1.5em;
+    width:6em;
+    border-radius: 5%;
+    font-size: 1.2em;
+    line-height: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Momo Trust Display", sans-serif;
+    
+}
+
+.submit_button button:hover
+{
+    background:white;
+    color: black;
+}
+
+.contact_me
+{
+    background: #001A33;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.fa {
+  padding: 0.5em;
+  font-size:4em;
+  width:1em;
+  text-align: center;
+  text-decoration: none;
+  margin: 1em;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    /*opacity: 0.7;*/
+    color: #FAC363;
+    border:2px solid #FAC363;
+}
+
+
+.fa-google {
+  background: white;
+  color: black;
+}
+
+.fa-linkedin {
+  background: white;
+  color: black;
+}
+
+
+.fa-instagram {
+  background: white;
+  color: black;
+}
+
+
+.social_media_buttons
+{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    background: #001A33;
+    padding-top: 2em;
+}
+
+.bg_bootom
+{
+    color: white;
+    text-align: center;
+    line-height: 5em;
+    background: #001A33;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
