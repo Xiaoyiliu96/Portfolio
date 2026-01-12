@@ -254,3 +254,28 @@
 }
 
 
+/*********☰*************/
+.menu-toggle {
+  color:white;
+  transition: color 0.3s ease;
+}
+
+ 
+
+.home_page_header.light-bg .menu-toggle .menu-icon,
+.home_page_header.light-bg .menu-toggle .menu-icon::before,
+.home_page_header.light-bg .menu-toggle .menu-icon::after
+{
+  background-color:black;
+} 
+
+
+.home_page_header.light-bg .menu-toggle:hover .menu-icon,
+.home_page_header.light-bg .menu-toggle:hover .menu-icon::before,
+.home_page_header.light-bg .menu-toggle:hover .menu-icon::after
+{
+  background-color: orange;
+} 
+
+ 
+/*********☰****************/ 

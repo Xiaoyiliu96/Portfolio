@@ -25,7 +25,7 @@ function togglenav() {
   topNav.classList.toggle("hidden");
 }
 
- 
+ /*************contact_me_card****************/
 
 
 function contact_me_card() {
@@ -54,23 +54,23 @@ function covid19_card() {
   mainCard.style.display = "flex";
 }
  
+/*************Color Change****************/
 
 const menuBtn = document.getElementById('menu-btn');
 const navList = document.getElementById('nav-list');
 const mobileLinks = document.querySelectorAll('.close-on-click');
 
 menuBtn.addEventListener('click', () => {
-    // 1. Toggle the menu visibility
+
     const isActive = navList.classList.toggle('active');
     
-    // 2. Toggle the button animation (The "X")
+
     menuBtn.classList.toggle('active'); 
-    
-    // 3. Prevent scrolling when menu is open
+
     document.body.style.overflow = isActive ? 'hidden' : 'auto';
 });
 
-// Close menu when clicking "Contact Me" link
+
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
         navList.classList.remove('active');
