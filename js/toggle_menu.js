@@ -54,24 +54,27 @@ function covid19_card() {
   mainCard.style.display = "flex";
 }
  
-/****************/
 
 const menuBtn = document.getElementById('menu-btn');
-    const navList = document.getElementById('nav-list');
-    const mobileLinks = document.querySelectorAll('.close-on-click');
+const navList = document.getElementById('nav-list');
+const mobileLinks = document.querySelectorAll('.close-on-click');
 
-    menuBtn.addEventListener('click', () => {
-        const isActive = navList.classList.toggle('active');
-        menuBtn.innerHTML = isActive ? '✕' : '☰';
-        document.body.style.overflow = isActive ? 'hidden' : 'auto';
-    });
+menuBtn.addEventListener('click', () => {
+    // 1. Toggle the menu visibility
+    const isActive = navList.classList.toggle('active');
+    
+    // 2. Toggle the button animation (The "X")
+    menuBtn.classList.toggle('active'); 
+    
+    // 3. Prevent scrolling when menu is open
+    document.body.style.overflow = isActive ? 'hidden' : 'auto';
+});
 
-   
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navList.classList.remove('active');
-            menuBtn.innerHTML = '☰';
-            document.body.style.overflow = 'auto';
-            
-        });
+// Close menu when clicking "Contact Me" link
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuBtn.classList.remove('active');
+        document.body.style.overflow = 'auto';
     });
+});
