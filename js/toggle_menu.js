@@ -4,7 +4,6 @@ function toggleMenu() {
 
   menu.classList.toggle("open");
   topNav.classList.toggle("hidden");
-
 }
 
 
@@ -55,4 +54,24 @@ function covid19_card() {
   mainCard.style.display = "flex";
 }
  
+/****************/
 
+const menuBtn = document.getElementById('menu-btn');
+    const navList = document.getElementById('nav-list');
+    const mobileLinks = document.querySelectorAll('.close-on-click');
+
+    menuBtn.addEventListener('click', () => {
+        const isActive = navList.classList.toggle('active');
+        menuBtn.innerHTML = isActive ? '✕' : '☰';
+        document.body.style.overflow = isActive ? 'hidden' : 'auto';
+    });
+
+   
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+            menuBtn.innerHTML = '☰';
+            document.body.style.overflow = 'auto';
+            
+        });
+    });

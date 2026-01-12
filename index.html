@@ -13,9 +13,9 @@
   <link rel="stylesheet" type="text/css" href="css/work_experience.css">
   <link rel="stylesheet" type="text/css" href="css/skills.css">
   <link rel="stylesheet" type="text/css" href="css/projects.css">
+  <link rel="stylesheet" type="text/css" href="css/rotate.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/rotate.css">
 </head>
 
 <body>
@@ -36,24 +36,26 @@
 
 
 
-
 <div class="image-container">
+  <home_page_header>
+  <a href="index.html"><div class="logo">&nbsp;</div></a>
+  <button class="menu-toggle" id="menu-btn">☰</button>
+  <ul class="nav-links" id="nav-list">
+    <li class="desktop-only"><a href="#" class="orange_nav">Home</a></li>
+    <li class="desktop-only"><a href="#projects">Projects</a></li>
+    <li class="desktop-only"><a href="#contact_me">CONTACT&nbsp;ME</a></li>
 
-  <!-- TOP NAV -->
-  <nav class="top_navs" id="top_navs">
-    <a href="#" class="logo" onclick="toggleMenu()">&nbsp;</a>
-    <button class="menu_btn" onclick="toggleMenu()"><a>☰</a></button>
-  </nav>
+    <li class="mobile-only"><a href="index.html" class="orange_nav">Home</a></li>
+    <li class="mobile-only"><a href="index.html#main_bg">Projects</a></li>
+    <li class="mobile-only"><a href="https://docs.google.com/presentation/d/..." target="_blank">OP-ED</a></li>
+    <li class="mobile-only"><a href="maze_game.html">Maze Game</a></li>
+    <li class="mobile-only"><a href="covid19_posters.html">Covid-19 Poster</a></li>
+    <li class="mobile-only"><a href="cad_blueprints.html">Drill Jig Assembly</a></li>
+    <li class="mobile-only"><a href="atypi19.html">ATYPI 19 Guide Design</a></li>
+    <li class="mobile-only"><a href="#contact_me" class="close-on-click">Contact Me</a></li>
+  </ul>
+</home_page_header>
 
-  <!-- DROPDOWN NAV -->
-  <nav class="image_container_navs" id="myLinks">
-    <div class="wrap_header">
-      <a href="#" class="logo"  onclick="toggleMenu()">&nbsp;</a>
-      <a href="index.html" class="orange_nav">Home</a>
-      <a href="#projects" class="white_nav">Projects</a>
-      <a href="#contact_me" class="white_nav">Contact&nbsp;Me</a>
-    </div>
-  </nav>
 
   <!-- BANNERS -->
   <img src="images/bgimages/Alice-web-design_01_4.png" class="banner banner1" alt="" loading="lazy">

@@ -253,8 +253,8 @@ label
 
 .fa {
   padding: 0.5em;
-  font-size:4em;
-  width:1em;
+  font-size:2em;
+  width:2em;
   text-align: center;
   text-decoration: none;
   margin: 1em;
@@ -262,9 +262,8 @@ label
 }
 
 .fa:hover {
-    /*opacity: 0.7;*/
     color: #FAC363;
-    border:2px solid #FAC363;
+    border:1px solid #FAC363;
 }
 
 

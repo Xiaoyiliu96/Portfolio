@@ -1,3 +1,149 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+
+ /* --- HEADER --- */
+home_page_header
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15%;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  z-index: 100;
+  font-family: "Momo Trust Display", sans-serif;  
+}
+
+/* --- NAV LINKS (Desktop) --- */
+.nav-links 
+{
+  display: flex;
+  list-style: none;
+  gap:3em;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+  color: orange;
+}
+
+
+/* --- MENU BUTTON (Hamburger/X) --- */
+#menu-btn:hover
+{
+  color: orange;
+}
+
+.menu-toggle 
+{
+  display: none; 
+  cursor: pointer;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  z-index: 101;
+}
+
+.menu-toggle:hover
+{
+  color: orange;
+}
+
+.mobile-only { display: none; }
+
+/* --- MOBILE FULL SCREEN STYLES --- */
+@media (max-width: 768px) 
+{
+  .menu-toggle 
+  {
+    display: block; 
+  }
+
+  .desktop-only { display: none; }
+  .mobile-only 
+  { 
+    display: block; 
+  }
+
+  .nav-links 
+  {
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+                
+    /* Full Screen Overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 99;
+  }
+
+  .nav-links.active {display: flex; }
+
+  .nav-links a 
+  {
+    font-size: 1.3rem; 
+    margin: 1em 0;
+  }
+
+  .nav-links a:hover 
+  {
+    color: orange;
+    transform: translateY(-2px);
+    letter-spacing: 10px;
+  }
+
+  #wonderland-nav
+  {
+    display: none;
+  }
+
+  home_page_header
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 13%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    position: fixed;
+    z-index: 100;
+ 
+  }
+
+  #menu-btn
+  { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:65%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    position: fixed;
+    z-index: 100;
+  }
+
+ 
+
+}
+
+/***********************/
+
 /* TOP NAV BAR */
 .top_navs {
   max-width:75%;
@@ -70,11 +216,11 @@
   color: orange;
 }
 
-.wrap_header .orange_nav {
+home_page_header .orange_nav {
   color: orange;
 }
 
-.wrap_header .orange_nav:hover {
+home_page_header .orange_nav:hover {
   color:white;
   text-shadow:
     -1px -1px 0 #000,
