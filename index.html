@@ -37,9 +37,9 @@
 
 
 <div class="image-container">
-  <home_page_header>
+  <div class="home_page_header"> <!-------home_page_header------->
   <a href="index.html"><div class="logo">&nbsp;</div></a>
-  <button class="menu-toggle" id="menu-btn">☰</button>
+  <button class="menu-toggle" id="menu_btn">☰</button>
   <ul class="nav-links" id="nav-list">
     <li class="desktop-only"><a href="#" class="orange_nav">Home</a></li>
     <li class="desktop-only"><a href="#projects">Projects</a></li>
@@ -54,7 +54,7 @@
     <li class="mobile-only"><a href="atypi19.html">ATYPI 19 Guide Design</a></li>
     <li class="mobile-only"><a href="#contact_me" class="close-on-click">Contact Me</a></li>
   </ul>
-</home_page_header>
+</div><!-------home_page_header------->
 
 
   <!-- BANNERS -->
@@ -68,8 +68,8 @@
 
 
 <!-------Education--------->
-<div id="edu">
-	<div class="edu_bg"><!-------edu_bg--------->
+<div id="edu" >
+	<div class="edu_bg white-section"><!-------edu_bg--------->
 		<div id="education"><img src="images/bgimages/Alice_logo.webp" class="slide_up"></div>
 
 		<div class="poker_navs slide_up"><!--poker_navs-->
@@ -81,7 +81,7 @@
 		</div><!--poker_navs-->
 
 
-		<div class="two_columns">
+		<div class="two_columns white-section">
 			<div class="edu_two_columns_left"><span class="red_title">Data Analysis Training</span><p>St. Nicks Alliance / General Assembly</p></div>
 			<div class="edu_two_columns_right"><span class="red_title">Oct. 2023 – Dec. 2023</span><p>10 E 21st St, New York, NY 10010</p></div>
 
@@ -268,7 +268,7 @@
 </div><!-------experience--------->
 
 
-<div class="skills"><!--skills-->
+<div class="skills white-section"><!--skills-->
 <img src="images/bgimages/Alice-web-design_04_01.webp" width="100%">
 
   <div id="skills">
@@ -460,7 +460,7 @@
 <div style="background: white;"><img src="images/bgimages/Alice-web-design_11.webp" width="100%"></div>
 
 
-<div class="contact_me">  
+<div class="contact_me white-section">  
   <div id="contact_me">
     <img src="images/bgimages/Alice_logo5.webp" class="slide_up">
     <div class="poker_navs"><!--poker_navs-->
@@ -567,26 +567,8 @@ window.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
- 
-<script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('appear'); 
-            
-        }
-    });
-}, { threshold: 0.1 });
+<script src="js/color_change.js"></script>
 
- 
-const sections = ['#edu', '#work_experience', '.skills', '#achievement', '#contact_me'];
-sections.forEach(selector => {
-    const el = document.querySelector(selector);
-    if(el) observer.observe(el);
-});
-</script>
-
- 
 
 </body>
 </html>
