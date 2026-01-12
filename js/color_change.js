@@ -6,7 +6,7 @@ let isTop = true;
 
 const observer = new IntersectionObserver(
   (entries) => {
-    if (window.scrollY === 0) return; // FORCE white at top
+    if (window.scrollY === 0) return;  
 
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -23,8 +23,7 @@ const observer = new IntersectionObserver(
 );
 
 whiteSections.forEach(section => observer.observe(section));
-
-/* Detect top of page */
+ 
 window.addEventListener("scroll", () => {
   if (window.scrollY === 0) {
     header.classList.remove("light-bg");
