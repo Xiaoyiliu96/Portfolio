@@ -60,7 +60,16 @@
     color: #FCC564;
     text-transform: uppercase;
     font-family: 'Helvetica';
+    line-height: 2em;
  }
+
+  .experience_text_right p,  .experience_text_left p
+ {
+
+    line-height: 1.3em;
+    padding-bottom: 1em;
+ }
+
 
 
 @media screen and (max-width: 600px) 
