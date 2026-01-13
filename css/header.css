@@ -182,27 +182,31 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 26, 51, 0.95);
     z-index: 999;
+    padding: 1em;
   }
 
   .nav-links.active {
     display: flex !important;
   }
 
+  .nav-links .mobile-only a
+  {
+    font-size: 1.4rem;
+  }
+
   .nav-links a {
     color: #fff;
-    font-size: 2rem;
     text-decoration: none;
-    letter-spacing: 2px;
     transition: color 0.3s ease, letter-spacing 0.3s ease, transform 0.3s ease;
-    margin: 15px 0;
+    margin: 1em 0;
   }
 
   .nav-links a:hover {
     color: orange;
     transform: translateY(-2px);
-    letter-spacing: 6px;
+    letter-spacing: 10px;
   }
 
   /* Hide Wonderland side nav on mobile */
