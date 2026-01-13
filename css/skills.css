@@ -63,6 +63,11 @@
     padding-top:3em;
 }
 
+.shelf h2
+{
+    margin-bottom: 1em;
+}
+
 .wonderland-wrapper h2 {
     font-variant: small-caps;
     border-left: 5px solid #B30000; 
@@ -76,6 +81,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap:2em;
+    margin-top: 1em;
 }
 
 .potion-card {
@@ -137,6 +143,10 @@
     font-weight: bolder;
 }
 
+.cert-info 
+{
+    padding-bottom: 2em;
+}
 
 .credential-id 
 {
@@ -340,6 +350,8 @@ label
 
 .potion-card {
     transition: box-shadow 0.3s ease;
+    padding-bottom: 2em;
+
 }
 
 .potion-card:hover {
@@ -374,4 +386,35 @@ label
 
 @keyframes shine {
     to { background-position: 200% center; }
+}
+
+/*******************************************/
+
+
+@media screen and (max-width: 600px) 
+{
+ 
+  .wonderland-wrapper,
+
+ {
+    width:80%;
+ 
+ }
+
+ form
+{
+    margin-top: 2em;
+    width: 80%;
+    text-align: left;
+    margin: auto;
+}
+
+.achievement 
+{
+    margin: auto;
+    padding: 0px;
+    width:80%;
+    padding-bottom: 5em;
+}
+
 }

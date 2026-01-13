@@ -148,9 +148,9 @@
    .content 
     {
         position: absolute;
-        left:14%;
+        left:10%;
         bottom: 80px;
-        max-width:400px;
+        max-width:380px;
     }
 
 
@@ -203,14 +203,7 @@
     margin-top: 3em;
 }
 
-@media only screen and (max-width:600px)
-{
-    .video_project iframe
-    {
-        width: 90%;
-        height: 20em;
-    }
-}
+
 
 .video_project_text
 {
@@ -248,3 +241,16 @@
 /**************************/
 
 
+@media only screen and (max-width:600px)
+{
+    .video_project iframe
+    {
+        width: 80%;
+        height: 20em;
+    }
+    .video_project_text
+    {
+       
+        max-width: 80%;
+    }
+}

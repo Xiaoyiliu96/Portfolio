@@ -16,6 +16,7 @@
   width:60%;
   height: auto;
   margin-top: 3em;
+  border: none;
 }
 
 
@@ -60,5 +61,38 @@
     text-transform: uppercase;
     font-family: 'Helvetica';
  }
+
+
+@media screen and (max-width: 600px) 
+{
+  
+  .experience_bg {
+    max-width: 80%;  
+    padding-bottom: 5em; 
+    background: none !important;
+    } 
+
+  .three_columns {
+    display: block;  
+    margin-bottom: 4em;  
+  }
+
+  .experience_text_right, 
+  .experience_text_left {
+    text-align: left;  
+    padding-top: 2em;  
+    width: 100%;
+  }
+
+  #work_experience .experience_bg
+  {
+    background: none !important;
+  }
+
+
+}
+
+
+
 
 
