@@ -201,7 +201,7 @@ h1 {
   color: black;
 }
 
-/ 
+
 .contact_me {
   padding-top: 40px;
   border-top: 1px solid var(--border);
@@ -330,7 +330,7 @@ h1 {
 .gallery-container::-webkit-scrollbar { width: 6px; }
 .gallery-container::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
 
-/ 
+
 @media (max-width: 1024px) {
   body {
     flex-direction: column;
