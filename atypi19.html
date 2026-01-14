@@ -114,40 +114,40 @@ crest that scatters in a shower of droplets in the form of an animal's claws.”
 
 <div id="about_bg">&nbsp;</div>
 
-	<div class="product_detail">
-		<div class="product_detail_left">
+	<div class="product_detail white-section">
+		<div class="product_detail_left white-section">
 			<ul>
-				<li><span class="atlas_title" id="titles">PRODUCT DETAILS</span></li>
-				<li><span class="product_detail_bold">Project:</span>ATypI Annual Type Conference Guide </li>
-				<li><span class="product_detail_bold">Class:</span> ART 39500 Typography II </li>
-				<li><span class="product_detail_bold">Size: </span> 3.5 X 8.5inches </li>
-				<li><span class="product_detail_bold">Pages: </span>60 pages </li>
-				<li><span class="product_detail_bold">Typefaces: </span>Atlas and Helvetica </li>
-				<li><span class="product_detail_bold">Main Color Tone:</span> Blue </li>
-				<li><span class="product_detail_bold">RBG:</span> R:16 G:28 B:53, R:216 G:199 B:176, and R:16 G:26 B:67 </li>
-				<li><span class="product_detail_bold">CMYK:</span> C:84 M:75 Y:59 K:79, C:16 M:20 Y:31 K:0, and C:88 M:79 Y:49 K:74 </li>
-				<li><span class="product_detail_bold">Hex:</span> #101C35, #D8C7B0, and #101A43 </li>
-				<li><span class="product_detail_bold">Design Element:</span> The Great Wave off Kanagawa Print by Hokusai </li>
-				<li><span class="product_detail_bold">Design Software: </span>Adobe InDesign </li>
+				<li><span class="atlas_title white-section" id="titles">PRODUCT DETAILS</span></li>
+				<li class="white-section"><span class="product_detail_bold">Project:</span>ATypI Annual Type Conference Guide </li>
+				<li class="white-section"><span class="product_detail_bold">Class:</span> ART 39500 Typography II </li>
+				<li class="white-section"><span class="product_detail_bold">Size: </span> 3.5 X 8.5inches </li>
+				<li class="white-section"><span class="product_detail_bold">Pages: </span>60 pages </li>
+				<li class="white-section"><span class="product_detail_bold">Typefaces: </span>Atlas and Helvetica </li>
+				<li class="white-section"><span class="product_detail_bold">Main Color Tone:</span> Blue </li>
+				<li class="white-section"><span class="product_detail_bold">RBG:</span> R:16 G:28 B:53, R:216 G:199 B:176, and R:16 G:26 B:67 </li>
+				<li class="white-section"><span class="product_detail_bold">CMYK:</span> C:84 M:75 Y:59 K:79, C:16 M:20 Y:31 K:0, and C:88 M:79 Y:49 K:74 </li>
+				<li class="white-section"><span class="product_detail_bold">Hex:</span> #101C35, #D8C7B0, and #101A43 </li>
+				<li class="white-section"><span class="product_detail_bold">Design Element:</span> The Great Wave off Kanagawa Print by Hokusai </li>
+				<li class="white-section"><span class="product_detail_bold ">Design Software: </span>Adobe InDesign </li>
 				
 			</ul>
 		</div>
 
-		<div class="product_detail_right">
+		<div class="product_detail_right white-section">
 			<div class="product_detail_right_01">&nbsp;</div>
 			<div class="product_detail_right_02">&nbsp;</div>
 		</div> 
 	</div>
 
-	<div class="product_detail_text">
+	<div class="product_detail_text white-section">
 		<span class="product_detail_bold">Design Idea:</span> When reflecting on Japan's essence, Mount Fuji and Ukiyo-e (woodblock prints) immediately come to mind. Mount Fuji, an active stratovolcano on Honshu, Japan's largest island, stands as the nation's loftiest peak, the secondhighest island volcano in Asia (after Mount Kerinci on Sumatra), and the seventh-highest island peak worldwide. Positioned approximately 100 km (62 mi) southwest of Tokyo, Mount Fuji graces clear days with its awe-inspiring presence, embodying Japan's cultural heritage with its snow-capped symmetrical cone that endures for much of the year. This iconic landmark is a centerpiece in art, and photography, and draws tourists, hikers, and climbers alike. Among the esteemed masterpieces of Ukiyo-e, "The Great Wave off Kanagawa" stands out, depicting three boats navigating turbulent waters, with a towering wave spiraling at the center and Mount Fuji etched in the background. However, in my design, I choose to preserve the captivating allure of the great wave, as it encapsulates Japan's maritime essence and artistic legacy. Regarding size, I envision this design as a pocketbook, ensuring ease of carry for attendees strolling through the Atypi event. For the title page design, I drew inspiration from the professor's suggestion. Each title is set against a background resembling rolling waves, symbolizing the dynamic spirit of Japan.  
 		
-		<p><span class="product_detail_bold">References:</span> <a href="https://atypi.org/conferences-events/past-conferences/atypi-2019-tokyo/">https://atypi.org/conferences-events/past-conferences/atypi-2019-tokyo/ </a></p>
+		<p><span class="product_detail_bold white-section">References:</span> <a href="https://atypi.org/conferences-events/past-conferences/atypi-2019-tokyo/">https://atypi.org/conferences-events/past-conferences/atypi-2019-tokyo/ </a></p>
 	</div>
 		 
 
 <div id="project_atypi">
-	<div class="atypi">
+	<div class="atypi white-section">
 		<iframe src="https://yoi96.github.io/atypi19_flipbook/" width="100%" height="270" frameborder="0"></iframe>
 	</div>
 </div>
@@ -231,5 +231,44 @@ crest that scatters in a shower of droplets in the form of an animal's claws.”
 
 <script src="js/toggle_menu.js"></script>
 <script src="js/nav.js"></script>
+
+<script>
+	 
+const header = document.querySelector(".image-container");
+const whiteSections = document.querySelectorAll(".white-section");
+
+let isTop = true;
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (window.scrollY === 0) return;  
+
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        header.classList.add("light-bg");
+      } else {
+        header.classList.remove("light-bg");
+      }
+    });
+  },
+  {
+    rootMargin: "-80px 0px 0px 0px",
+    threshold: 0.1
+  }
+);
+
+whiteSections.forEach(section => observer.observe(section));
+ 
+window.addEventListener("scroll", () => {
+  if (window.scrollY === 0) {
+    header.classList.remove("light-bg");
+    isTop = true;
+  } else {
+    isTop = false;
+  }
+});
+ 
+</script>
+
 </body>
 </html>

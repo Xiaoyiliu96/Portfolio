@@ -372,4 +372,29 @@ h1 {
   .nav-content a {
     font-size: 1.8rem;  
   }
+
+
 }
+
+/*********☰*************/
+.minimal-nav {
+  color:white;
+  transition: color 0.3s ease;
+}
+
+ 
+
+.minimal-nav.light-bg .menu-icon
+{
+  color:orange;
+} 
+
+.minimal-nav.light-bg .menu-icon:hover
+{
+  color:black;
+} 
+
+ 
+
+ 
+/*********☰****************/ 

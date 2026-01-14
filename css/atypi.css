@@ -47,7 +47,28 @@ a:hover {
 }
 
  
+/*********☰*************/
+.menu_btn {
+  color:white;
+  transition: color 0.3s ease;
+}
 
+ 
+
+.image-container.light-bg .top_navs .menu_btn
+{
+  color:black;
+} 
+
+.image-container.light-bg .top_navs .menu_btn:hover
+{
+  color:#CEBAA3;
+} 
+
+ 
+
+ 
+/*********☰****************/ 
 
 /* ===================== LOGO ===================== */
 .logo {
