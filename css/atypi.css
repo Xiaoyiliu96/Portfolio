@@ -249,6 +249,7 @@ body{font-family:'Helvetica';}
   color: #D8C7B0;
   font-family: 'atlas';
   font-size:5em;
+  src: url(../fonts/atlas.TTF);
 }
 
 .atlas_title
@@ -256,6 +257,7 @@ body{font-family:'Helvetica';}
   color: #D8C7B0;
   font-family: 'atlas';
   font-size:3em;
+  src: url(../fonts/atlas.TTF);
 }
 
 .kanagawa_title
@@ -263,6 +265,7 @@ body{font-family:'Helvetica';}
   color: #D8C7B0;
   font-family: 'atlas';
   font-size:2em;
+  src: url(../fonts/atlas.TTF);
 }
 
 
@@ -383,6 +386,7 @@ body{font-family:'Helvetica';}
 {
   color: #D8C7B0;
   font-family: 'atlas';
+  src: url(../fonts/atlas.TTF);
   font-size: 3em;
 }
 
