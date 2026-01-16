@@ -35,7 +35,7 @@
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 5em;
+  gap: 3em;
 }
 
 .nav-links a {
@@ -282,4 +282,5 @@
 } 
 
  
+
 /*********☰****************/ 
