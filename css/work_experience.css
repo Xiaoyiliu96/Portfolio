@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "work_title"; 
+  src: url("fonts/atlas.TTF") format("ttf");
+
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+
+
 #work_experience
 {
   width: 100%;

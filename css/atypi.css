@@ -4,6 +4,14 @@ a:hover {
   color: #CEBAA3;
 }
 
+@font-face {
+  font-family: "atypi_atlas_title"; 
+  src: url("../fonts/atlas.TTF") format("truetype");
+
+  font-weight: normal; 
+  font-style: normal; 
+}
+
  
 
 /* ===================== NAV RESET ===================== */
@@ -247,25 +255,24 @@ body{font-family:'Helvetica';}
 .banner_title
 {
   color: #D8C7B0;
-  font-family: 'atlas';
+  font-family: 'atypi_atlas_title';
   font-size:5em;
-  src: url(../fonts/atlas.TTF);
 }
 
 .atlas_title
 {
   color: #D8C7B0;
-  font-family: 'atlas';
+  font-family: 'atypi_atlas_title';
   font-size:3em;
-  src: url(../fonts/atlas.TTF);
+  
 }
 
 .kanagawa_title
 {
   color: #D8C7B0;
-  font-family: 'atlas';
+  font-family: 'atypi_atlas_title';
   font-size:2em;
-  src: url(../fonts/atlas.TTF);
+  
 }
 
 
@@ -385,8 +392,8 @@ body{font-family:'Helvetica';}
 .atlas_title
 {
   color: #D8C7B0;
-  font-family: 'atlas';
-  src: url(../fonts/atlas.TTF);
+  font-family: 'atypi_atlas_title';
+  
   font-size: 3em;
 }
 
