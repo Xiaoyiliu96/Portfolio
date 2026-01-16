@@ -3,7 +3,7 @@ const data = [
     { 
         title: "ATYPI 2019", 
         sub: "ATYPI Annual Type Conference Guide Design", 
-        desc: "This project is a user guide designed for the ATYPI Annual Type Conference, an international event that brings together typographers, type designers, and graphic designers from around the world. Using the 2019 in-person conference as a reference, the guide organizes schedules, talks, and workshops into a clear and accessible layout that supports both first-time and returning attendees. The design emphasizes typographic hierarchy and readability through the use of Atlas and Helvetica, while a deep blue color palette establishes a calm, authoritative tone. Visual inspiration from The Great Wave off Kanagawa introduces a sense of rhythm and movement, reflecting the dynamic exchange of ideas within the global typographic community.", 
+        desc: "This project is a user guide designed for the ATYPI Annual Type Conference, an international event that brings together typographers, type designers, and graphic designers from around the world. Using the 2019 in-person conference as a reference, the guide organizes schedules, talks, and workshops into a clear and accessible layout that supports both first-time and returning attendees. The design emphasizes typographic hierarchy and readability through the use of Atlas and Helvetica, while a deep blue color palette establishes a calm, authoritative tone. Visual inspiration from <span style='font-style: italic;'> The Great Wave off Kanagawa </span> introduces a sense of rhythm and movement, reflecting the dynamic exchange of ideas within the global typographic community.", 
         img: 'url("images/project_images/atypi19.jpg")',
         software:"Software: Adobe InDesign",
         link: "atypi19.html"
@@ -52,25 +52,22 @@ function switchTab(index) {
 
     document.getElementById("main-title").innerText = item.title;
     document.getElementById("sub-title").innerText = item.sub;
-    document.getElementById("desc").innerText = item.desc;
-    document.getElementById("software").innerText = item.software;
+    
+    // UPDATE THIS LINE:
+    document.getElementById("desc").innerHTML = item.desc; 
 
+    document.getElementById("software").innerText = item.software;
     document.getElementById("main_bg").style.backgroundImage = item.img;
 
     document.getElementById("detail-btn").onclick = () => {
-        window.location.href = item.link;
+        window.open(item.link, "_blank");
     };
 
     document.querySelectorAll(".nav-item").forEach((el, i) => {
         el.classList.toggle("active", i === index);
     });
-
-    
-
-    document.getElementById("detail-btn").onclick = () => {
-    window.open(item.link, "_blank");
-};
 }
+
 
 // load first project
 switchTab(0);
