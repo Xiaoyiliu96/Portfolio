@@ -1,13 +1,3 @@
-@font-face {
-  font-family: "work_title"; 
-  src: url("fonts/atlas.TTF") format("ttf");
-
-  font-weight: normal; 
-  font-style: normal; 
-}
-
-
-
 #work_experience
 {
   width: 100%;
@@ -82,7 +72,7 @@
 
 
 
-@media screen and (max-width: 600px) 
+@media screen and (max-width: 768px) 
 {
   
   .experience_bg {
