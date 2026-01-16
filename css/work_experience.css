@@ -83,7 +83,8 @@
 
   .three_columns {
     display: block;  
-    margin-bottom: 4em;  
+    margin-bottom: 5em;
+    border-top: 1px dashed #ff4d4d;  
   }
 
   .experience_text_right, 
