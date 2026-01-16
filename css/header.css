@@ -35,7 +35,7 @@
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 3em;
+  gap: 5em;
 }
 
 .nav-links a {
@@ -185,7 +185,9 @@
     background-color: rgba(0, 26, 51, 0.95);
     z-index: 999;
     padding: 1em;
+    gap: 2em;
   }
+ 
 
   .nav-links.active {
     display: flex !important;
@@ -193,7 +195,7 @@
 
   .nav-links .mobile-only a
   {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .nav-links a {
@@ -282,6 +284,4 @@
 } 
 
  
-
 /*********☰****************/ 
-
