@@ -176,6 +176,9 @@ a:hover {
 img {
       user-select: none;
       pointer-events: none;
+      border: none;
+      padding: 0px;
+      margin: 0px;
     }
 
 
