@@ -35,10 +35,12 @@ img
 
 body
 {
-	background: url("../images/maze_game_images/02.jpg") repeat-y center center;
-	background-size: cover;
+  background: url("../images/maze_game_images/02.jpg") repeat-y center center;
+  background-size: cover;
   width: 100%;
-  overflow-x: hidden;  
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
 }
 
  
@@ -46,7 +48,7 @@ body
 /* ====================model-viewer ===================== */
 model-viewer
 {
-  width: 100%;
+  max-width: 100%;
   height: 100vh;
   text-transform: uppercase;
   border: none;
@@ -62,6 +64,8 @@ model-viewer
   top: 0;
   left: 0;
   z-index: 1000;
+
+  overflow: hidden;
 }
 
 /* ===================== TOP NAV (The Bar) ===================== */
@@ -71,7 +75,7 @@ model-viewer
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 1200px;
+  max-width:1400px;
 
   display: flex;
   justify-content: space-between;
@@ -144,7 +148,7 @@ model-viewer
   top: 0;
   right: 0;
   width: 100%;
-  padding: 2em;  
+  padding: 2em; 
   display: flex;
   justify-content: flex-end;
   pointer-events: none;  
@@ -198,12 +202,12 @@ model-viewer
 }
 
 /* ===================== MOBILE OVERRIDES ===================== */
-@media only screen and (max-width: 600px) 
+@media only screen and (max-width: 768px) 
 {
   .top_navs 
   {
     max-width: 90%; 
-    padding: 1em 0;
+    padding: 1em 0px;
   }
   
 
@@ -214,8 +218,14 @@ model-viewer
   }
 
   .image_container_navs {
-    width: 100vw !important;
-    left: 0 !important;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+  }
+
+  #project_game
+  {
+    display: none;
   }
 }
 
@@ -408,7 +418,7 @@ model-viewer
   right:41%;
 }
 
- 
+img{max-width: 100%;} 
 
 .face
 {
@@ -432,6 +442,8 @@ model-viewer
 	{
 		max-width: 85%;
 	}
+
+
 
 
 }
