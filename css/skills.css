@@ -406,28 +406,22 @@ label
 @media screen and (max-width: 600px) 
 {
  
-  .wonderland-wrapper,
-
- {
-    width:80%;
  
- }
+     form
+     {
+        margin-top: 2em;
+        width: 80%;
+        text-align: left;
+        margin: auto;
+     }
 
- form
-{
-    margin-top: 2em;
-    width: 80%;
-    text-align: left;
-    margin: auto;
-}
-
-.achievement 
-{
-    margin: auto;
-    padding: 0px;
-    width:80%;
-    padding-bottom: 5em;
-}
+    .achievement 
+    {
+        margin: auto;
+        padding: 0px;
+        width:80%;
+        padding-bottom: 5em;
+    }
 
 }
 
