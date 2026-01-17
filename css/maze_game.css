@@ -295,9 +295,25 @@ model-viewer
 /* ===================== MOBILE TWEAKS ===================== */
 @media only screen and (max-width: 600px) {
   .topic {
-    font-size: 4rem;
+    font-size: 3rem;
   }
+
+.two_columns_left
+{
+  grid-area: two_columns_left;
+}
+
+.two_columns_right
+{
+  grid-area: two_columns_right;
+}
+
   
+.two_columns
+{
+  grid-template-columns: 1fr;
+  grid-template-areas:'two_columns_right' 'two_columns_left';
+}
 
 
   .download_button a {
