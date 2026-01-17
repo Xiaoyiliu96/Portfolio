@@ -1,7 +1,18 @@
 
 .drakbblue
 {
-    background: #001A33;
+  background: #001A33;
+}
+
+.achievement_top
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: url("../images/bgimages/Alice-web-design_06.webp") no-repeat top center;
+    background-size:cover;
+    height: 35vw;
+    border: none;
 }
 
 
@@ -23,7 +34,6 @@
     width: 100%;
     text-align: center;
     height: auto;
-    background: white;
     background: white;
  }
 
@@ -380,7 +390,7 @@ label
 /******************/
 .gold_title {
     background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700);
-    background-size: 200% auto;
+    background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 3s linear infinite;
@@ -420,3 +430,5 @@ label
 }
 
 }
+
+

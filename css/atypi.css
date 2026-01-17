@@ -4,6 +4,12 @@ a:hover {
   color: #CEBAA3;
 }
 
+div{border: none;
+  padding: 0px;
+  margin: 0px;
+}
+ 
+
 @font-face {
   font-family: "atypi_atlas_title"; 
   src: url("../fonts/atlas.TTF") format("truetype");
@@ -79,6 +85,7 @@ a:hover {
   display: block;
   background: url("../images/logo/logo_light_yellow.png") no-repeat left center;
   background-size: contain;
+
 }
 
 .logo:hover {
@@ -211,7 +218,7 @@ body{font-family:'Helvetica';}
 {
   width: 100%;
   height: auto;
-  background: #101A43;
+  background: #101A43 !important;
 }
 
 #header_bg
@@ -300,6 +307,10 @@ body{font-family:'Helvetica';}
   width: 100%;
   height: auto;
   color: white;
+  overflow: hidden;
+  border: none;
+  padding: 0px;
+  margin: 0px;
   
 }
 
@@ -350,7 +361,7 @@ body{font-family:'Helvetica';}
   width: 100%;
   height: auto;
   background: url("https://mcraftsmanship.com/cdn/shop/articles/Katsushikahokusaipaint_1600x.jpg?v=1636120956") no-repeat;
-  background-position: center;
+  background-position: top center;
   background-size: cover;
 }
 
@@ -364,10 +375,11 @@ body{font-family:'Helvetica';}
   height: auto;
   padding: 0px;
   margin: 0px;
-  background: url("../images/atypi2019toyko_images/about_bg.png") no-repeat;
+  background: url("../images/atypi2019toyko_images/about_bg.png") no-repeat 0 0;
   background-size: cover;
-  background-position: center;
   padding-bottom: 30em;
+  border: none;
+  border-style: none;
 }
 
 .product_detail
@@ -774,4 +786,31 @@ label
     grid-template-columns: 1fr;
   }
 
+
 }
+
+
+#header_bg, #about_bg {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+
+@media only screen and (max-width: 1024px) 
+{
+ 
+
+  .social_media_buttons,img, #about_bg, #header_bg 
+  {
+    margin-top: -2px;
+    padding-top: -2px;
+    margin-bottom: -2px;
+    padding-bottom: -2px;
+    
+  }
+
+ 
+}
+

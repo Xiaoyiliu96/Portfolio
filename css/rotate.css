@@ -30,10 +30,56 @@
   {
     width: 80%;
   }
-  #achievement img{width: 130%;}
+  #achievement img{width: 100%;}
 }
 
 
 /**********************/
 
+ @media screen and (max-width: 600px) 
+{
  
+
+#education img,
+#experience img,
+#skills img,
+#achievement img,
+#projects img,
+#contact_me img,
+img
+  {
+    margin-top: -2px;
+    padding-top: -2px;
+    margin-bottom: -2px;
+    padding-bottom: -2px;
+    outline: none;
+    
+  }
+
+  .achievement_top
+  {
+    border: none;
+    outline: none;
+  }
+
+  #education img
+  {
+    width:100%;
+    height: auto;
+    margin-top:17em;
+  }
+
+  .drakbblue
+  {
+    margin-top: -2px;
+    padding-top: -2px;
+    margin-bottom: -2px;
+    padding-bottom: -2px;
+    outline: none;
+
+  }
+
+
+
+
+}
