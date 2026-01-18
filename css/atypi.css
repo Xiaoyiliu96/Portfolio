@@ -127,6 +127,9 @@ body
   color: black;  
 }
 
+.menu_btn.dark-mode:hover {
+    color: #D8C7B0;
+}
  
 #myLinks {
     position: fixed;
