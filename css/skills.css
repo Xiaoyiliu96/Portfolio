@@ -1,7 +1,12 @@
 
 .drakbblue
 {
-  background: #001A33;
+  background: url("../images/bgimages/Alice-in-Wonderland_34.webp") no-repeat top center;
+  background-size:cover;
+  width: 100%;
+  height:300px;
+  margin: -5px 0px;
+  padding: -5px 0px;
 }
 
 .achievement_top
@@ -24,6 +29,9 @@
   width:60%;
   height: auto;
   margin-top: 3em;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
 }
 
 
@@ -403,6 +411,9 @@ label
 /*******************************************/
 
 
+
+ 
+
 @media screen and (max-width: 600px) 
 {
  
@@ -424,5 +435,3 @@ label
     }
 
 }
-
-
