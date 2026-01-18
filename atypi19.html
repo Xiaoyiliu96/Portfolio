@@ -12,12 +12,6 @@
   
 </head>
 <body>
-
-
-<div id="wrap">
-	<div id="header_bg">
-	<div id="header" class="header"> 
-
 <div class="image-container"><!-------image-container--------->
 
 
@@ -36,16 +30,19 @@
       <a href="index.html#main_bg" id="nav_color" target="_blank" >Projects</a>
       <a href="https://docs.google.com/presentation/d/1EtfpYpQDQh5bsWt8w8PleQaQcUt8bpUC/edit?slide=id.p1#slide=id.p1" target="_blank"> OP-ED</a>
       <a href="maze_game.html" target="_blank"> Maze Game</a>
-      <a href="covid19_posters.html" target="_blank"> Covid-19 Poster</a>
+      <a href="covid19_posters.html" target="_blank"  id="nav_color"> Covid-19 Poster</a>
       <a href="cad_blueprints.html" target="_blank"> Drill Jig Assembly</a>
-      <a href="ATYPI19.html" target="_blank" id="nav_color" > ATYPI 19 Guide Design</a>
+      <a href="atypi19.html" target="_blank"> ATYPI 19 Guide Design</a>
 
-      <a href="#contact_me" onclick="toggleMenu()">Contact Me</a>
+      <a href="#contact_me" onclick="contact_me_card()">Contact Me</a>
     </div>
   </nav>
 
 </div><!-------image-container--------->
-	</div><!--header end-->
+
+<div id="wrap">
+	<div id="header_bg">
+	<div id="header" class="header">&nbsp;</div><!--header end-->
  
 
 		<div id="banner" class="banner"> 
@@ -306,40 +303,33 @@
 
 <script>
 	 
-const header = document.querySelector(".image-container");
-const whiteSections = document.querySelectorAll(".white-section");
+window.addEventListener('scroll', function() {
+  const menuBtn = document.querySelector('.menu_btn');
+  const whiteSections = document.querySelectorAll('.white-section');
+  const btnRect = menuBtn.getBoundingClientRect();
 
-let isTop = true;
+  let isOverWhite = false;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    if (window.scrollY === 0) return;  
+  whiteSections.forEach(section => {
+    const sectionRect = section.getBoundingClientRect();
 
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        header.classList.add("light-bg");
-      } else {
-        header.classList.remove("light-bg");
-      }
-    });
-  },
-  {
-    rootMargin: "-80px 0px 0px 0px",
-    threshold: 0.1
-  }
-);
+    // Check if the button coordinates overlap with the section coordinates
+    if (
+      btnRect.top < sectionRect.bottom &&
+      btnRect.bottom > sectionRect.top &&
+      btnRect.left < sectionRect.right &&
+      btnRect.right > sectionRect.left
+    ) {
+      isOverWhite = true;
+    }
+  });
 
-whiteSections.forEach(section => observer.observe(section));
- 
-window.addEventListener("scroll", () => {
-  if (window.scrollY === 0) {
-    header.classList.remove("light-bg");
-    isTop = true;
+  if (isOverWhite) {
+    menuBtn.classList.add('dark-mode');
   } else {
-    isTop = false;
+    menuBtn.classList.remove('dark-mode');
   }
 });
- 
 </script>
 
 </body>
