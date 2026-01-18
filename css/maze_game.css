@@ -2,7 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster&family=Noto+Sans+SC:wght@500&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Orienta&family=Patua+One&family=Radio+Canada:wght@300&family=Righteous&family=Roboto&family=Rubik:wght@300&family=Share&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Bitter:wght@600;900&family=Cantora+One&family=Inknut+Antiqua:wght@800&family=Londrina+Solid:wght@300&family=Ma+Shan+Zheng&family=Neuton:wght@800&family=Noto+Sans+SC:wght@500&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Orienta&family=Passion+One&family=Patua+One&family=Radio+Canada:wght@300&family=Righteous&family=Roboto&family=Rubik:wght@300&family=Share&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,100..900;1,100..900&family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-  
+
+@font-face
+{
+  font-family:'Helvetica';
+  src: url("../fonts/Helvetica.ttf") format("truetype");
+  font-weight: normal; 
+  font-style: normal; 
+  background: black;
+}  
 
 ul
 {
@@ -74,8 +82,8 @@ model-viewer
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width:1400px;
+  width: 80%;
+  max-width:100%;
 
   display: flex;
   justify-content: space-between;
@@ -206,14 +214,16 @@ model-viewer
 {
   .top_navs 
   {
-    max-width: 90%; 
+    width: 90%; 
     padding: 1em 0px;
+    max-width: 100%;
   }
   
 
   .wrap_header {
     font-size: 1.2rem;  
     gap: 2rem;
+    max-width: 100%;
 
   }
 
