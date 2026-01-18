@@ -4,10 +4,53 @@ a:hover {
   color: #CEBAA3;
 }
 
-div{border: none;
+
+ 
+
+ 
+ 
+img {
+      user-select: none;
+      pointer-events: none;
+      border: none;
+      padding: 0px;
+      margin: 0px;
+    }
+
+
+a
+{
+  color: white;
+  text-decoration: none;
+  
+}
+
+ul
+{
+  list-style: none;
   padding: 0px;
   margin: 0px;
 }
+
+li
+{
+  line-height: 2em;
+}
+
+iframe
+{
+  border: none;
+  overflow: hidden;
+}
+
+body
+{
+  font-family:'Helvetica';
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+
  
 
 @font-face {
@@ -34,7 +77,7 @@ div{border: none;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 1200px;
+  max-width:100%;
 
   display: flex;
   justify-content: space-between;
@@ -174,61 +217,26 @@ div{border: none;
 
 
 /* ===================== SCROLL LOCK ===================== */
-.no-scrollbar {
-  overflow: hidden;
-}
 
- 
- 
-img {
-      user-select: none;
-      pointer-events: none;
-      border: none;
-      padding: 0px;
-      margin: 0px;
-    }
-
-
-a
-{
-  color: white;
-  text-decoration: none;
-  
-}
-
-ul
-{
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-li{line-height: 2em}
-
-iframe
-{
-  border: none;
-  overflow: hidden;
-}
-
-body{font-family:'Helvetica';}
- 
 
 #wrap
 {
   width: 100%;
+  max-width: 100%;
   height: auto;
   background: #101A43 !important;
+  overflow: hidden;
 }
 
 #header_bg
 {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   background: url("../images/atypi2019toyko_images/banner.gif") no-repeat;
   background-size: cover;
   background-position: center;
   padding-bottom:36em;
+  overflow: hidden;
 }
 
 .dropdown-content a:hover {
@@ -254,7 +262,9 @@ body{font-family:'Helvetica';}
   height: auto;
   text-align: center;
   color: white;
-  font-family:'Helvetica';  
+  font-family:'Helvetica';
+  max-width: 100%;
+  overflow: hidden;  
 }
 
 .banner_title
@@ -311,6 +321,7 @@ body{font-family:'Helvetica';}
   border: none;
   padding: 0px;
   margin: 0px;
+  overflow: hidden;
   
 }
 
@@ -380,6 +391,7 @@ body{font-family:'Helvetica';}
   padding-bottom: 30em;
   border: none;
   border-style: none;
+  overflow: hidden;
 }
 
 .product_detail
@@ -804,10 +816,10 @@ label
 
   .social_media_buttons,img, #about_bg, #header_bg 
   {
-    margin-top: -2px;
-    padding-top: -2px;
-    margin-bottom: -2px;
-    padding-bottom: -2px;
+    margin-top: -1px;
+    padding-top: -1px;
+    margin-bottom: -1px;
+    padding-bottom: -1px;
     
   }
 
