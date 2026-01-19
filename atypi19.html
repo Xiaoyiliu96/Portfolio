@@ -25,7 +25,7 @@
   <nav class="image_container_navs" id="myLinks">
     <button class="menu_btn close_btn" onclick="toggleMenu()">X</button>
 
-    <div class="wrap_header">
+    <div class="wrap_header" id="wrap_header">
       <a href="index.html" target="_blank">Home</a>
       <a href="index.html#main_bg" id="nav_color" target="_blank" >Projects</a>
       <a href="https://docs.google.com/presentation/d/1EtfpYpQDQh5bsWt8w8PleQaQcUt8bpUC/edit?slide=id.p1#slide=id.p1" target="_blank"> OP-ED</a>
@@ -34,7 +34,7 @@
       <a href="cad_blueprints.html" target="_blank"> Drill Jig Assembly</a>
       <a href="atypi19.html" target="_blank"> ATYPI 19 Guide Design</a>
 
-      <a href="#contact_me" onclick="contact_me_card()">Contact Me</a>
+      <a href="#contact_me" onclick="toggleMenu(); contact_me_card();">Contact Me</a>
     </div>
   </nav>
 
