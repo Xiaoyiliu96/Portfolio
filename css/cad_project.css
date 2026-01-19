@@ -423,16 +423,18 @@ h1 {
 
   .social_media_buttons
   {
-    text-align: center;
     margin: auto;
-    width: 10%;
+    width:20%;
+    text-align: center;
     line-height: 4em;
     margin-top: 2em;
+    align-items: center;
   }
 
   .bg_bootom
   {
     text-align: center;
+    margin-bottom: 1em;
   }
 
 
