@@ -333,11 +333,39 @@ h1 {
 .gallery-container::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
 
 
+#showing_contact_me
+{
+  display: none;
+  width: 100%;
+}
+
+.nav-content #mobile_contact_me_nav  
+{
+  display: none;
+}
+
+
+.nav-content #desktop_contact_me_nav  
+{
+  display: block;
+}
+
 @media (max-width: 1024px) {
   body {
     flex-direction: column;
     overflow-y: auto; 
   }
+
+  .nav-content #desktop_contact_me_nav  
+  {
+    display: none;
+  }
+  
+  .nav-content #mobile_contact_me_nav 
+  {
+    display: block;
+  }
+
 
   .sidebar {
     width: 100%;
@@ -375,6 +403,38 @@ h1 {
     font-size: 1.4rem;
     margin-bottom: 2em;  
   }
+
+  #showing_contact_me
+  {
+    display: flex;
+    width: 100%;
+  }
+
+  .sidebar .contact_me
+  {
+    display:none;
+  }
+
+  #showing_contact_me .contact_me
+  {
+    width:95%;
+    margin: auto;
+  }
+
+  .social_media_buttons
+  {
+    text-align: center;
+    margin: auto;
+    width: 10%;
+    line-height: 4em;
+    margin-top: 2em;
+  }
+
+  .bg_bootom
+  {
+    text-align: center;
+  }
+
 
 
 

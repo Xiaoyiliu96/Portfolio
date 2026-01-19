@@ -28,7 +28,11 @@
             <a href="cad_blueprints.html" target="_blank" id="nav_color" > Drill Jig Assembly</a>
             <a href="atypi19.html" target="_blank"> ATYPI 19 Guide Design</a>
 
-            <a href="#contact_me" onclick="toggleMenu()">Contact Me</a>
+           <a href="#contact_me_mobile" onclick="navOverlay.classList.remove('active')" id="mobile_contact_me_nav">Contact Me</a>
+
+           <a href="#contact_me_desktop" onclick="navOverlay.classList.remove('active')" id="desktop_contact_me_nav">Contact Me</a>
+
+
         </div>
     </div>
 
@@ -48,7 +52,7 @@
         <a href="https://drive.google.com/file/d/14gz3lLTwALdkQPWdJo5RmqwGZjgpSJ-e/view?usp=sharing" class="btn-pdf" target="_blank">DOWNLOAD PDF</a>
 
         <!-- CONTACT FORM -->
-        <div class="contact_me" id="contact_me">
+        <div class="contact_me" id="contact_me_desktop">
             <h2>Contact Me</h2>
             <form id="contact-form">
                 <label for="fname">First Name:</label>
@@ -83,9 +87,61 @@
     <!-- GALLERY -->
     <main class="gallery-container white-section" id="gallery"></main>
 
+
+
+    <div id="showing_contact_me">
+        <!-- CONTACT FORM -->
+        <div class="contact_me" id="contact_me_mobile">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <label for="fname">First Name:</label>
+                <input type="text" class="textbox" name="firstname" placeholder="Your name.." required id="fname">
+
+                <label for="lname">Last Name:</label>
+                <input type="text" class="textbox" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                <label for="email">Email:</label>
+                <input type="email" class="textbox" id="email" name="email" placeholder="Your Email address" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" class="textbox" name="message" placeholder="Write something.." style="height:150px" required></textarea>
+
+                <div class="submit_button">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            <div class="social_media_buttons">
+                <a href="mailto:xiaoyiliu96xyl@gmail.com" class="fa fa-google" target="_blank"></a>
+                <a href="https://www.linkedin.com/in/xiaoyi-l-7a4510286" class="fa fa-linkedin" target="_blank"></a>
+                <a href="https://www.instagram.com/xiaoyiliu96?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="fa fa-instagram" target="_blank"></a>
+            </div>
+
+            <div class="bg_bootom">
+                Copyright © Xiaoyi Liu 2024
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- SCRIPTS -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="js/cad.js"></script>
+
 
 
 <script>
