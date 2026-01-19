@@ -161,15 +161,16 @@ body
 .wrap_header a {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 2rem;
     text-transform: uppercase;
     font-family: 'Inter', -apple-system, sans-serif;
     font-weight: 800;
     transition: 0.3s ease;
+    margin-bottom: 1em;
 }
 
 .wrap_header a:hover {
-    color: #E6007E;
+    color: #D5C5AE;
     transform: translateY(-2px);
     letter-spacing: 10px;
 }
@@ -182,33 +183,7 @@ body
 }
 
 
-/************************************/
-
-
-/* ===================== MENU CONTENT ===================== */
-.wrap_header {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8em;
-  text-align: center;
-  font-family: 'Inter', -apple-system, sans-serif;
-  font-weight: 800;
-}
-
-.wrap_header a {
-  font-size: 1.3em;
-  letter-spacing: 0.08em;
-  color: white;
-  text-decoration: none;
-  transition: all 0.3s ease;
-
-}
-
-.wrap_header a:hover {
-  color: #D8C7B0;
-  transform: translateY(-2px);
-  letter-spacing:10px;
-}
+ 
 
 
 
@@ -817,6 +792,11 @@ label
     margin-bottom: -1px;
     padding-bottom: -1px;
     
+  }
+
+  .wrap_header a
+  {
+    font-size: 1.2rem;
   }
 
  
