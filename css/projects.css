@@ -51,7 +51,7 @@
 
 .content {
     position: absolute;
-    left:10%;
+    left:15%;
     right:10%;
     bottom: 80px;
     max-width: 600px;
@@ -144,71 +144,7 @@
     height:5vw;
 }
 
-@media only screen and (max-width:600px)
-{
 
-   .content 
-    {
-        position: absolute;
-        left:10%;
-        bottom: 80px;
-        max-width:380px;
-    }
-
-
-
-    .pro_nav 
-    {
-        position: absolute;
-        right:5%;
-        bottom: 80px;
-        display: flex;
-        flex-direction: column;
-        z-index:10;
-        gap:1em;
-        text-align: right;
-        font-family: "Momo Trust Display", sans-serif;
-    }
-
-    #projects
-    {
-        margin: 0px;
-        padding: 0px;
-        width: 100%;
-        text-align: center;
-        padding-top:20%;
-    }
-
-    .content
-    {
-        max-width: 100%;
-    }
-
-
-
- 
-
-
-}
-
-.video_project
-{
-    width: 100%;
-    background: #001A33;
-    padding: 0px;
-    margin: 0px;
-    padding-top: 3em;
-    text-align: center;
-}
-
-.video_project iframe
-{
-    width: 70%;
-    padding: 0px;
-    margin: auto;
-    border: none;
-    margin-top: 3em;
-}
 
 .video_project_bg
 {
@@ -218,14 +154,35 @@
     background-color: #001A33;
 }
 
+
+.video_project
+{
+    max-width:70%;
+    background: #001A33;
+    padding: 0px;
+    margin:auto;
+    padding-top: 3em;
+    text-align: center;
+}
+
+.video_project iframe
+{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+
+}
+
+
 .video_project_text
 {
     color: white;
-    max-width: 70%;
-    margin: auto;
+    margin: 0px;
     text-align: left;
     padding: 0px;
     margin-top: 2em;
+    width:100%;
 }
 
 .video_project_text_sub-title {
@@ -258,12 +215,61 @@
 {
     .video_project iframe
     {
-        width: 80%;
+        width: 90%;
         height: 20em;
     }
     .video_project_text
     {
        
-        max-width: 80%;
+        width: 90%;
+        margin: auto;
+        margin-top: 2em;
     }
+
+    .video_project
+    {
+        max-width: 90%;
+
+    }
+ 
+
+   .content 
+    {
+        position: absolute;
+        left:10%;
+        right: 10%;
+        bottom: 80px;
+        max-width:380px;
+    }
+
+
+
+
+    .pro_nav 
+    {
+        position: absolute;
+        right:5%;
+        bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        z-index:10;
+        gap:1em;
+        text-align: right;
+        font-family: "Momo Trust Display", sans-serif;
+    }
+
+    #projects
+    {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+        padding-top:20%;
+    }
+
+ 
+
+ 
+
+
 }
