@@ -19,6 +19,7 @@
     background-size:contain;
     height:100vw;
     text-align: center;
+    background-color: #001A33;
 
 }
 
@@ -209,7 +210,13 @@
     margin-top: 3em;
 }
 
-
+.video_project_bg
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background-color: #001A33;
+}
 
 .video_project_text
 {

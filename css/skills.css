@@ -28,7 +28,7 @@
 {
   width:60%;
   height: auto;
-  margin-top: 3em;
+  padding-top: 3em;
   transform: translateZ(0);
   backface-visibility: hidden;
 
@@ -176,15 +176,23 @@
 
 .grid p{line-height: 1.5em;}
 
-
  
 
 .achievement 
 {
-    margin: auto;
+    margin:0px;
+    padding: 0px;
+    width:100%;
+    padding-bottom: 5em;
+    background: #001A33;
+}
+
+.achievement_bg
+{
+    margin:auto;
     padding: 0px;
     width:70%;
-    padding-bottom: 5em;
+
 }
 
 
@@ -319,7 +327,8 @@ label
     margin: 0 auto;
     width: 100%;
     text-align: center;
-    margin-top: 2em;
+    padding-top: 2em;
+    background-color:#001A33;
 }
 
 .bg_bootom
@@ -426,7 +435,7 @@ label
         margin: auto;
      }
 
-    .achievement 
+    .achievement_bg
     {
         margin: auto;
         padding: 0px;

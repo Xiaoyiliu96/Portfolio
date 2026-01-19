@@ -33,21 +33,7 @@
   #achievement img{width: 100%;}
  
 
-  #education img,
-  #experience img,
-  #skills img,
-  #achievement img,
-  #projects img,
-  #contact_me img,
-  img
-  {
-    margin-top: -2px;
-    padding-top: -2px;
-    margin-bottom: -2px;
-    padding-bottom: -2px;
-    outline: none;
-      
-  }
+ 
 
   .achievement_top
   {
