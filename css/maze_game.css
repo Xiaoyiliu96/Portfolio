@@ -310,22 +310,22 @@ model-viewer
     font-size: 3rem;
   }
 
-.two_columns_left
-{
-  grid-area: two_columns_left;
-}
+  .two_columns_left
+  {
+    grid-area: two_columns_left;
+  }
 
-.two_columns_right
-{
-  grid-area: two_columns_right;
-}
+  .two_columns_right
+  {
+    grid-area: two_columns_right;
+  }
 
-  
-.two_columns
-{
-  grid-template-columns: 1fr;
-  grid-template-areas:'two_columns_right' 'two_columns_left';
-}
+    
+  .two_columns
+  {
+    grid-template-columns: 1fr;
+    grid-template-areas:'two_columns_right' 'two_columns_left';
+  }
 
 
   .download_button a {
@@ -454,27 +454,7 @@ img{max-width: 100%;}
 }
 
 
-@media only screen and (max-width:600px)
-{
-	#project_game
-	{
-		display: none;
-	}
 
-	.column
-	{
-		grid-template-columns: 1fr;
-	}
-
-	#game_description 
-	{
-		max-width: 85%;
-	}
-
-
-
-
-}
 
 /* =====================Project 2===================== */
 
@@ -482,6 +462,9 @@ img{max-width: 100%;}
 {
 	margin-bottom: 10em;
 	margin-top: 10em;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-column-gap:4em;
 }
 
 
@@ -861,4 +844,27 @@ label
 	background: url('../images/maze_game_images/15.png') no-repeat;
 	background-position: center;
 	background-size: cover;
+}
+
+
+@media only screen and (max-width:600px)
+{
+  #project_game
+  {
+    display: none;
+  }
+
+  .column,.two_columns
+  {
+    grid-template-columns: 1fr;
+  }
+
+  #game_description 
+  {
+    max-width: 85%;
+  }
+
+
+
+
 }
