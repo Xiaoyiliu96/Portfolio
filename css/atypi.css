@@ -478,8 +478,21 @@ body
 
   .banner_right
   {
-    padding-bottom:20em;
-    text-shadow: 2px 2px #101C35;
+    text-shadow:-1px -1px 0 #101C35,
+     1px -1px 0 #101C35,
+    -1px  1px 0 #101C35,
+     1px  1px 0 #101C35;
+    font-size: 1em;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 2em;
+  }
+
+  .banner_right li
+  {
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.1em;
   }
 
   .the_great_wave_off_kanagawa
