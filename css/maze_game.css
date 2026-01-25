@@ -30,6 +30,7 @@ iframe
 {
   border: none;
   overflow: hidden;
+  line-height: 30em;
 }
 
 a{color: white;}
@@ -129,7 +130,7 @@ model-viewer
 .image_container_navs {
   position: fixed;
   top: 0;
-  left: 0;         
+  left: 0;  
   width: 100vw;   
   height: 100vh;    
   margin: 0;
@@ -395,7 +396,7 @@ model-viewer
   width:29em;
   position: relative;
   margin-top: 1em;
-  height:29em;        
+  height:29em; 
 }
 
 .face::after
@@ -406,7 +407,7 @@ model-viewer
   left: 50%;
   transform: translateX(-50%);
   width: 5em;
-  height: 4em;            
+  height: 4em;     
 }
 
 .eye
@@ -415,7 +416,7 @@ model-viewer
   width:23px;
   height:23px;
   border-radius: 50%;
-  background-color:#75cbd3;           
+  background-color:#75cbd3;    
 }
 
 .eye::after
@@ -429,7 +430,7 @@ model-viewer
   height: 70%;
   background-color: #000;
   border-radius: 50%;
-            
+     
 }
 
 .face .eye:nth-child(1)
@@ -453,8 +454,7 @@ img{max-width: 100%;}
 	grid-area: face;
 }
 
-
-
+ 
 
 /* =====================Project 2===================== */
 
@@ -571,127 +571,118 @@ img{max-width: 100%;}
 
 
 /* =====================Project 2===================== */
-.props-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap:4em;
-        margin-top: 10em;
-    }
+.props-grid 
+{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+ gap:4em;
+ margin-top: 10em;
+}
 
-    .prop-box {
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-        transition: transform 0.2s ease;
-        background: radial-gradient(circle at top, #1c1c1c, #131629);
-        font-family: "Segoe UI", Arial, sans-serif;
-        color: #eee;
-        margin-bottom: 4em;
-    }
+.prop-box 
+{
+  border-radius: 14px;
+ overflow: hidden;
+ box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+ transition: transform 0.2s ease;
+ background: radial-gradient(circle at top, #1c1c1c, #131629);
+ font-family: "Segoe UI", Arial, sans-serif;
+ color: #eee;
+ margin-bottom: 4em;
+}
 
-    .prop-box:hover {
-        transform: translateY(-6px);
-    }
+.prop-box:hover 
+{
+ transform: translateY(-6px);
+}
 
-    .prop-image {
-        height: 140px;
-        background: #333;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.prop-image
+{
+ height: 140px;
+ background: #333;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
 
-    .prop-image img {
-        max-height: 90px;
-    }
+.prop-image img 
+{
+ max-height: 90px;
+}
 
-    .health { background: linear-gradient(135deg, #b31217, #ff4b4b); }
-    .coin   { background: linear-gradient(135deg, #b68d00, #ffd700); }
-    .key    { background: linear-gradient(135deg, #2c7be5, #6ea8ff); }
-    .trap   { background: linear-gradient(135deg, lightblue, green); }
-    .map1
-    {
-    	background-size: cover;
-    	background: url('../images/maze_game_images/23.png') no-repeat center center;
-    }
-    .map2
-    {
-    	background-size: cover;
-    	background: url('../images/maze_game_images/24.png') no-repeat center center;
-    }
-    .map3
-    {
-    	background-size: cover;
-    	background: url('../images/maze_game_images/25.png') no-repeat center center;
-    }
-    .map4
-    {
-    	background-size: cover;
-    	background: url('../images/maze_game_images/26.png') no-repeat center center;
-    }
+.health { background: linear-gradient(135deg, #b31217, #ff4b4b); }
+.coin   { background: linear-gradient(135deg, #b68d00, #ffd700); }
+.key    { background: linear-gradient(135deg, #2c7be5, #6ea8ff); }
+.trap   { background: linear-gradient(135deg, lightblue, green); }
 
+.map1
+{
+ background-size: cover;
+ background: url('../images/maze_game_images/23.png') no-repeat center center;
+}
+.map2
+{
+ background-size: cover;
+ background: url('../images/maze_game_images/24.png') no-repeat center center;
+}
+.map3
+{
+ background-size: cover;
+ background: url('../images/maze_game_images/25.png') no-repeat center center;
+}
+.map4
+{
+ background-size: cover;
+ background: url('../images/maze_game_images/26.png') no-repeat center center;
+}
 
+ 
 
+.prop-content {
+ padding: 16px;
+}
 
+.prop-title {
+ font-size: 17px;
+ font-weight: bold;
+ margin-bottom: 6px;
+}
 
+.prop-tag {
+ display: inline-block;
+ font-size: 12px;
+ padding: 3px 8px;
+ border-radius: 20px;
+ background: #333;
+ color: #ccc;
+ margin-bottom: 10px;
+}
 
+.prop-text {
+ font-size: 14px;
+ line-height: 1.5;
+ color: #d0d0d0;
+}
 
-
-
-
-
-
-    .prop-content {
-        padding: 16px;
-    }
-
-    .prop-title {
-        font-size: 17px;
-        font-weight: bold;
-        margin-bottom: 6px;
-    }
-
-    .prop-tag {
-        display: inline-block;
-        font-size: 12px;
-        padding: 3px 8px;
-        border-radius: 20px;
-        background: #333;
-        color: #ccc;
-        margin-bottom: 10px;
-    }
-
-    .prop-text {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #d0d0d0;
-    }
-
-    .danger {
-        margin-top: 10px;
-        color: #ff6b6b;
-        font-weight: bold;
-        font-size: 13px;
-    }
+.danger {
+ margin-top: 10px;
+ color: #ff6b6b;
+ font-weight: bold;
+ font-size: 13px;
+}
 
 
 /***********************/
 
-  iframe
-  {
-    width: 100%;
-    margin-top: 2em;
-    margin-bottom: 5em;
-    height: 17em;
-  }
 
-  form
-  {
-    width: 85%;
-  }
-
- 
+#test_video
+{
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 5em;
+  height: 35em;
 }
+
 
 
 
@@ -864,7 +855,26 @@ label
     max-width: 85%;
   }
 
+  #test_video
+  {
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 5em;
+    height:20em;
+  }
+
+
+  form
+  {
+    width: 85%;
+  }
+ 
+
 
 
 
 }
+
+
+
+
