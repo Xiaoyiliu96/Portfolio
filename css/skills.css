@@ -305,21 +305,11 @@ label
 }
 
 
-.fa-google {
+.social_media_buttons a {
   background: white;
   color: black;
 }
 
-.fa-linkedin {
-  background: white;
-  color: black;
-}
-
-
-.fa-instagram {
-  background: white;
-  color: black;
-}
 
 
 .social_media_buttons
