@@ -21,7 +21,7 @@ a{text-decoration: none;}
     font-size: 4em;
     text-align: center;
     position: relative;
-    z-index:40;
+    z-index:30;
 }
 
 .poker_navs a{color:#001A33;}

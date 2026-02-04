@@ -4,7 +4,14 @@ a:hover {
   color: #CEBAA3;
 }
 
-
+div
+{
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  outline: hidden;
+}
  
 
  
@@ -387,7 +394,6 @@ body
 {
   color: #D8C7B0;
   font-family: 'atypi_atlas_title';
-  
   font-size: 3em;
 }
 
