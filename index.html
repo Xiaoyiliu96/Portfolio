@@ -25,7 +25,7 @@
 <!-------wonderland-sidenav--------->
 
 <div class="wonderland-nav" id="wonderland-nav">
-  <a href="#" class="nav-card black" style="margin-top:1em;">Top<span><img src="images/logo/crown.png" width="20px" style="padding-bottom: 5px;"> </span></a>
+  <a href="#nav-list" class="nav-card black" style="margin-top:1em;">Top<span><img src="images/logo/crown.png" width="20px" style="padding-bottom: 5px;"> </span></a>
   <a href="#education" class="nav-card">Education <span>♥</span></a>
   <a href="#experience" class="nav-card black">Work&nbsp;Experience<span>♣</span></a>
   <a href="#skills" class="nav-card">Skills<span>♦</span></a>
@@ -642,34 +642,8 @@
 <script src="js/toggle_menu.js"></script>
 <script type="text/javascript" src="js/slide_up.js"></script>
 
+<script type="text/javascript" src="js/side_nav_animation.js"></script>
 
- 
-<script>
-window.addEventListener("DOMContentLoaded", () => {
-  const navCards = document.querySelectorAll("#wonderland-nav .nav-card");
-
-  navCards.forEach((card, index) => {
-     
-    card.style.transformOrigin = "left center";
-
-    setTimeout(() => {
-      const cardWidth = card.offsetWidth;
-      const jumpX = cardWidth / 20; 
-      const jumpRotate = 0;         
-
-      card.style.transition = "transform 0.5s ease";
-      card.style.transform = `translateX(${jumpX}px) rotate(${jumpRotate}deg)`;
-
-    
-      setTimeout(() => {
-        card.style.transition = "transform 0.3s ease";
-        card.style.transform = "";  works
-      }, 500);
-
-    }, index * 400);  
-  });
-});
-</script>
 
 
 <script src="js/color_change.js"></script>
@@ -678,4 +652,3 @@ window.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
