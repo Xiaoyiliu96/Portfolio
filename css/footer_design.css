@@ -41,7 +41,7 @@ footer
 	color:#70849F;
 	font-family: 'Inter', sans-serif;
 	font-size: 14px;
-	padding-top: 2em;
+	padding-top: 3em;
 }
 
 
@@ -63,6 +63,7 @@ footer
 	margin: 0px;
 	padding: 0px;
 	font-weight: 800;
+	background: none;
 }
 
 .footer_grid ul {
@@ -138,8 +139,14 @@ footer
 .footer_middle_text ul li a:hover, .mymail:hover
 {
 	color: #FAC363;
-	font-weight: bold;
+	
 }
+
+.footer_grid ul li:hover
+{
+	font-weight: bolder;
+}
+
 
 
 .btn_drink 
@@ -204,8 +211,9 @@ footer
       margin: 0px;
       overflow: hidden;
       outline: hidden;
+      padding-top:5em;
 	}
-
+	 
 	.footer_grid 
 	{
 		grid-template-columns: 1fr;
@@ -259,6 +267,11 @@ footer
 	.footer_grid, .footer_booton
 	{
 		max-width: 80%;
+	}
+
+	.footer_middle_text ul .withoutbg
+	{
+		background: none;
 	}
 
 
