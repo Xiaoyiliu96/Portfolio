@@ -304,20 +304,25 @@
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-function() {
-        emailjs.init("4R44izEO1n-dseC1Z");  
+    // Initialize EmailJS with your Public Key
+    (function() {
+        emailjs.init("4R44izEO1n-dseC1Z");
     })();
 
+    // Handle form submission
     document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    emailjs.sendForm('service_1zyi415', 'template_zkfyzoh', this)
-    .then(function(response) {
-        alert('Email sent successfully!');
-     }, function(error) {
-    console.error('EmailJS Error:', error);
-    alert('Email sending failed! Please check the console for more details.');
-    });
+        // Use 'this' to refer to the form being submitted
+        emailjs.sendForm('service_1zyi415', 'template_zkfyzoh', this)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Email sent successfully!');
+            }, function(error) {
+                console.error('EmailJS Error:', error);
+                alert('Email sending failed! Please check the console for more details.');
+            });
+    }); // Added the missing closing bracket and parenthesis here
 </script>
 
 
