@@ -34,7 +34,8 @@ const data = [
         img: 'url("images/project_images/CAD.jpg")',
         software:"Software: AutoCAD",
         link: "cad_blueprints.html"
-    },
+    }
+    /*,
 
     { 
         title: "OP-ED", 
@@ -43,7 +44,7 @@ const data = [
         img: 'url("images/project_images/op_ed_animation.gif")',
         software:"Software: Adobe Photoshop & Google PowerPoint",
         link: "https://docs.google.com/presentation/d/1EtfpYpQDQh5bsWt8w8PleQaQcUt8bpUC/edit?slide=id.p1#slide=id.p1"
-    }
+    }*/
 
 ];
 
