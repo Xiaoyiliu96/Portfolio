@@ -21,7 +21,7 @@ const data = [
     { 
         title: "Covid-19 Poster", 
         sub: "3D Typography Poster Design", 
-        desc: "This 3D typography poster series explores the impact of COVID-19 beyond human health, addressing its connection to environmental pollution and the shared need for clean air. Using photographed masks as physical objects transformed into three-dimensional typographic forms, the project visualizes the tension between protection and restriction. The concept reflects the idea that while masks protect against COVID-19, they do not shield humans—or the planet—from environmental damage. Through bold color contrasts, expressive type, and layered compositions, the work emphasizes that under COVID-19, not only humans, but animals and the environment are deeply affected.", 
+        desc: "This poster is a compelling visual commentary on the dual nature of face masks during the pandemic—serving as essential tools for human safety while simultaneously becoming a significant source of environmental waste.", 
         img: 'url("images/project_images/covid19_poster.jpg")',
         software:"Software: Adobe InDesign & Adobe Photoshop",
         link: "covid19_posters.html"

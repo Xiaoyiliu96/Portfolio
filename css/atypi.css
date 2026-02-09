@@ -375,10 +375,10 @@ body
 
 .product_detail
 {
-  max-width: 1024px;
+  max-width:100%;
   height: auto;
   padding: 0px;
-  margin:auto;
+  margin:0px;
 
 }
 
@@ -439,9 +439,9 @@ body
 
 .product_detail_text
 {
-  max-width: 100%;
+  max-width: 1024px;
   height: auto;
-  margin: 0px;
+  margin: 0 auto;
 
 }
 
@@ -694,7 +694,7 @@ label
    margin-top: 2em;
  }
 
- .detail-label
+ .detail_label
  {
   text-transform: uppercase;
   font-weight: bold;
@@ -829,3 +829,13 @@ label
  
 }
 
+
+p
+{
+  line-height: 1.5em;
+}
+
+.artwork_title
+{
+  font-style: italic;
+}
