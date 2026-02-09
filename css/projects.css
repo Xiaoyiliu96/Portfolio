@@ -89,7 +89,7 @@
     line-height: 2em;
     padding: 0.7em;
     margin-top: 3em;
-
+    width:200px;
 }
 
 #detail-btn:hover {
@@ -273,3 +273,10 @@
 
 
 }
+
+
+.content p button
+{
+    z-index: 999;
+}
+
