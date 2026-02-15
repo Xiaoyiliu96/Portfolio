@@ -4,8 +4,8 @@
   margin:0px;
   padding: 0px;
   background: #001A33;
-  margin:-5px 0px;
-  padding:-5px 0px;
+  margin:0px;
+  padding:0px;
 }
 
 #experience
@@ -25,88 +25,233 @@
 
 
 
- .experience_bg
-{
-    background: url("../images/bgimages/Alice-web-design_03_3.gif") no-repeat top center;
-    background-size:cover;
-    max-width:70%;
-    margin:auto;
-    padding: 0px;
-    color: white;
-    padding-bottom: 20em;
-        
- }
-
- .three_columns
- {
-    width: 100%;
-    display: grid;
-    grid-template-columns:1fr 0.5fr 1fr;
- }
-
- .experience_text_left
- {
-    text-align: left;
-    width: 100%;
-    padding-top: 20em;
- }
-
- .experience_text_right
- {
-    text-align: right;
-    width: 100%;
-    padding-top: 20em;
- }
-
- .experience_text_right h2,  .experience_text_left h2
- {
-    font-size: 1.2em;
-    color: #FCC564;
-    text-transform: uppercase;
-    font-family: 'Helvetica';
-    line-height: 2em;
- }
-
-  .experience_text_right p,  .experience_text_left p
- {
-
-    line-height: 1.3em;
-    padding-bottom: 1em;
- }
-
 
 
 @media screen and (max-width: 768px) 
 {
   
   .experience_bg {
-    max-width: 80%;  
-    padding-bottom: 5em; 
-    background: none !important;
-    } 
+  max-width:90%;
+  margin: 0 auto;  
+  padding-bottom: 5em; 
+  background: none !important;
+  } 
 
-  .three_columns {
-    display: block;  
-    margin-bottom: 5em;
-    border-top: 1px dashed #ff4d4d;  
-  }
 
-  .experience_text_right, 
-  .experience_text_left {
-    text-align: left;  
-    padding-top: 2em;  
-    width: 100%;
-  }
 
   #work_experience .experience_bg
   {
-    background: none !important;
+  background: none !important;
   }
 
 
 }
 
+:root {
+--bg-color: #001A33;
+--white: #ffffff;
+--gold: #FFB347;
+}
 
+ 
+.experience_bg {
+color: var(--white);
+font-family: 'Arial', sans-serif;
+display: flex;
+justify-content: center;
+padding: 40px 20px;
+}
 
+.work_container 
+{
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.top-line 
+{
+  width: 8px;
+  height: 60px;
+  background-color: var(--white);
+  margin-bottom: -2px;
+}
 
+/* The Ornate Watch Case */
+.watch_case 
+{
+  width: 140px;
+  height: 140px;
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  position: relative;
+  background: var(--bg-color);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch_case::before {
+content: '';
+position: absolute;
+top: -22px;
+width: 24px;
+height: 14px;
+background: var(--white);
+border-radius: 4px;
+}
+
+.watch_case::after {
+content: '';
+position: absolute;
+top: -45px;
+width: 30px;
+height: 30px;
+border: 3px solid var(--white);
+border-radius: 50%;
+}
+
+.inner_ring {
+width: 115px;
+height: 115px;
+border: 2px solid var(--white);
+border-radius: 50%;
+position: relative;
+}
+
+.num {
+position: absolute;
+width: 100%;
+height: 100%;
+text-align: center;
+font-size: 13px;
+font-weight: bold;
+color: var(--white);
+padding-top: 5px;
+transform-origin: center;
+}
+
+/* Clock Hands */
+.hand {
+position: absolute;
+bottom: 50%;
+left: 50%;
+transform-origin: bottom center;
+background: var(--white);
+border-radius: 4px;
+transform: translateX(-50%);
+}
+
+.hour-hand { width: 5px; height: 30px; z-index: 3; }
+.min-hand { width: 4px; height: 45px; z-index: 2; }
+.sec-hand { width: 2px; height: 50px; background: var(--gold); z-index: 4; }
+
+.center_dot 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--white);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.work_experience_timeline_line 
+{
+  width: 8px;
+  background-color: var(--white);
+  position: absolute;
+  top: 180px;
+  bottom: 0;
+  z-index: 1;
+}
+
+.work_experience_content_wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
+  z-index: 5;
+  padding-bottom: 5em;
+}
+
+.left_col 
+{ 
+  flex: 1; 
+  text-align: right; 
+  padding-right: 60px;
+}
+
+.right_col 
+{ 
+  flex: 1; 
+  text-align: left; 
+  padding-left: 60px;
+}
+
+.date_text 
+{ 
+  color: var(--gold); 
+  font-weight: bold; 
+  font-size: 1.1rem; 
+  margin-bottom: 5px; 
+}
+
+.org 
+{ 
+  font-weight: bold; 
+  font-size: 1rem; 
+  line-height: 1.4; 
+  margin-bottom: 5px; 
+}
+
+.loc 
+{ 
+  font-size: 0.9rem; 
+  opacity: 0.8; 
+  font-style: italic; 
+}
+
+.work_experience_job_title 
+{ 
+  color: var(--gold); 
+  font-weight: bold; 
+  font-size: 1.1rem; 
+  margin-bottom: 10px; 
+  text-transform: uppercase; 
+}
+
+.work_experience_desc 
+{ 
+  font-size: 0.95rem; 
+  line-height: 1.6; 
+  margin-bottom: 12px; 
+}
+
+@media (max-width: 768px) 
+{
+  .work_experience_content_wrapper 
+  { 
+    flex-direction: column; 
+    padding-bottom: 2em;
+    border-bottom: 1px dashed orange;
+    padding-top: 5em;
+  }
+
+  .left_col, .right_col 
+  { 
+    text-align: left; 
+    padding: 0px; 
+  }
+
+  .work_experience_timeline_line { display:none; }
+  .watch_case { display:none; }
+  .top-line { display: none; }
+  .inner_ring{display: none;}
+}
