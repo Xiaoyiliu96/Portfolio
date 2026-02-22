@@ -208,7 +208,7 @@ transform: translateX(-50%);
   font-weight: bold; 
   font-size: 1rem; 
   line-height: 1.4; 
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .loc 
@@ -247,7 +247,8 @@ transform: translateX(-50%);
   .left_col, .right_col 
   { 
     text-align: left; 
-    padding: 0px; 
+    padding: 0px;
+    padding-top: 2em; 
   }
 
   .work_experience_timeline_line { display:none; }
