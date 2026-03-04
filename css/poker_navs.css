@@ -177,3 +177,55 @@ a{text-decoration: none;}
 
 
 /*******************/
+
+
+.poker_navs a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1.5em; 
+}
+
+
+.poker_navs .icon {
+    display: inline-block;
+    transition: all 0.4s ease;
+    opacity: 1;
+}
+
+
+.poker_navs .poker_nav_text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    font-size: 0.25em; 
+    font-family: "Momo Trust Display", sans-serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    letter-spacing: 1px;
+}
+
+
+.poker_navs a:hover .icon {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+
+.poker_navs a:hover .poker_nav_text {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.red_poker_nav a:hover .poker_nav_text {
+    color: var(--accent-red);
+}
+
+.poker_nav a:hover .poker_nav_text {
+    color: #001A33;
+}
