@@ -203,6 +203,11 @@
     text-decoration: none;
     transition: color 0.3s ease, letter-spacing 0.3s ease, transform 0.3s ease;
     margin: 1em 0;
+    text-shadow: 
+    -1px -1px 0 #001A33,  
+     1px -1px 0 #001A33,
+    -1px  1px 0 #001A33,
+     1px  1px 0 #001A33;
   }
 
   .nav-links a:hover {
@@ -289,3 +294,42 @@
 
  
 /*********☰****************/ 
+
+/* about_me_resume*/
+.about_me_resume {
+  position: relative;
+  list-style: none;
+}
+
+.sub_resume {
+  display: none;
+  position: absolute; 
+  top: 100%;          
+  left: 0;
+  padding: 10px;
+  z-index: 10;   
+}
+
+.about_me_resume:hover .sub_resume {
+  display: block;
+}
+
+
+.sub_resume ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sub_resume ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 5px 10px;
+  text-shadow: 
+    -1px -1px 0 #001A33,  
+     1px -1px 0 #001A33,
+    -1px  1px 0 #001A33,
+     1px  1px 0 #001A33;
+}
+
