@@ -117,6 +117,7 @@
     opacity: 0.4;
     transition: 0.3s;
     color: #FAC363;
+    font-weight: bolder;
 }
 
 .nav-item.active,
@@ -152,6 +153,7 @@
     padding: 0px;
     width: 100%;
     background-color: #001A33;
+    padding-top: 6em;
 }
 
 
@@ -161,7 +163,7 @@
     background: #001A33;
     padding: 0px;
     margin:auto;
-    padding-top: 3em;
+    padding-top:5em;
     text-align: center;
 }
 
@@ -181,7 +183,7 @@
     margin: 0px;
     text-align: left;
     padding: 0px;
-    margin-top: 2em;
+    margin-top: 5em;
     width:100%;
 }
 

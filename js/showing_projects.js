@@ -46,6 +46,20 @@ const data = [
         link: "https://docs.google.com/presentation/d/1EtfpYpQDQh5bsWt8w8PleQaQcUt8bpUC/edit?slide=id.p1#slide=id.p1"
     }*/
 
+    ,
+
+    { 
+        title: "Superstore Tableau Project", 
+        sub: "Data Validation Project", 
+        desc: "This project involved a comprehensive data analysis of a global retail dataset to transform raw transactional records into actionable business intelligence. Utilizing Tableau, I developed an end-to-end analytical framework to evaluate sales performance, profitability cycles, and supply chain efficiency across the Americas, APAC, and EMEA regions.", 
+        img: 'url("images/project_images/Superstore_Tableau_Project.jpg")',
+        software:"Software: Tableau Desktop & Excel",
+        link: 'tableau_project.html'
+    }
+
+
+
+
 ];
 
 function switchTab(index) {
