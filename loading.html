@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Wonderland</title>
+    <link rel="shortcut icon" href="images/logo/logo_black.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #001A33;
+            --text-color: #ffffff;
+            --accent-color: orange; 
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body, html {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            overflow: hidden; 
+        }
+
+        #loader-container {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1200px; 
+            z-index: 1000;
+            background: radial-gradient(circle at center, #111 0%, #001A33 100%);
+            /* Smooth exit transition */
+            transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.8s ease;
+        }
+
+        #tunnel {
+            transform-style: preserve-3d;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .word {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(2rem, 10vw, 5rem); 
+            font-weight: 900;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            pointer-events: none;
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+
+        .ui-elements {
+            position: fixed;
+            bottom: 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: 1001;
+        }
+
+        .scroll-hint {
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            opacity: 0.4;
+            text-transform: uppercase;
+        }
+
+        .bar-bg {
+            width: 120px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #bar-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-color);
+            transition: width 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader-container">
+        <div id="tunnel"></div>
+        <div class="ui-elements">
+            <div class="scroll-hint">Scroll to Enter</div>
+            <div class="bar-bg"><div id="bar-fill"></div></div>
+        </div>
+    </div>
+
+    <script>
+        // Data from your user profile: Xiaoyi Liu, Digital Designer & Data Analyst
+        const words = [
+            "Hello!",
+            "I'm Xiaoyi",
+            "Welcome to My Wordland",
+            "Digital Designer", 
+            "Web Designer", 
+            "Graphic Designer", 
+            "Data Analyst",
+            "Entering My Portfolio..."
+        ];
+
+        const tunnel = document.getElementById('tunnel');
+        const loader = document.getElementById('loader-container');
+        const barFill = document.getElementById('bar-fill');
+        
+        let scrollZ = 0;
+        let isTransitioning = false;
+        
+        const spacing = 1800; 
+        const totalDepth = (words.length - 1) * spacing;
+        const wordElements = [];
+
+        function init() {
+            words.forEach((text, i) => {
+                const el = document.createElement('div');
+                el.className = 'word';
+                el.innerText = text;
+                tunnel.appendChild(el);
+                wordElements.push({ el: el, initialZ: i * -spacing });
+            });
+            render();
+        }
+
+        function render() {
+            const progress = Math.min(100, (scrollZ / totalDepth) * 100);
+            barFill.style.width = `${progress}%`;
+
+            wordElements.forEach((item) => {
+                const z = item.initialZ + scrollZ;
+                let opacity = 0;
+
+                if (z > -2500 && z < 600) {
+                    if (z < -1000) opacity = (z + 2500) / 1500;
+                    else if (z <= 200) opacity = 1;
+                    else opacity = 1 - (z - 200) / 400;
+                }
+
+                const blur = Math.max(0, Math.abs(z) / 150);
+                const rotate = z * 0.1; 
+
+                item.el.style.transform = `translate(-50%, -50%) translateZ(${z}px) rotateZ(${rotate}deg)`;
+                item.el.style.opacity = Math.max(0, opacity);
+                item.el.style.filter = `blur(${blur}px)`;
+                
+                if (z > -200 && z < 200) {
+                    item.el.style.color = 'var(--accent-color)';
+                } else {
+                    item.el.style.color = 'white';
+                }
+            });
+
+            // Trigger the link once you pass the final word
+            if (scrollZ > totalDepth + 500 && !isTransitioning) {
+                jumpToIndex();
+            }
+        }
+
+        function handleScroll(e) {
+            if (isTransitioning) return;
+            scrollZ += e.deltaY * 0.8;
+            if (scrollZ < 0) scrollZ = 0;
+            requestAnimationFrame(render);
+        }
+
+        function jumpToIndex() {
+            isTransitioning = true;
+            
+            // Visual "Zoom-In" effect before changing the URL
+            loader.style.transform = "scale(4) translateZ(2000px)";
+            loader.style.opacity = "0";
+
+            setTimeout(() => {
+                // Navigate to your existing index.html
+                window.location.href = "index.html"; 
+            }, 800);
+        }
+
+        window.addEventListener('wheel', handleScroll);
+        init();
+    </script>
+</body>
+</html>

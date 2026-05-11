@@ -19,9 +19,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/footer_design.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
 </head>
 
 <body>
+<script>
+    if (!sessionStorage.getItem('hasRedirected')) {
+        sessionStorage.setItem('hasRedirected', 'true');
+        window.location.replace('loading.html');
+    }
+</script>
+
 <!-------wonderland-sidenav--------->
 
 <div class="wonderland-nav" id="wonderland-nav">
