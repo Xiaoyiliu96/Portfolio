@@ -103,17 +103,10 @@
     </div>
 
     <script>
-        // Data from your user profile: Xiaoyi Liu, Digital Designer & Data Analyst
         const words = [
             "Hello!",
             "I'm Xiaoyi",
-            "Welcome to My Wordland",
-            "I am a",
-            "Digital Designer", 
-            "Web Designer", 
-            "Graphic Designer", 
-            "Data Analyst",
-            "Entering My Portfolio..."
+            "Welcome to My profile"
         ];
 
         const tunnel = document.getElementById('tunnel');
@@ -166,7 +159,7 @@
                 }
             });
 
-            // Trigger the link once you pass the final word
+
             if (scrollZ > totalDepth + 500 && !isTransitioning) {
                 jumpToIndex();
             }
@@ -182,12 +175,10 @@
         function jumpToIndex() {
             isTransitioning = true;
             
-            // Visual "Zoom-In" effect before changing the URL
             loader.style.transform = "scale(4) translateZ(2000px)";
             loader.style.opacity = "0";
 
             setTimeout(() => {
-                // Navigate to your existing index.html
                 window.location.href = "index.html"; 
             }, 800);
         }
