@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #001A33;
+            --bg: #030712;
             --text-color: #ffffff;
-            --accent-color: orange; 
+            --accent-color: #00f0ff; 
             --font-family: 'Inter', sans-serif;
         }
 
@@ -27,21 +27,27 @@
         #loader-container {
             position: fixed;
             inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            perspective: 1200px; 
             z-index: 1000;
-            background: radial-gradient(circle at center, #111 0%, #001A33 100%);
-            /* Smooth exit transition */
+            background: #030712;
             transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.8s ease;
         }
 
-        #tunnel {
-            transform-style: preserve-3d;
+        #canvas-container {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
-            position: relative;
+            z-index: 1;
+        }
+
+        #tunnel {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            perspective: 1200px; 
+            z-index: 2;
+            pointer-events: none;
         }
 
         .word {
@@ -57,6 +63,8 @@
             pointer-events: none;
             opacity: 0;
             will-change: transform, opacity;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0);
+            transition: text-shadow 0.3s ease, color 0.3s ease;
         }
 
         .ui-elements {
@@ -73,8 +81,10 @@
         .scroll-hint {
             font-size: 0.7rem;
             letter-spacing: 5px;
-            opacity: 0.4;
+            opacity: 0.6;
             text-transform: uppercase;
+            color: #00f0ff;
+            text-shadow: 0 0 8px #00b4d8;
         }
 
         .bar-bg {
@@ -91,10 +101,12 @@
             transition: width 0.2s ease;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
     <div id="loader-container">
+        <div id="canvas-container"></div>
         <div id="tunnel"></div>
         <div class="ui-elements">
             <div class="scroll-hint">Scroll to Enter</div>
@@ -109,7 +121,7 @@
             "Welcome to My profile"
         ];
 
-        const tunnel = document.getElementById('tunnel');
+        const tunnelDOM = document.getElementById('tunnel');
         const loader = document.getElementById('loader-container');
         const barFill = document.getElementById('bar-fill');
         
@@ -120,20 +132,159 @@
         const totalDepth = (words.length - 1) * spacing;
         const wordElements = [];
 
-        function init() {
+        let scene, camera, renderer, tunnelMesh, texture, cardsGroup;
+        const cardsArray = [];
+        let tunnelCurve;
+
+        function initDOMWords() {
             words.forEach((text, i) => {
                 const el = document.createElement('div');
                 el.className = 'word';
                 el.innerText = text;
-                tunnel.appendChild(el);
+                tunnelDOM.appendChild(el);
                 wordElements.push({ el: el, initialZ: i * -spacing });
             });
-            render();
+        }
+
+        function initThree() {
+            const container = document.getElementById('canvas-container');
+            scene = new THREE.Scene();
+            scene.fog = new THREE.FogExp2(0x02050c, 0.015);
+
+            camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.outputEncoding = THREE.sRGBEncoding;
+            container.appendChild(renderer.domElement);
+
+            const points = [];
+            for (let i = 0; i < 120; i++) {
+                points.push(new THREE.Vector3(
+                    Math.sin(i * 0.12) * 4.5,
+                    Math.cos(i * 0.08) * 3.5,
+                    i * 12
+                ));
+            }
+            tunnelCurve = new THREE.CatmullRomCurve3(points);
+            const tunnelGeometry = new THREE.TubeGeometry(tunnelCurve, 200, 15, 32, false);
+
+            const canvas = document.createElement('canvas');
+            canvas.width = 512; canvas.height = 512;
+            const ctx = canvas.getContext('2d');
+            const gradient = ctx.createLinearGradient(0, 0, 512, 0);
+            gradient.addColorStop(0, '#010307');   
+            gradient.addColorStop(0.2, '#051021'); 
+            gradient.addColorStop(0.45, '#00b4d8'); 
+            gradient.addColorStop(0.55, '#d946ef'); 
+            gradient.addColorStop(0.8, '#0b1d3a');  
+            gradient.addColorStop(1, '#010307');   
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 512, 512);
+
+            ctx.fillStyle = '#ffffff';
+            for(let i=0; i<40; i++) {
+                ctx.globalAlpha = Math.random() * 0.4 + 0.2;
+                ctx.beginPath();
+                ctx.arc(Math.random()*512, Math.random()*512, Math.random()*2+1, 0, Math.PI*2);
+                ctx.fill();
+            }
+            ctx.globalAlpha = 1.0;
+
+            texture = new THREE.CanvasTexture(canvas);
+            texture.wrapS = THREE.RepeatWrapping;
+            texture.wrapT = THREE.RepeatWrapping;
+            texture.repeat.set(6, 1);
+
+            const tunnelMaterial = new THREE.MeshStandardMaterial({
+                map: texture,
+                side: THREE.BackSide,
+                roughness: 0.5,
+                metalness: 0.1
+            });
+            tunnelMesh = new THREE.Mesh(tunnelGeometry, tunnelMaterial);
+            scene.add(tunnelMesh);
+
+            setupPlayingCards();
+            setupLights();
+        }
+
+        function createSvgTexture(svgMarkup) {
+            const img = new Image();
+            const svg = new Blob([svgMarkup], {type: 'image/svg+xml;charset=utf-8'});
+            const url = URL.createObjectURL(svg);
+            const tex = new THREE.Texture();
+            img.onload = () => {
+                tex.image = img;
+                tex.needsUpdate = true;
+                URL.revokeObjectURL(url);
+            };
+            img.src = url;
+            return tex;
+        }
+
+        function setupPlayingCards() {
+            const createCardSvg = (suit, color) => `
+            <svg xmlns="http://www.w3.org/2000/svg" width="256" height="364" viewBox="0 0 256 364">
+                <rect width="256" height="364" rx="15" fill="#fcfcfc" stroke="#e0e0e0" stroke-width="2"/>
+                <text x="25" y="45" font-family="'Georgia', serif" font-size="32" font-weight="bold" fill="${color}" text-anchor="middle">A</text>
+                <text x="25" y="75" font-family="serif" font-size="28" fill="${color}" text-anchor="middle">${suit}</text>
+                <g transform="rotate(180 128 182)">
+                    <text x="25" y="45" font-family="'Georgia', serif" font-size="32" font-weight="bold" fill="${color}" text-anchor="middle">A</text>
+                    <text x="25" y="75" font-family="serif" font-size="28" fill="${color}" text-anchor="middle">${suit}</text>
+                </g>
+                <text x="128" y="215" font-family="serif" font-size="140" fill="${color}" text-anchor="middle" dominant-baseline="middle">${suit}</text>
+            </svg>`;
+
+            const texHeart = createSvgTexture(createCardSvg('♥', '#ff0055'));
+            const texSpade = createSvgTexture(createCardSvg('♠', '#111622'));
+            const texDiamond = createSvgTexture(createCardSvg('♦', '#ff0055'));
+            const texClub = createSvgTexture(createCardSvg('♣', '#111622'));
+
+            cardsGroup = new THREE.Group();
+            const cardGeo = new THREE.BoxGeometry(4.2, 6.0, 0.12);
+            const cardBaseMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.15, metalness: 0.05, clearcoat: 1.0 });
+
+            const config = [
+                { tex: texHeart, offsetPos: new THREE.Vector3(-3.5, 2.0, -3), rotSpeed: { x: 1.2, y: 0.8, z: 0.3 } },
+                { tex: texSpade, offsetPos: new THREE.Vector3(3.5, -2.0, 1), rotSpeed: { x: -0.9, y: 1.3, z: -0.4 } },
+                { tex: texDiamond, offsetPos: new THREE.Vector3(2.5, 3.0, -5), rotSpeed: { x: 0.7, y: -1.0, z: 0.9 } },
+                { tex: texClub, offsetPos: new THREE.Vector3(-2.5, -3.0, -1), rotSpeed: { x: 1.1, y: 0.6, z: -0.7 } }
+            ];
+
+            config.forEach(cfg => {
+                const cardFrontMat = new THREE.MeshStandardMaterial({ map: cfg.tex, roughness: 0.2 });
+                const materials = [cardBaseMat, cardBaseMat, cardBaseMat, cardBaseMat, cardFrontMat, cardFrontMat];
+                
+                const singleCardMesh = new THREE.Mesh(cardGeo, materials);
+                const singleGroup = new THREE.Group();
+                
+                singleCardMesh.position.copy(cfg.offsetPos);
+                singleGroup.add(singleCardMesh);
+                
+                cardsGroup.add(singleGroup);
+                cardsArray.push({ group: singleGroup, speed: cfg.rotSpeed });
+            });
+
+            scene.add(cardsGroup);
+        }
+
+        function setupLights() {
+            const ambientLight = new THREE.AmbientLight(0x020b18, 1.3); 
+            scene.add(ambientLight);
+            
+            const spotLightWarm = new THREE.SpotLight(0xffb86c, 6.0, 40, Math.PI/3, 0.5);
+            spotLightWarm.position.set(8, 8, 15);
+            scene.add(spotLightWarm);
+
+            const spotLightCyan = new THREE.SpotLight(0x00f0ff, 7.0, 40, Math.PI/3, 0.5);
+            spotLightCyan.position.set(-8, -8, 15);
+            scene.add(spotLightCyan);
         }
 
         function render() {
-            const progress = Math.min(100, (scrollZ / totalDepth) * 100);
-            barFill.style.width = `${progress}%`;
+            const progressRatio = Math.min(100, (scrollZ / totalDepth) * 100);
+            barFill.style.width = `${progressRatio}%`;
 
             wordElements.forEach((item) => {
                 const z = item.initialZ + scrollZ;
@@ -153,12 +304,13 @@
                 item.el.style.filter = `blur(${blur}px)`;
                 
                 if (z > -200 && z < 200) {
-                    item.el.style.color = 'var(--accent-color)';
+                    item.el.style.color = '#00f0ff';
+                    item.el.style.textShadow = '0 0 20px #00b4d8, 0 0 40px #d946ef';
                 } else {
                     item.el.style.color = 'white';
+                    item.el.style.textShadow = '0 0 20px rgba(0, 240, 255, 0)';
                 }
             });
-
 
             if (scrollZ > totalDepth + 500 && !isTransitioning) {
                 jumpToIndex();
@@ -183,8 +335,51 @@
             }, 800);
         }
 
+        function animateThree() {
+            requestAnimationFrame(animateThree);
+            
+            if (renderer && scene && camera) {
+                const time = performance.now() * 0.001;
+
+                texture.offset.y = time * 0.16;
+                texture.offset.x = Math.sin(time * 0.04) * 0.02;
+
+                const normalizedProgress = Math.min(0.92, (scrollZ / (totalDepth + 500)) * 0.92);
+                
+                const camPos = tunnelCurve.getPointAt(normalizedProgress);
+                const camTarget = tunnelCurve.getPointAt(Math.min(1, normalizedProgress + 0.01));
+                
+                camera.position.copy(camPos);
+                camera.lookAt(camTarget);
+
+                const propsPos = tunnelCurve.getPointAt(Math.min(1, normalizedProgress + 0.07));
+                cardsGroup.position.copy(propsPos);
+                cardsGroup.rotation.z = time * 0.08; 
+
+                cardsArray.forEach(item => {
+                    item.group.rotation.x = time * item.speed.x;
+                    item.group.rotation.y = time * item.speed.y;
+                    item.group.rotation.z = time * item.speed.z;
+                });
+
+                renderer.render(scene, camera);
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            if (camera && renderer) {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+        });
+
         window.addEventListener('wheel', handleScroll);
-        init();
+        
+        initDOMWords();
+        initThree();
+        render();
+        animateThree();
     </script>
 </body>
 </html>
