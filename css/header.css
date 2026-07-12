@@ -333,3 +333,32 @@
      1px  1px 0 #001A33;
 }
 
+/***********Vedio Banner****************/
+
+.hero{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* Background Video */
+.hero video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+}
+
+/* Dark Overlay */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+}
+
