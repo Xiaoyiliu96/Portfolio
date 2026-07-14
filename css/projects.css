@@ -279,6 +279,6 @@
 
 .content p button
 {
-    z-index: 999;
+    z-index:60;
 }
 
