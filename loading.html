@@ -22,6 +22,7 @@
             color: var(--text-color);
             font-family: var(--font-family);
             overflow: hidden; 
+            overscroll-behavior: none; /* Prevents mobile bounce */
         }
 
         #loader-container {
@@ -115,23 +116,18 @@
     </div>
 
     <script>
-        const words = [
-            "Hello!",
-            "I'm Xiaoyi",
-            "Welcome to My profile"
-        ];
-
+        const words = ["Hello!", "I'm Xiaoyi", "Welcome to My profile"];
         const tunnelDOM = document.getElementById('tunnel');
         const loader = document.getElementById('loader-container');
         const barFill = document.getElementById('bar-fill');
         
         let scrollZ = 0;
         let isTransitioning = false;
+        let touchStartY = 0;
         
         const spacing = 1800; 
         const totalDepth = (words.length - 1) * spacing;
         const wordElements = [];
-
         let scene, camera, renderer, tunnelMesh, texture, cardsGroup;
         const cardsArray = [];
         let tunnelCurve;
@@ -150,7 +146,6 @@
             const container = document.getElementById('canvas-container');
             scene = new THREE.Scene();
             scene.fog = new THREE.FogExp2(0x02050c, 0.015);
-
             camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
             renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
             renderer.setSize(window.innerWidth, window.innerHeight);
@@ -160,11 +155,7 @@
 
             const points = [];
             for (let i = 0; i < 120; i++) {
-                points.push(new THREE.Vector3(
-                    Math.sin(i * 0.12) * 4.5,
-                    Math.cos(i * 0.08) * 3.5,
-                    i * 12
-                ));
+                points.push(new THREE.Vector3(Math.sin(i * 0.12) * 4.5, Math.cos(i * 0.08) * 3.5, i * 12));
             }
             tunnelCurve = new THREE.CatmullRomCurve3(points);
             const tunnelGeometry = new THREE.TubeGeometry(tunnelCurve, 200, 15, 32, false);
@@ -173,68 +164,37 @@
             canvas.width = 512; canvas.height = 512;
             const ctx = canvas.getContext('2d');
             const gradient = ctx.createLinearGradient(0, 0, 512, 0);
-            gradient.addColorStop(0, '#010307');   
-            gradient.addColorStop(0.2, '#051021'); 
-            gradient.addColorStop(0.45, '#00b4d8'); 
-            gradient.addColorStop(0.55, '#d946ef'); 
-            gradient.addColorStop(0.8, '#0b1d3a');  
-            gradient.addColorStop(1, '#010307');   
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, 512, 512);
+            gradient.addColorStop(0, '#010307'); gradient.addColorStop(0.2, '#051021');
+            gradient.addColorStop(0.45, '#00b4d8'); gradient.addColorStop(0.55, '#d946ef');
+            gradient.addColorStop(0.8, '#0b1d3a'); gradient.addColorStop(1, '#010307');
+            ctx.fillStyle = gradient; ctx.fillRect(0, 0, 512, 512);
 
             ctx.fillStyle = '#ffffff';
             for(let i=0; i<40; i++) {
                 ctx.globalAlpha = Math.random() * 0.4 + 0.2;
-                ctx.beginPath();
-                ctx.arc(Math.random()*512, Math.random()*512, Math.random()*2+1, 0, Math.PI*2);
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(Math.random()*512, Math.random()*512, Math.random()*2+1, 0, Math.PI*2); ctx.fill();
             }
-            ctx.globalAlpha = 1.0;
-
             texture = new THREE.CanvasTexture(canvas);
-            texture.wrapS = THREE.RepeatWrapping;
-            texture.wrapT = THREE.RepeatWrapping;
-            texture.repeat.set(6, 1);
+            texture.wrapS = THREE.RepeatWrapping; texture.wrapT = THREE.RepeatWrapping; texture.repeat.set(6, 1);
 
-            const tunnelMaterial = new THREE.MeshStandardMaterial({
-                map: texture,
-                side: THREE.BackSide,
-                roughness: 0.5,
-                metalness: 0.1
-            });
+            const tunnelMaterial = new THREE.MeshStandardMaterial({ map: texture, side: THREE.BackSide, roughness: 0.5, metalness: 0.1 });
             tunnelMesh = new THREE.Mesh(tunnelGeometry, tunnelMaterial);
             scene.add(tunnelMesh);
-
             setupPlayingCards();
             setupLights();
         }
 
-        function createSvgTexture(svgMarkup) {
-            const img = new Image();
-            const svg = new Blob([svgMarkup], {type: 'image/svg+xml;charset=utf-8'});
-            const url = URL.createObjectURL(svg);
-            const tex = new THREE.Texture();
-            img.onload = () => {
-                tex.image = img;
-                tex.needsUpdate = true;
-                URL.revokeObjectURL(url);
-            };
-            img.src = url;
-            return tex;
-        }
-
         function setupPlayingCards() {
-            const createCardSvg = (suit, color) => `
-            <svg xmlns="http://www.w3.org/2000/svg" width="256" height="364" viewBox="0 0 256 364">
-                <rect width="256" height="364" rx="15" fill="#fcfcfc" stroke="#e0e0e0" stroke-width="2"/>
-                <text x="25" y="45" font-family="'Georgia', serif" font-size="32" font-weight="bold" fill="${color}" text-anchor="middle">A</text>
-                <text x="25" y="75" font-family="serif" font-size="28" fill="${color}" text-anchor="middle">${suit}</text>
-                <g transform="rotate(180 128 182)">
-                    <text x="25" y="45" font-family="'Georgia', serif" font-size="32" font-weight="bold" fill="${color}" text-anchor="middle">A</text>
-                    <text x="25" y="75" font-family="serif" font-size="28" fill="${color}" text-anchor="middle">${suit}</text>
-                </g>
-                <text x="128" y="215" font-family="serif" font-size="140" fill="${color}" text-anchor="middle" dominant-baseline="middle">${suit}</text>
-            </svg>`;
+            // ... (SVG logic remains the same)
+            const createCardSvg = (suit, color) => `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="364" viewBox="0 0 256 364"><rect width="256" height="364" rx="15" fill="#fcfcfc" stroke="#e0e0e0" stroke-width="2"/><text x="25" y="45" font-family="'Georgia', serif" font-size="32" font-weight="bold" fill="${color}" text-anchor="middle">A</text><text x="25" y="75" font-family="serif" font-size="28" fill="${color}" text-anchor="middle">${suit}</text><g transform="rotate(180 128 182)"><text x="25" y="45" font-family="'Georgia', serif" font-size="32" font-weight="bold" fill="${color}" text-anchor="middle">A</text><text x="25" y="75" font-family="serif" font-size="28" fill="${color}" text-anchor="middle">${suit}</text></g><text x="128" y="215" font-family="serif" font-size="140" fill="${color}" text-anchor="middle" dominant-baseline="middle">${suit}</text></svg>`;
+            const createSvgTexture = (svgMarkup) => {
+                const img = new Image();
+                const blob = new Blob([svgMarkup], {type: 'image/svg+xml'});
+                const url = URL.createObjectURL(blob);
+                const tex = new THREE.Texture();
+                img.onload = () => { tex.image = img; tex.needsUpdate = true; URL.revokeObjectURL(url); };
+                img.src = url; return tex;
+            };
 
             const texHeart = createSvgTexture(createCardSvg('♥', '#ff0055'));
             const texSpade = createSvgTexture(createCardSvg('♠', '#111622'));
@@ -253,33 +213,21 @@
             ];
 
             config.forEach(cfg => {
-                const cardFrontMat = new THREE.MeshStandardMaterial({ map: cfg.tex, roughness: 0.2 });
-                const materials = [cardBaseMat, cardBaseMat, cardBaseMat, cardBaseMat, cardFrontMat, cardFrontMat];
-                
-                const singleCardMesh = new THREE.Mesh(cardGeo, materials);
-                const singleGroup = new THREE.Group();
-                
-                singleCardMesh.position.copy(cfg.offsetPos);
-                singleGroup.add(singleCardMesh);
-                
-                cardsGroup.add(singleGroup);
-                cardsArray.push({ group: singleGroup, speed: cfg.rotSpeed });
+                const materials = [cardBaseMat, cardBaseMat, cardBaseMat, cardBaseMat, new THREE.MeshStandardMaterial({ map: cfg.tex }), new THREE.MeshStandardMaterial({ map: cfg.tex })];
+                const mesh = new THREE.Mesh(cardGeo, materials);
+                const group = new THREE.Group();
+                mesh.position.copy(cfg.offsetPos);
+                group.add(mesh);
+                cardsGroup.add(group);
+                cardsArray.push({ group, speed: cfg.rotSpeed });
             });
-
             scene.add(cardsGroup);
         }
 
         function setupLights() {
-            const ambientLight = new THREE.AmbientLight(0x020b18, 1.3); 
-            scene.add(ambientLight);
-            
-            const spotLightWarm = new THREE.SpotLight(0xffb86c, 6.0, 40, Math.PI/3, 0.5);
-            spotLightWarm.position.set(8, 8, 15);
-            scene.add(spotLightWarm);
-
-            const spotLightCyan = new THREE.SpotLight(0x00f0ff, 7.0, 40, Math.PI/3, 0.5);
-            spotLightCyan.position.set(-8, -8, 15);
-            scene.add(spotLightCyan);
+            scene.add(new THREE.AmbientLight(0x020b18, 1.3));
+            const spotLight = (color, pos) => { const s = new THREE.SpotLight(color, 6.0, 40, Math.PI/3, 0.5); s.position.set(...pos); scene.add(s); };
+            spotLight(0xffb86c, [8, 8, 15]); spotLight(0x00f0ff, [-8, -8, 15]);
         }
 
         function render() {
@@ -288,98 +236,51 @@
 
             wordElements.forEach((item) => {
                 const z = item.initialZ + scrollZ;
-                let opacity = 0;
-
-                if (z > -2500 && z < 600) {
-                    if (z < -1000) opacity = (z + 2500) / 1500;
-                    else if (z <= 200) opacity = 1;
-                    else opacity = 1 - (z - 200) / 400;
-                }
-
-                const blur = Math.max(0, Math.abs(z) / 150);
-                const rotate = z * 0.1; 
-
-                item.el.style.transform = `translate(-50%, -50%) translateZ(${z}px) rotateZ(${rotate}deg)`;
+                let opacity = (z > -2500 && z < 600) ? (z < -1000 ? (z + 2500) / 1500 : (z <= 200 ? 1 : 1 - (z - 200) / 400)) : 0;
+                item.el.style.transform = `translate(-50%, -50%) translateZ(${z}px) rotateZ(${z * 0.1}deg)`;
                 item.el.style.opacity = Math.max(0, opacity);
-                item.el.style.filter = `blur(${blur}px)`;
-                
-                if (z > -200 && z < 200) {
-                    item.el.style.color = '#00f0ff';
-                    item.el.style.textShadow = '0 0 20px #00b4d8, 0 0 40px #d946ef';
-                } else {
-                    item.el.style.color = 'white';
-                    item.el.style.textShadow = '0 0 20px rgba(0, 240, 255, 0)';
-                }
+                item.el.style.filter = `blur(${Math.max(0, Math.abs(z) / 150)}px)`;
+                item.el.style.color = (z > -200 && z < 200) ? '#00f0ff' : 'white';
             });
 
-            if (scrollZ > totalDepth + 500 && !isTransitioning) {
-                jumpToIndex();
-            }
+            if (scrollZ > totalDepth + 500 && !isTransitioning) jumpToIndex();
         }
 
-        function handleScroll(e) {
+        function handleInput(delta) {
             if (isTransitioning) return;
-            scrollZ += e.deltaY * 0.8;
-            if (scrollZ < 0) scrollZ = 0;
+            scrollZ = Math.max(0, scrollZ + delta);
             requestAnimationFrame(render);
         }
 
         function jumpToIndex() {
             isTransitioning = true;
-            
             loader.style.transform = "scale(4) translateZ(2000px)";
             loader.style.opacity = "0";
-
-            setTimeout(() => {
-                window.location.href = "index.html"; 
-            }, 800);
+            setTimeout(() => window.location.href = "index.html", 800);
         }
 
         function animateThree() {
             requestAnimationFrame(animateThree);
-            
-            if (renderer && scene && camera) {
-                const time = performance.now() * 0.001;
-
-                texture.offset.y = time * 0.16;
-                texture.offset.x = Math.sin(time * 0.04) * 0.02;
-
-                const normalizedProgress = Math.min(0.92, (scrollZ / (totalDepth + 500)) * 0.92);
-                
-                const camPos = tunnelCurve.getPointAt(normalizedProgress);
-                const camTarget = tunnelCurve.getPointAt(Math.min(1, normalizedProgress + 0.01));
-                
-                camera.position.copy(camPos);
-                camera.lookAt(camTarget);
-
-                const propsPos = tunnelCurve.getPointAt(Math.min(1, normalizedProgress + 0.07));
-                cardsGroup.position.copy(propsPos);
-                cardsGroup.rotation.z = time * 0.08; 
-
-                cardsArray.forEach(item => {
-                    item.group.rotation.x = time * item.speed.x;
-                    item.group.rotation.y = time * item.speed.y;
-                    item.group.rotation.z = time * item.speed.z;
-                });
-
-                renderer.render(scene, camera);
-            }
+            const time = performance.now() * 0.001;
+            texture.offset.y = time * 0.16;
+            const progress = Math.min(0.92, (scrollZ / (totalDepth + 500)) * 0.92);
+            camera.position.copy(tunnelCurve.getPointAt(progress));
+            camera.lookAt(tunnelCurve.getPointAt(Math.min(1, progress + 0.01)));
+            cardsGroup.position.copy(tunnelCurve.getPointAt(Math.min(1, progress + 0.07)));
+            cardsArray.forEach(item => {
+                item.group.rotation.set(time * item.speed.x, time * item.speed.y, time * item.speed.z);
+            });
+            renderer.render(scene, camera);
         }
 
-        window.addEventListener('resize', () => {
-            if (camera && renderer) {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            }
-        });
+        window.addEventListener('wheel', (e) => handleInput(e.deltaY * 0.8), { passive: false });
+        window.addEventListener('touchstart', (e) => touchStartY = e.touches[0].clientY, { passive: true });
+        window.addEventListener('touchmove', (e) => {
+            handleInput((touchStartY - e.touches[0].clientY) * 1.5);
+            touchStartY = e.touches[0].clientY;
+        }, { passive: false });
 
-        window.addEventListener('wheel', handleScroll);
-        
-        initDOMWords();
-        initThree();
-        render();
-        animateThree();
+        initDOMWords(); initThree(); render(); animateThree();
     </script>
 </body>
 </html>
