@@ -97,14 +97,32 @@ if (window.innerWidth > 768) {
 
 <section class="hero">
     
-    <video id="bgVideo" autoplay muted playsinline>
+    <video id="bgVideo" autoplay muted playsinline poster="images/bgimages/animation one.png">
         <source src="images/bgimages/banner2.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
     </video>
 
 
 
 </section>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const video = document.getElementById('bgVideo');
+        
+        video.muted = true;
+        
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+            }).catch(error => {
+                console.log("Autoplay prevented, adding click listener to start.");
+                document.addEventListener('click', () => {
+                    video.play();
+                }, { once: true });
+            });
+        }
+    });
+</script>
 
 
 </div><!-----image-container------->
