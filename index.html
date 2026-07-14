@@ -24,10 +24,12 @@
 
 <body>
 <script>
+if (window.innerWidth > 768) {
     if (!sessionStorage.getItem('hasRedirected')) {
         sessionStorage.setItem('hasRedirected', 'true');
         window.location.replace('loading.html');
     }
+}
 </script>
 
 <!-------wonderland-sidenav--------->
@@ -57,7 +59,7 @@
     <li class="desktop-only"><a href="#" class="orange_nav">Home</a></li>
     <li class="desktop-only"><a href="#projects">Projects</a></li>
    
-    <li class="about_me_resume">
+    <li class="desktop-only about_me_resume">
         <div class="resume"><a href="#">About&nbsp;Me</a></div>
         <div class="sub_resume">
           <ul>

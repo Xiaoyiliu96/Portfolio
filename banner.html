@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Hero Banner</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+
+}
+
+/* Background Video */
+.hero video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Dark Overlay */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+}
+
+/* Content */
+.content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:#fff;
+    text-align:center;
+}
+
+.content h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:22px;
+}
+
+/* ================= SECOND SECTION ================= */
+
+.section{
+    min-height:100vh;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:80px;
+}
+
+.section:nth-child(2){
+    background:#f5f5f5;
+}
+
+.section h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.section p{
+    font-size:20px;
+    max-width:700px;
+    text-align:center;
+    line-height:1.8;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <video id="bgVideo" autoplay muted playsinline>
+        <source src="images/bgimages/banner2.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+  
+
+</section>
+
+<!-- Second Section -->
+<section class="section">
+    <h2>About Me</h2>
+    <p>
+        This is the second section.
+        Once you scroll past the first screen, the video is no longer visible.
+    </p>
+</section>
+
+<!-- Third Section -->
+<section class="section">
+    <h2>Portfolio</h2>
+    <p>
+        Add your 3D models, projects, or artwork here.
+    </p>
+</section>
+
+<script>
+// Stop the video when it reaches the end
+const video = document.getElementById("bgVideo");
+
+video.addEventListener("ended", () => {
+    video.pause();
+});
+</script>
+
+</body>
+</html>
