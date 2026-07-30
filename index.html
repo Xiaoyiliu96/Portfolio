@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Xiaoyi Liu - Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+<div class="loading-mask" id="loadingMask"></div>
+
+<header class="header">
+<div class="headerbar"><!-----------headerbar------------->
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#" class="logo"><img src="images/logo_yellow.png" alt="Portfolio Logo"></a>
+
+<button
+    id="navToggle"
+    class="nav-toggle"
+    aria-expanded="false"
+    aria-label="Toggle Navigation">
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+</button>
+
+      <!-- Full Screen Navigation Menu -->
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li class="nav_home">
+            <a href="#home" class="nav-link" style="color: orange;">Home</a>
+          </li>
+
+          <!-- Projects Dropdown -->
+          <li class="dropdown" id="projectsDropdown">
+            <button 
+              class="nav-link dropdown-btn" 
+              aria-expanded="false" 
+              aria-controls="projectsSubmenu">
+              Projects <span class="dropdown-arrow">▼</span>
+            </button>
+            <ul class="submenu" id="projectsSubmenu">
+              <li><a href="#maze-game" class="nav-link">Maze Game</a></li>
+              <li><a href="#covid-poster" class="nav-link">Covid-19 Poster</a></li>
+              <li><a href="#drill-jig" class="nav-link">Drill Jig Assembly</a></li>
+              <li><a href="#atypi-guide" class="nav-link">ATYPI 19 Guide Design</a></li>
+              <li><a href="#tableau-project" class="nav-link">Superstore Tableau Project</a></li>
+              <li><a href="#phone-dies" class="nav-link">What if your phone dies</a></li>
+              <li><a href="#coffee-brochure" class="nav-link">Coffee Brochure Project</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#contact" class="nav-link">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</div><!-----------headerbar------------->
+  </header>
+
+
+<canvas id="bgSequenceCanvas"></canvas>
+<canvas id="eyeCanvas"></canvas>
+
+<!-------------Main Body Wrapper (1200px Max Width)-------------------->
+<div id="main_body" class="main_body">
+
+ 
+
+<!------------- Hero Text Overlay (0s mark) ------------->
+  <div class="hero-content" id="heroText">
+    <h1 class="hero-title">I am Xiaoyi Liu</h1>
+    <p class="hero-subtitle">Welcome to my website; I am a programmer, designer, and data analyst.</p>
+    
+    <!-- tips -->
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll Down</span>
+      <div class="scroll-arrow">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!------------- Education Overlay (00:02 mark) ------------->
+  <div class="education-content" id="educationText">
+    <h2 class="edu-main-title">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h3 class="edu-degree">Data Analysis Training</h3>
+        <p class="edu-school">St. Nicks Alliance / General Assembly</p>
+        <p class="edu-date">Oct. 2023 – Dec. 2023</p>
+        <p class="edu-location">10 E 21st St, New York, NY 10010</p>
+      </div>
+
+      <div class="edu-card">
+        <h3 class="edu-degree">Digital Design</h3>
+        <p class="edu-school">The City College of New York</p>
+        <p class="edu-date">2021 – 2023</p>
+        <p class="edu-location">160 Convent Ave, New York, NY 10031</p>
+      </div>
+
+      <div class="edu-card">
+        <h3 class="edu-degree">Game Development</h3>
+        <p class="edu-school">LaGuardia Community College</p>
+        <p class="edu-date">2018 – 2020</p>
+        <p class="edu-location">31-10 Thomson Ave, Long Island City, NY 11101</p>
+      </div>
+
+      <div class="edu-card">
+        <h3 class="edu-degree">Computer Application</h3>
+        <p class="edu-school">Suihua School</p>
+        <p class="edu-date">2012 – 2015</p>
+        <p class="edu-location">China</p>
+      </div>
+    </div>
+  </div>
+
+  <!------------- Work Overlay (00:05 mark) ------------->
+  <div class="work-content" id="workText">
+    <h2 class="work-main-title">Work Experience</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <h3 class="work-role">Data Manager</h3>
+        <p class="work-company">Research Foundation of CUNY - Liberty Partnerships Program's Urban Scholars Program at City College of New York</p>
+        <p class="work-date">January 2025 – Present</p>
+        <p class="work-location">Manhattan, New York</p>
+      </div>
+
+      <div class="work-card">
+        <h3 class="work-role">IT Business Analyst</h3>
+        <p class="work-company">PS Business Solutions</p>
+        <p class="work-date">December 2024 – Present</p>
+        <p class="work-location">Manhattan, New York</p>
+      </div>
+
+      <div class="work-card">
+        <h3 class="work-role">Data Specialist</h3>
+        <p class="work-company">Research Foundation of CUNY - Liberty Partnerships Program's Urban Scholars Program at City College of New York</p>
+        <p class="work-date">June 2024 – September 2024</p>
+        <p class="work-location">Manhattan, New York</p>
+      </div>
+
+      <div class="work-card">
+        <h3 class="work-role">Data Analyst Intern</h3>
+        <p class="work-company">Maimonides Cancer Center</p>
+        <p class="work-date">February 2024 – March 2024</p>
+        <p class="work-location">Brooklyn, New York</p>
+      </div>
+
+      <div class="work-card">
+        <h3 class="work-role">Graphic Designer Assistant</h3>
+        <p class="work-company">HY N Ship Printing</p>
+        <p class="work-date">August 2019 – October 2024</p>
+        <p class="work-location">Brooklyn, New York</p>
+      </div>
+
+      <div class="work-card">
+        <h3 class="work-role">Graphic Designer</h3>
+        <p class="work-company">Chenlin Graphic & Design</p>
+        <p class="work-date">July 2017 – November 2018</p>
+        <p class="work-location">Manhattan, New York</p>
+      </div>
+
+      <div class="work-card">
+        <h3 class="work-role">Web Designer</h3>
+        <p class="work-company">Taobao: Ziqing Clothing Online Store</p>
+        <p class="work-date">October 2013 – April 2015</p>
+        <p class="work-location">China</p>
+      </div>
+    </div>
+  </div>
+
+  <!------------- Skills Overlay (00:03 mark) ------------->
+  <div class="skills-content" id="skillsText">
+    <h2 class="skills-main-title">Skills & Certifications</h2>
+    <div class="skills-borderless-container">
+
+      <!-- Development -->
+      <div class="skills-group">
+        <h3 class="skills-category">Development</h3>
+        <p class="skills-line">
+          <span class="skill-label">Frontend:</span>
+          <span class="particle-word p-1">HTML5,</span> 
+          <span class="particle-word p-2">CSS3,</span> 
+          <span class="particle-word p-3">JavaScript</span>
+        </p>
+        <p class="skills-line">
+          <span class="skill-label">Backend:</span>
+          <span class="particle-word p-4">Python,</span> 
+          <span class="particle-word p-2">MySQL,</span> 
+          <span class="particle-word p-5">SQL</span>
+        </p>
+        <p class="skills-line">
+          <span class="skill-label">Env:</span>
+          <span class="particle-word p-3">VS Code,</span> 
+          <span class="particle-word p-1">GitHub,</span> 
+          <span class="particle-word p-4">WordPress,</span> 
+          <span class="particle-word p-2">Adobe Dreamweaver</span>
+        </p>
+      </div>
+
+      <!-- Design -->
+      <div class="skills-group">
+        <h3 class="skills-category">Design</h3>
+        <p class="skills-line">
+          <span class="skill-label">Adobe Suite:</span>
+          <span class="particle-word p-5">Photoshop,</span> 
+          <span class="particle-word p-1">Illustrator,</span> 
+          <span class="particle-word p-3">InDesign,</span> 
+          <span class="particle-word p-2">Premiere Pro,</span> 
+          <span class="particle-word p-4">After Effects</span>
+        </p>
+      </div>
+
+      <!-- 3D & Game -->
+      <div class="skills-group">
+        <h3 class="skills-category">3D & Game</h3>
+        <p class="skills-line">
+          <span class="particle-word p-2">Unity,</span> 
+          <span class="particle-word p-4">Blender,</span> 
+          <span class="particle-word p-1">Unreal,</span> 
+          <span class="particle-word p-3">C++</span>
+        </p>
+      </div>
+
+      <!-- Visuals -->
+      <div class="skills-group">
+        <h3 class="skills-category">Visuals</h3>
+        <p class="skills-line">
+          <span class="particle-word p-3">CorelDRAW,</span> 
+          <span class="particle-word p-5">Figma,</span> 
+          <span class="particle-word p-1">Canva,</span> 
+          <span class="particle-word p-4">AutoCAD</span>
+        </p>
+      </div>
+
+      <!-- Data Analysis -->
+      <div class="skills-group">
+        <h3 class="skills-category">Data Analysis</h3>
+        <p class="skills-line">
+          <span class="skill-label">Languages:</span>
+          <span class="particle-word p-1">SQL,</span> 
+          <span class="particle-word p-3">Python</span>
+        </p>
+        <p class="skills-line">
+          <span class="skill-label">Software:</span>
+          <span class="particle-word p-4">Tableau,</span> 
+          <span class="particle-word p-2">MS Office,</span> 
+          <span class="particle-word p-5">Access,</span> 
+          <span class="particle-word p-1">SQL Server</span>
+        </p>
+      </div>
+
+      <!-- Certifications -->
+      <div class="skills-group cert-group">
+        <h3 class="skills-category">Certifications</h3>
+        <div class="cert-item">
+          <p class="cert-name particle-word p-2">Microsoft Office Specialist: Excel Associate</p>
+          <p class="cert-meta">Microsoft | Nov 2023 | ID: 995847681</p>
+        </div>
+        <div class="cert-item">
+          <p class="cert-name beida-particle">Web Design Senior Engineer</p>
+          <p class="cert-meta beida-particle">Beijing Aptech Beida Jade Bird | 2015</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div><!-------------Main Body-------------------->
+
+
+
+<!-------------Footer--------------------->
+
+<footer class="footer">
+  <div class="footer-copyright">
+    &copy; 2026 Xiaoyi Liu. All rights reserved.
+  </div>
+  <div class="footer-links">
+    <!-- Instagram Icon -->
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Instagram">
+      <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    </a>
+
+    <!-- LinkedIn Icon -->
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="LinkedIn">
+      <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+      </svg>
+    </a>
+
+    <!-- Email Icon & Address -->
+    <a href="mailto:xiaoyiliu96xyl@gmail.com" class="footer-link email-link">
+      <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+    </a>
+  </div>
+</footer>
+
+
+
+
+<!------------JS Files---------------------->
+<script type="text/javascript" src="script/navs.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const BG_TOTAL_FRAMES = 40;
+    const bgImagePath = "video_background_image"; 
+    
+    const EYE_TOTAL_FRAMES = 40;
+    const eyeImagePath = "eyes";
+
+    const eyeCanvas = document.getElementById("eyeCanvas");
+    const eyeCtx = eyeCanvas.getContext("2d");
+    const bgCanvas = document.getElementById("bgSequenceCanvas");
+    const bgCtx = bgCanvas.getContext("2d");
+
+    const loadingMask = document.getElementById('loadingMask');
+    const heroText = document.getElementById('heroText');
+    const educationText = document.getElementById('educationText');
+    const skillsText = document.getElementById('skillsText');
+    const workText = document.getElementById('workText');
+
+    let currentEyeFrame = 1;
+    let currentBgFrame = 1;
+    let targetEyeFrame = 1;
+    let mouseX = 0.5;
+    let mouseY = 0.5;
+    let isScrolled = false;
+
+    function resizeCanvases() {
+        eyeCanvas.width = window.innerWidth;
+        eyeCanvas.height = window.innerHeight;
+        bgCanvas.width = window.innerWidth;
+        bgCanvas.height = window.innerHeight;
+        renderBgSequence(currentBgFrame);
+        renderEye(currentEyeFrame);
+    }
+    window.addEventListener("resize", resizeCanvases);
+
+    const eyeImages = [];
+    const bgImages = [];
+
+    function dismissLoadingMask() {
+        if (loadingMask && loadingMask.style.display !== 'none') {
+            loadingMask.style.opacity = '0';
+            setTimeout(() => { loadingMask.style.display = 'none'; }, 500);
+        }
+    }
+
+    // Preload Eye Sequence
+    for (let i = 1; i <= EYE_TOTAL_FRAMES; i++) {
+        const img = new Image();
+        img.src = `${eyeImagePath}/Image${i}.png`;
+        img.onload = () => {
+            if (i === 1) renderEye(1);
+        };
+        img.onerror = () => {
+            console.error(`Eye image failed to load: ${img.src}`);
+        };
+        eyeImages.push(img);
+    }
+
+    // Preload Background Sequence
+    for (let i = 1; i <= BG_TOTAL_FRAMES; i++) {
+        const img = new Image();
+        img.src = `${bgImagePath}/Image${i}.png`;
+        img.onload = () => {
+            if (i === 1) {
+                renderBgSequence(1);
+                dismissLoadingMask();
+            }
+        };
+        img.onerror = () => {
+            console.error(`Background image failed to load: ${img.src}`);
+        };
+        bgImages.push(img);
+    }
+
+    // Fail-safe timeout to unmask screen
+    setTimeout(dismissLoadingMask, 800);
+
+    function calculateEyeFrame() {
+        let x = (mouseX - 0.5) * 2;
+        let y = (mouseY - 0.5) * 2;
+        if (Math.abs(x) < 0.1 && Math.abs(y) < 0.1) return 1;
+        if (Math.abs(x) > Math.abs(y)) {
+            return x < 0 ? 3 + Math.abs(x) * 9 : 13 + x * 6;
+        } else {
+            return y < 0 ? 28 + Math.abs(y) * 12 : 20 + y * 7;
+        }
+    }
+
+    function renderEye(frame) {
+        if (isScrolled) return;
+        frame = Math.round(frame);
+        frame = Math.max(1, Math.min(EYE_TOTAL_FRAMES, frame));
+
+        const img = eyeImages[frame - 1];
+        if (!img || !img.complete || img.naturalWidth === 0) return;
+
+        eyeCtx.clearRect(0, 0, eyeCanvas.width, eyeCanvas.height);
+
+        const hRatio = eyeCanvas.width / img.naturalWidth;
+        const vRatio = eyeCanvas.height / img.naturalHeight;
+        const ratio = Math.max(hRatio, vRatio);
+
+        const centerShift_x = (eyeCanvas.width - img.naturalWidth * ratio) / 2;
+        const centerShift_y = (eyeCanvas.height - img.naturalHeight * ratio) / 2;
+
+        eyeCtx.drawImage(
+            img, 0, 0, img.naturalWidth, img.naturalHeight,
+            centerShift_x, centerShift_y, img.naturalWidth * ratio, img.naturalHeight * ratio
+        );
+    }
+
+    function animateEye() {
+        if (!isScrolled) {
+            targetEyeFrame = calculateEyeFrame();
+            currentEyeFrame += (targetEyeFrame - currentEyeFrame) * 0.08;
+            renderEye(currentEyeFrame);
+        }
+        requestAnimationFrame(animateEye);
+    }
+
+    function renderBgSequence(frame) {
+        frame = Math.round(frame);
+        frame = Math.max(1, Math.min(BG_TOTAL_FRAMES, frame));
+        currentBgFrame = frame;
+
+        const img = bgImages[frame - 1];
+        if (!img || !img.complete || img.naturalWidth === 0) return;
+
+        bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+        const hRatio = bgCanvas.width / img.naturalWidth;
+        const vRatio = bgCanvas.height / img.naturalHeight;
+        const ratio = Math.max(hRatio, vRatio);
+
+        const centerShift_x = (bgCanvas.width - img.naturalWidth * ratio) / 2;
+        const centerShift_y = (bgCanvas.height - img.naturalHeight * ratio) / 2;
+
+        bgCtx.drawImage(
+            img, 0, 0, img.naturalWidth, img.naturalHeight,
+            centerShift_x, centerShift_y, img.naturalWidth * ratio, img.naturalHeight * ratio
+        );
+    }
+
+    window.addEventListener("mousemove", e => {
+        if (!isScrolled) {
+            mouseX = e.clientX / window.innerWidth;
+            mouseY = e.clientY / window.innerHeight;
+        }
+    });
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    function onScroll() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        if (scrollTop > 20) {
+            if (!isScrolled) {
+                document.body.classList.add("scrolled");
+                isScrolled = true;
+                eyeCtx.clearRect(0, 0, eyeCanvas.width, eyeCanvas.height);
+            }
+        } else {
+            if (isScrolled) {
+                document.body.classList.remove("scrolled");
+                isScrolled = false;
+            }
+        }
+
+        if (heroText && maxScroll > 0) {
+            const fadeProgress = scrollTop / (window.innerHeight * 0.6);
+            heroText.style.opacity = Math.max(0, 1 - fadeProgress);
+        }
+
+        if (maxScroll > 0) {
+            const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScroll));
+            const targetBgFrame = Math.floor(scrollFraction * (BG_TOTAL_FRAMES - 1)) + 1;
+            renderBgSequence(targetBgFrame);
+
+            if (educationText) {
+                if (targetBgFrame >= 8 && targetBgFrame <= 17) educationText.classList.add('is-visible');
+                else educationText.classList.remove('is-visible');
+            }
+            if (skillsText) {
+                if (targetBgFrame >= 18 && targetBgFrame <= 27) skillsText.classList.add('is-visible');
+                else skillsText.classList.remove('is-visible');
+            }
+            if (workText) {
+                if (targetBgFrame >= 28 && targetBgFrame <= 38) workText.classList.add('is-visible');
+                else workText.classList.remove('is-visible');
+            }
+        }
+    }
+
+    resizeCanvases();
+    animateEye();
+});
+</script>
+</body>
+</html>
