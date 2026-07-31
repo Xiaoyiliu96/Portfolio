@@ -5,25 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Xiaoyi Liu - Portfolio</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <style>
+
+        /* Full-screen CSS background containers */
+        .bg-cover-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        #bgSequenceContainer {
+            z-index: -2;
+            background-image: url('video_background_image/Image1.png'); /* Default background frame */
+        }
+
+        #eyeContainer {
+            z-index: -1;
+            background-image: url('eyes/Image1.png'); /* Default eye frame */
+        }
+    </style>
 </head>
 <body>
 
 <div class="loading-mask" id="loadingMask"></div>
 
 <header class="header">
-<div class="headerbar"><!-----------headerbar------------->
+  <div class="headerbar"><!-----------headerbar------------->
     <nav class="navbar" aria-label="Main Navigation">
-      <a href="#" class="logo"><img src="images/logo_yellow.png" alt="Portfolio Logo"></a>
+     <a href="#" class="logo"><img src="images/logo_yellow.png" alt="Portfolio Logo"></a>
 
-<button
-    id="navToggle"
-    class="nav-toggle"
-    aria-expanded="false"
-    aria-label="Toggle Navigation">
-  <span class="hamburger-line"></span>
-  <span class="hamburger-line"></span>
-  <span class="hamburger-line"></span>
-</button>
+      <button
+        id="navToggle"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-label="Toggle Navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
 
       <!-- Full Screen Navigation Menu -->
       <div class="nav-menu" id="navMenu">
@@ -57,19 +82,17 @@
         </ul>
       </div>
     </nav>
-</div><!-----------headerbar------------->
-  </header>
+  </div><!-----------headerbar------------->
+</header>
 
-
-<canvas id="bgSequenceCanvas"></canvas>
-<canvas id="eyeCanvas"></canvas>
+<!-- Background containers using CSS background-image with cover -->
+<div id="bgSequenceContainer" class="bg-cover-layer"></div>
+<div id="eyeContainer" class="bg-cover-layer"></div>
 
 <!-------------Main Body Wrapper (1200px Max Width)-------------------->
 <div id="main_body" class="main_body">
 
- 
-
-<!------------- Hero Text Overlay (0s mark) ------------->
+  <!------------- Hero Text Overlay (0s mark) ------------->
   <div class="hero-content" id="heroText">
     <h1 class="hero-title">I am Xiaoyi Liu</h1>
     <p class="hero-subtitle">Welcome to my website; I am a programmer, designer, and data analyst.</p>
@@ -269,14 +292,9 @@
     </div>
   </div>
 
-
-
 </div><!-------------Main Body-------------------->
 
-
-
 <!-------------Footer--------------------->
-
 <footer class="footer">
   <div class="footer-copyright">
     &copy; 2026 Xiaoyi Liu. All rights reserved.
@@ -308,9 +326,6 @@
   </div>
 </footer>
 
-
-
-
 <!------------JS Files---------------------->
 <script type="text/javascript" src="script/navs.js"></script>
 
@@ -323,10 +338,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const EYE_TOTAL_FRAMES = 40;
     const eyeImagePath = "eyes";
 
-    const eyeCanvas = document.getElementById("eyeCanvas");
-    const eyeCtx = eyeCanvas.getContext("2d");
-    const bgCanvas = document.getElementById("bgSequenceCanvas");
-    const bgCtx = bgCanvas.getContext("2d");
+    const eyeContainer = document.getElementById("eyeContainer");
+    const bgContainer = document.getElementById("bgSequenceContainer");
 
     const loadingMask = document.getElementById('loadingMask');
     const heroText = document.getElementById('heroText');
@@ -341,19 +354,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let mouseY = 0.5;
     let isScrolled = false;
 
-    function resizeCanvases() {
-        eyeCanvas.width = window.innerWidth;
-        eyeCanvas.height = window.innerHeight;
-        bgCanvas.width = window.innerWidth;
-        bgCanvas.height = window.innerHeight;
-        renderBgSequence(currentBgFrame);
-        renderEye(currentEyeFrame);
-    }
-    window.addEventListener("resize", resizeCanvases);
-
-    const eyeImages = [];
-    const bgImages = [];
-
     function dismissLoadingMask() {
         if (loadingMask && loadingMask.style.display !== 'none') {
             loadingMask.style.opacity = '0';
@@ -361,33 +361,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Preload Eye Sequence
-    for (let i = 1; i <= EYE_TOTAL_FRAMES; i++) {
-        const img = new Image();
-        img.src = `${eyeImagePath}/Image${i}.png`;
-        img.onload = () => {
-            if (i === 1) renderEye(1);
-        };
-        img.onerror = () => {
-            console.error(`Eye image failed to load: ${img.src}`);
-        };
-        eyeImages.push(img);
-    }
-
     // Preload Background Sequence
     for (let i = 1; i <= BG_TOTAL_FRAMES; i++) {
         const img = new Image();
         img.src = `${bgImagePath}/Image${i}.png`;
-        img.onload = () => {
-            if (i === 1) {
-                renderBgSequence(1);
-                dismissLoadingMask();
-            }
-        };
-        img.onerror = () => {
-            console.error(`Background image failed to load: ${img.src}`);
-        };
-        bgImages.push(img);
+        if (i === 1) {
+            img.onload = dismissLoadingMask;
+        }
+    }
+
+    // Preload Eye Sequence
+    for (let i = 1; i <= EYE_TOTAL_FRAMES; i++) {
+        const img = new Image();
+        img.src = `${eyeImagePath}/Image${i}.png`;
     }
 
     // Fail-safe timeout to unmask screen
@@ -408,23 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isScrolled) return;
         frame = Math.round(frame);
         frame = Math.max(1, Math.min(EYE_TOTAL_FRAMES, frame));
-
-        const img = eyeImages[frame - 1];
-        if (!img || !img.complete || img.naturalWidth === 0) return;
-
-        eyeCtx.clearRect(0, 0, eyeCanvas.width, eyeCanvas.height);
-
-        const hRatio = eyeCanvas.width / img.naturalWidth;
-        const vRatio = eyeCanvas.height / img.naturalHeight;
-        const ratio = Math.max(hRatio, vRatio);
-
-        const centerShift_x = (eyeCanvas.width - img.naturalWidth * ratio) / 2;
-        const centerShift_y = (eyeCanvas.height - img.naturalHeight * ratio) / 2;
-
-        eyeCtx.drawImage(
-            img, 0, 0, img.naturalWidth, img.naturalHeight,
-            centerShift_x, centerShift_y, img.naturalWidth * ratio, img.naturalHeight * ratio
-        );
+        eyeContainer.style.backgroundImage = `url('${eyeImagePath}/Image${frame}.png')`;
     }
 
     function animateEye() {
@@ -440,23 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
         frame = Math.round(frame);
         frame = Math.max(1, Math.min(BG_TOTAL_FRAMES, frame));
         currentBgFrame = frame;
-
-        const img = bgImages[frame - 1];
-        if (!img || !img.complete || img.naturalWidth === 0) return;
-
-        bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
-
-        const hRatio = bgCanvas.width / img.naturalWidth;
-        const vRatio = bgCanvas.height / img.naturalHeight;
-        const ratio = Math.max(hRatio, vRatio);
-
-        const centerShift_x = (bgCanvas.width - img.naturalWidth * ratio) / 2;
-        const centerShift_y = (bgCanvas.height - img.naturalHeight * ratio) / 2;
-
-        bgCtx.drawImage(
-            img, 0, 0, img.naturalWidth, img.naturalHeight,
-            centerShift_x, centerShift_y, img.naturalWidth * ratio, img.naturalHeight * ratio
-        );
+        bgContainer.style.backgroundImage = `url('${bgImagePath}/Image${frame}.png')`;
     }
 
     window.addEventListener("mousemove", e => {
@@ -476,12 +430,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isScrolled) {
                 document.body.classList.add("scrolled");
                 isScrolled = true;
-                eyeCtx.clearRect(0, 0, eyeCanvas.width, eyeCanvas.height);
+                eyeContainer.style.display = 'none';
             }
         } else {
             if (isScrolled) {
                 document.body.classList.remove("scrolled");
                 isScrolled = false;
+                eyeContainer.style.display = 'block';
             }
         }
 
@@ -510,7 +465,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    resizeCanvases();
     animateEye();
 });
 </script>
