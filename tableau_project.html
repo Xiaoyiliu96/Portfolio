@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Wonderland</title>
+
+    <link rel="shortcut icon" href="images/logo/logo_black.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/cad_project.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="minimal-nav">
+        <a href="index.html"><div class="logo">&nbsp;</div></a>
+        <div class="menu-icon" id="menuBtn">☰</div>
+    </nav>
+
+    <div class="nav-overlay" id="navOverlay">
+        <div class="close-btn" id="closeBtn">&times;</div>
+        <div class="nav-content">
+            <a href="index.html" target="_blank">Home</a>
+            <a href="index.html#main_bg" id="nav_color" target="_blank" >Projects</a>
+           <!-- <a href="https://docs.google.com/presentation/d/1EtfpYpQDQh5bsWt8w8PleQaQcUt8bpUC/edit?slide=id.p1#slide=id.p1" target="_blank"> OP-ED</a>-->
+            <a href="maze_game.html" target="_blank"> Maze Game</a>
+            <a href="covid19_posters.html" target="_blank"> Covid-19 Poster</a>
+            <a href="cad_blueprints.html" target="_blank"> Drill Jig Assembly</a>
+            <a href="atypi19.html" target="_blank"> ATYPI 19 Guide Design</a>
+            <a href="tableau_project.html" target="_blank" id="nav_color" > Superstore&nbsp;Analysis</a>
+
+           <a href="#contact_me_mobile" onclick="navOverlay.classList.remove('active')" id="mobile_contact_me_nav">Contact Me</a>
+
+           <a href="#contact_me_desktop" onclick="navOverlay.classList.remove('active')" id="desktop_contact_me_nav">Contact Me</a>
+
+
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="category-tag">Tableau Project</div>
+        <h1>Superstore Analysis</h1>
+        <p class="project-desc">This project analyzes global retail data to identify profitability trends and operational inefficiencies. Key findings include a deep dive into salesperson performance, regional growth in the Americas, and a critical analysis of return reasons across product sub-categories like Binders and Art supplies.</p>
+
+        <div class="specs">
+            <div class="spec-item"><h4>Software</h4><p>Tableau Desktop and Excel</p></div>
+            <div class="spec-item"><h4>Date</h4><p>10/16/2024</p></div>
+            <div class="spec-item"><h4>MAX REVENUE</h4><p>$53,553,348</p></div>
+            <div class="spec-item"><h4>Peak Annual Profit</h4><p>$225,670 (2019)</p></div>
+            <div class="spec-item"><h4>Focus Regions</h4><p>Americas, APAC, EMEA</p></div>
+
+        </div>
+        <a href="https://drive.google.com/file/d/1y6QFyYGRhQ8tTxDCkzn9isT7ZW02gNVy/view?usp=drive_link" class="btn-pdf" target="_blank">DOWNLOAD PDF</a>
+
+        <!-- CONTACT FORM -->
+        <div class="contact_me" id="contact_me_desktop">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <label for="fname">First Name:</label>
+                <input type="text" class="textbox" name="firstname" placeholder="Your name.." required id="fname">
+
+                <label for="lname">Last Name:</label>
+                <input type="text" class="textbox" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                <label for="email">Email:</label>
+                <input type="email" class="textbox" id="email" name="email" placeholder="Your Email address" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" class="textbox" name="message" placeholder="Write something.." style="height:150px" required></textarea>
+
+                <div class="submit_button">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            <div class="social_media_buttons">
+                <a href="mailto:xiaoyiliu96xyl@gmail.com" class="fa fa-google" target="_blank"></a>
+                <a href="https://www.linkedin.com/in/xiaoyi-l-7a4510286" class="fa fa-linkedin" target="_blank"></a>
+                <a href="https://www.instagram.com/xiaoyiliu96?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="fa fa-instagram" target="_blank"></a>
+            </div>
+
+            <div class="bg_bootom">
+                &copy; <span id="current_year">&nbsp;</span> Xiaoyi Liu
+            </div>
+        </div>
+    </aside>
+
+    <!-- GALLERY -->
+    <main class="gallery-container white-section" id="gallery"></main>
+
+
+
+    <div id="showing_contact_me">
+        <!-- CONTACT FORM -->
+        <div class="contact_me" id="contact_me_mobile">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <label for="fname">First Name:</label>
+                <input type="text" class="textbox" name="firstname" placeholder="Your name.." required id="fname">
+
+                <label for="lname">Last Name:</label>
+                <input type="text" class="textbox" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                <label for="email">Email:</label>
+                <input type="email" class="textbox" id="email" name="email" placeholder="Your Email address" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" class="textbox" name="message" placeholder="Write something.." style="height:150px" required></textarea>
+
+                <div class="submit_button">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            <div class="social_media_buttons">
+                <a href="mailto:xiaoyiliu96xyl@gmail.com" class="fa fa-google" target="_blank"></a>
+                <a href="https://www.linkedin.com/in/xiaoyi-l-7a4510286" class="fa fa-linkedin" target="_blank"></a>
+                <a href="https://www.instagram.com/xiaoyiliu96?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="fa fa-instagram" target="_blank"></a>
+            </div>
+
+            <div class="bg_bootom">
+                &copy; <span id="current_year">&nbsp;</span>  Xiaoyi Liu
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- SCRIPTS -->
+   
+    <script src="js/copyright_year.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/tableau_project.js"></script>
+
+
+
+<script>
+     
+const header = document.querySelector(".minimal-nav");
+const whiteSections = document.querySelectorAll(".white-section");
+
+let isTop = true;
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (window.scrollY === 0) return;  
+
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        header.classList.add("light-bg");
+      } else {
+        header.classList.remove("light-bg");
+      }
+    });
+  },
+  {
+    rootMargin: "-80px 0px 0px 0px",
+    threshold: 0.1
+  }
+);
+
+whiteSections.forEach(section => observer.observe(section));
+ 
+window.addEventListener("scroll", () => {
+  if (window.scrollY === 0) {
+    header.classList.remove("light-bg");
+    isTop = true;
+  } else {
+    isTop = false;
+  }
+});
+ 
+</script>
+ 
+</body>
+</html>
