@@ -114,8 +114,8 @@
     width: 100%;
     z-index: 1000;
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /*backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);*/
 }
 
 .headerbar
@@ -802,5 +802,16 @@ Irregular Particle Motion
   .scroll-indicator
   {
     padding-bottom:5em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-content {
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 16px; 
+    padding: 16px; 
+    box-sizing: border-box;
   }
 }

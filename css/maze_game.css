@@ -1,0 +1,890 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Bitter:wght@600;900&family=Cantora+One&family=Inknut+Antiqua:wght@800&family=Londrina+Solid:wght@300&family=Ma+Shan+Zheng&family=Neuton:wght@800&family=Noto+Sans+SC:wght@500&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Orienta&family=Passion+One&family=Patua+One&family=Radio+Canada:wght@300&family=Righteous&family=Roboto&family=Rubik:wght@300&family=Share&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster&family=Noto+Sans+SC:wght@500&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Orienta&family=Patua+One&family=Radio+Canada:wght@300&family=Righteous&family=Roboto&family=Rubik:wght@300&family=Share&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Bitter:wght@600;900&family=Cantora+One&family=Inknut+Antiqua:wght@800&family=Londrina+Solid:wght@300&family=Ma+Shan+Zheng&family=Neuton:wght@800&family=Noto+Sans+SC:wght@500&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Orienta&family=Passion+One&family=Patua+One&family=Radio+Canada:wght@300&family=Righteous&family=Roboto&family=Rubik:wght@300&family=Share&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,100..900;1,100..900&family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face
+{
+  font-family:'Helvetica';
+  src: url("../fonts/Helvetica.ttf") format("truetype");
+  font-weight: normal; 
+  font-style: normal; 
+  background: black;
+}
+
+div
+{
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  outline: hidden;
+}
+   
+
+ul
+{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+li
+{
+  padding: 0px;
+  margin: 0px;
+}
+
+
+iframe
+{
+  border: none;
+  overflow: hidden;
+  line-height: 30em;
+}
+
+a{color: white;}
+
+img
+{
+	border: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+  background: url("../images/maze_game_images/02.jpg") repeat-y center center;
+  background-size: cover;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+ 
+
+/* ====================model-viewer ===================== */
+model-viewer
+{
+  width: 100%;
+  height: 100vh;
+  text-transform: uppercase;
+  border: none;
+  color: #FFC0CB;
+}
+
+
+
+/* ===================== NAV ===================== */
+.image-container {
+  width: 100%;
+  position: absolute;  
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  overflow: hidden;
+}
+
+/* ===================== TOP NAV (The Bar) ===================== */
+.top_navs {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width:100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.8em 0;
+  background:none;
+
+  z-index: 1000;
+}
+
+
+.menu_btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+}
+
+.menu_btn:hover {
+  color:  #AA05A0;
+  transform: scale(1.1);
+}
+
+/* ===================== LOGO ===================== */
+.logo {
+  width: 45px;
+  height: 45px;
+  display: block;
+  background: url("../images/logo/logo_greenblue.png") no-repeat center/contain;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  background-image: url("../images/logo/logo_white.png");
+  transform: translateY(-2px);
+}
+
+/* ===================== FULLSCREEN MENU ===================== */
+.image_container_navs {
+  position: fixed;
+  top: 0;
+  left: 0;  
+  width: 100vw;   
+  height: 100vh;    
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.98);  
+  z-index: 999999; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  transform: translateX(100%);  
+  visibility: hidden;  
+}
+
+.image_container_navs.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* ===================== CLOSE BUTTON OVERLAY ===================== */
+.menu_top_overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 2em; 
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;  
+}
+
+.close_btn {
+  pointer-events: auto;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close_btn:hover {
+  color: #AA05A0;  
+}
+
+/* ===================== MENU LINKS ===================== */
+.wrap_header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: center;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  text-transform: uppercase;
+
+}
+
+.wrap_header a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.wrap_header a:hover {
+  color: #AA05A0;
+  transform: scale(1.05);
+  letter-spacing: 10px;  
+}
+
+#nav_color {
+  color: #AA05A0;
+}
+
+#nav_color:hover {
+  color: white;
+}
+
+/* ===================== MOBILE OVERRIDES ===================== */
+@media only screen and (max-width: 768px) 
+{
+  .top_navs 
+  {
+    width: 90%; 
+    padding: 1em 0px;
+    max-width: 100%;
+  }
+  
+
+  .wrap_header {
+    font-size: 1.2rem;  
+    gap: 2rem;
+    max-width: 100%;
+
+  }
+
+  .image_container_navs {
+    width: 100%;
+    left: 0px;
+    right: 0px;
+  }
+
+  #project_game
+  {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+/***************************************/
+#game_banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;    
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+#game_bg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url('../images/maze_game_images/01.png') no-repeat center top;
+  background-size: cover;
+}
+
+.topic {
+  font-family: 'Kaushan Script', cursive;
+  font-size: clamp(3rem, 12vw, 7rem); 
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding: 0;
+ 
+}
+
+.download_button {
+  margin-top: 2em;  
+  background: #3BB7CA;
+  border-radius: 15px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.download_button a {
+  display: block;
+  padding: 15px 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.download_button:hover {
+  background: #B500AB;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(181, 0, 171, 0.4);
+}
+/* ===================== MOBILE TWEAKS ===================== */
+@media only screen and (max-width: 600px) {
+  .topic {
+    font-size: 3rem;
+  }
+
+  .two_columns_left
+  {
+    grid-area: two_columns_left;
+  }
+
+  .two_columns_right
+  {
+    grid-area: two_columns_right;
+  }
+
+    
+  .two_columns
+  {
+    grid-template-columns: 1fr;
+    grid-template-areas:'two_columns_right' 'two_columns_left';
+  }
+
+
+  .download_button a {
+    font-size: 1.2rem;
+    padding: 0.6rem 2rem;
+  }
+}
+
+/* ================game_description===================== */
+
+#game_description
+{
+	max-width: 70%;
+	margin: auto;
+	padding: 0px;
+	margin-top: 3em;
+}
+
+.game_description_title
+{
+	font-size: 2em;
+	font-weight: bold;
+	color:pink;
+	margin-top: 2em;
+	font-family: 'bodoni';
+	text-transform: uppercase;
+	text-align: left;
+}
+
+.contact_me_title
+{
+	font-size: 2em;
+	font-weight: bold;
+	color:#9BF9FB;
+	margin-top: 2em;
+	font-family: 'bodoni';
+	text-transform: uppercase;
+	text-align: left;
+}
+
+#describe_text
+{
+	font-size: 1.2em;
+	color: white;
+}
+
+#describe_text p
+{
+	margin-bottom: 2em;
+}
+
+
+
+.column
+{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2em;
+		
+}
+
+.face 
+{
+  background: url('../images/maze_game_images/21.png') no-repeat;
+  background-position: center;
+  background-size: contain;
+  width:29em;
+  position: relative;
+  margin-top: 1em;
+  height:29em; 
+}
+
+.face::after
+{
+  content: '';
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5em;
+  height: 4em;     
+}
+
+.eye
+{
+	position: absolute;
+  width:23px;
+  height:23px;
+  border-radius: 50%;
+  background-color:#75cbd3;    
+}
+
+.eye::after
+{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: transLateY(-50%);
+  width: 70%;
+  height: 70%;
+  background-color: #000;
+  border-radius: 50%;
+     
+}
+
+.face .eye:nth-child(1)
+{
+     
+  top: 46%;
+  left:39%;
+}
+
+.face .eye:nth-child(2)
+{
+     
+  top: 46%;
+  right:41%;
+}
+
+img{max-width: 100%;} 
+
+.face
+{
+	grid-area: face;
+}
+
+ 
+
+/* =====================Project 2===================== */
+
+.two_columns
+{
+	margin-bottom: 10em;
+	margin-top: 10em;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-column-gap:4em;
+}
+
+
+#game_project_part2
+{
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 3em;
+	color: white;
+}
+
+.game_project_img
+{
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 5em;
+	margin-top: 5em;
+}
+
+.two_columns_left p
+{
+	font-size: 1.2em;
+}
+
+#player
+{
+	background: url('../images/maze_game_images/27.png') no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 400px;
+	height:600px;
+	border-bottom: 20px solid #3BB7CA;
+  animation: pulse 0.6s infinite;
+}
+
+#player:hover
+{
+	background: url('../images/maze_game_images/14.png') no-repeat;
+	background-position: center;
+	background-size: cover;
+  animation: pulse 0.6s infinite;
+}
+
+#npc
+{
+	background: url('../images/maze_game_images/16.jpg') no-repeat;
+	background-position:35%;
+	background-size: cover;
+	border-radius: 400px;
+	height:600px; 
+	border-bottom: 20px solid #3BB7CA;
+  animation: pulse 0.6s infinite;
+}
+
+#npc2
+{
+	background: url('../images/maze_game_images/15.jpg') no-repeat;
+	background-position:center;
+	background-size: cover;
+	border-radius: 400px;
+	height:600px;
+	border-bottom: 20px solid #3BB7CA;
+  animation: pulse 0.6s infinite;
+}
+
+#npc3
+{
+	background: url('../images/maze_game_images/08.jpg') no-repeat;
+	background-position:center;
+	background-size: cover;
+	border-radius: 400px;
+	height:600px;  
+	border-bottom: 20px solid #3BB7CA;
+  animation: pulse 0.6s infinite;
+}
+
+#npc3:hover
+{
+	background: url('../images/maze_game_images/28.jpg') no-repeat;
+	background-position: center;
+	background-size: cover;
+  animation: pulse 0.6s infinite;
+}
+
+#npc:hover
+{
+	background: url('../images/maze_game_images/29.jpg') no-repeat;
+	background-position: 35%;
+	background-size: cover;
+  animation: pulse 0.6s infinite;
+}
+
+#npc2:hover
+{
+	background: url('../images/maze_game_images/30.jpg') no-repeat;
+	background-position: center;
+	background-size: cover;
+  animation: pulse 0.6s infinite;
+}
+
+
+/* =====================Project 2===================== */
+.props-grid 
+{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+ gap:4em;
+ margin-top: 10em;
+}
+
+.prop-box 
+{
+  border-radius: 14px;
+ overflow: hidden;
+ box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+ transition: transform 0.2s ease;
+ background: radial-gradient(circle at top, #1c1c1c, #131629);
+ font-family: "Segoe UI", Arial, sans-serif;
+ color: #eee;
+ margin-bottom: 4em;
+}
+
+.prop-box:hover 
+{
+ transform: translateY(-6px);
+}
+
+.prop-image
+{
+ height: 140px;
+ background: #333;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.prop-image img 
+{
+ max-height: 90px;
+}
+
+.health { background: linear-gradient(135deg, #b31217, #ff4b4b); }
+.coin   { background: linear-gradient(135deg, #b68d00, #ffd700); }
+.key    { background: linear-gradient(135deg, #2c7be5, #6ea8ff); }
+.trap   { background: linear-gradient(135deg, lightblue, green); }
+
+.map1
+{
+ background-size: cover;
+ background: url('../images/maze_game_images/23.png') no-repeat center center;
+}
+.map2
+{
+ background-size: cover;
+ background: url('../images/maze_game_images/24.png') no-repeat center center;
+}
+.map3
+{
+ background-size: cover;
+ background: url('../images/maze_game_images/25.png') no-repeat center center;
+}
+.map4
+{
+ background-size: cover;
+ background: url('../images/maze_game_images/26.png') no-repeat center center;
+}
+
+ 
+
+.prop-content {
+ padding: 16px;
+}
+
+.prop-title {
+ font-size: 17px;
+ font-weight: bold;
+ margin-bottom: 6px;
+}
+
+.prop-tag {
+ display: inline-block;
+ font-size: 12px;
+ padding: 3px 8px;
+ border-radius: 20px;
+ background: #333;
+ color: #ccc;
+ margin-bottom: 10px;
+}
+
+.prop-text {
+ font-size: 14px;
+ line-height: 1.5;
+ color: #d0d0d0;
+}
+
+.danger {
+ margin-top: 10px;
+ color: #ff6b6b;
+ font-weight: bold;
+ font-size: 13px;
+}
+
+
+/***********************/
+
+
+#test_video
+{
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 5em;
+  height: 35em;
+}
+
+
+
+
+.no-scrollbar 
+{
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+
+
+form
+{
+    width: 100%;
+    text-align: left;
+    margin: auto;
+}
+
+#contact-form
+{
+  margin-top: 2em;
+}
+
+input,textarea
+{
+    width: 100%;
+    height: auto;
+}
+
+label
+{
+    line-height: 2em;
+    color:#9BF9FB;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.textbox
+{
+    margin-bottom: 2em;
+}
+
+.textbox:focus {
+    outline: none;
+    border: 2px solid #FFC0CB;
+}
+
+.submit_button
+{
+    text-align: center;
+    padding: 0px;
+    margin: 0px auto;
+}
+
+.submit_button button
+{
+    background: #44CBEA;
+    color:white;
+    border: none;
+    line-height: 1.5em;
+    width:6em;
+    border-radius: 5%;
+    font-size: 1.2em;
+    line-height: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Momo Trust Display", sans-serif;
+    
+}
+
+.submit_button button:hover
+{
+    background:#FFC7F7;
+    color:#2E333F;
+}
+
+.contact_me
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.fa {
+  padding: 0.5em;
+  font-size:4em;
+  width:1em;
+  text-align: center;
+  text-decoration: none;
+  margin: 1em;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    /*opacity: 0.7;*/
+    color:#44CBEA;
+    border:2px solid #7EF8FA;
+}
+
+
+.fa-google {
+  background: white;
+  color: black;
+}
+
+.fa-linkedin {
+  background: white;
+  color: black;
+}
+
+
+.fa-instagram {
+  background: white;
+  color: black;
+}
+
+
+.social_media_buttons
+{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 2em;
+}
+
+.bg_bootom
+{
+    color: white;
+    text-align: center;
+    line-height: 5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.contact_me_player
+{
+	background: url('../images/maze_game_images/27.png') no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 400px;
+	height:600px;
+	border-bottom: 20px solid #3BB7CA;
+}
+
+.contact_me_player:hover
+{
+	background: url('../images/maze_game_images/15.png') no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+
+@media only screen and (max-width:600px)
+{
+  #project_game
+  {
+    display: none;
+  }
+
+  .column,.two_columns
+  {
+    grid-template-columns: 1fr;
+  }
+
+  #game_description 
+  {
+    max-width: 85%;
+  }
+
+  #test_video
+  {
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 5em;
+    height:20em;
+  }
+
+
+  form
+  {
+    width: 85%;
+  }
+ 
+
+
+
+
+}
+
+
+
+

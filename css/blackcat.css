@@ -1,0 +1,174 @@
+
+:root {
+  --accent: #ff9f00;
+  --bg: #000000;
+  --orangetxte: #FB9037;
+  --purpletext:#521F80;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+#header
+{
+  width: 100%;
+  height:60em;
+  margin: 0px;
+  padding: 0px;
+  background:  linear-gradient(to bottom, rgba(11, 9, 12, 0.2), rgba(11, 9, 12, 0.5)),
+  url("../images/blackcat/e6b0f6de-d448-4ced-90d7-b40469af4ed0.png") no-repeat center center;
+  background-size: cover;
+}
+
+
+
+/*-- NAVIGATION --*/
+a{text-decoration: none;}
+
+
+.logo {
+  width: 35px;
+  height: 4em;
+  background: url("../images/logo/logo_yellow.png") no-repeat left center;
+  background-size: 2em;
+  pointer-events: auto;
+}
+
+.logo:hover {
+  width: 35px;
+  height: 4em;
+  background: url("../images/logo/logo_white.png") no-repeat left center;
+  background-size: 2em;
+  pointer-events: auto;
+}
+.menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  pointer-events: auto;
+  text-align: right;
+  color: white;
+}
+
+.menu-icon:hover { 
+  color: var(--accent); 
+}
+
+.minimal-nav
+{
+  width: 80%;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+/*-- NAVIGATION --*/
+
+.header_text
+{
+  color: white;
+  padding-left:15vw;
+  padding-top:30vh;
+  font-size:1.3em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sub_title
+{
+  color: var(--orangetxte);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 2em;
+}
+
+
+
+.blackcat_project
+{
+  width: 80%;
+  padding: 0px;
+  margin: 0px auto;
+}
+
+
+.toy
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height:40em;
+  grid-gap: 2em;
+  margin-top: 2em;
+}
+
+
+.toy_left
+{
+  background: url("../images/blackcat/chef.png") no-repeat center center;
+  background-size: cover;
+}
+
+.toy_right
+{
+  background: url("../images/blackcat/artiest.png") no-repeat center center;
+  background-size: cover;
+}
+
+.blackcat_design
+{
+  background: url("../images/blackcat/blackcatdesign.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  height:50em;
+}
+
+.blackcat_design2
+{
+  background: url("../images/blackcat/795c5c58-0044-40df-ab26-96d7c34139b6.png") no-repeat 0px 0px;
+  background-size:contain;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  height:60em;
+  margin-top: 2em;
+}
+
+.header_text_title_button
+{
+  background: var(--purpletext);
+  width: 300px;
+  text-align: center;
+  line-height:1.5em;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.sub_title2
+{
+  max-width: 450px;
+}
+
+
+@media only screen and (max-width:700px) 
+{
+  #header
+  {
+    width: 100%;
+    height:35em;
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(to bottom, rgba(11, 9, 12, 0.3), rgba(11, 9, 12, 0.9)),
+    url("../images/blackcat/9879864163123.png") no-repeat center center;
+    background-size: cover;
+    text-align: center;
+  }
+  .header_text_title_button{margin: 0px auto;}
+  .header_text{padding: 0px; padding-top:25vh;}
+  .sub_title2{max-width: 65%;  margin: 0px auto; font-size: 0.8em;}
+  .blackcat_design{background-size: contain; margin: 0px; padding: 0px; height: 20em;}
+  .blackcat_design2{height: 20em;}
+}
